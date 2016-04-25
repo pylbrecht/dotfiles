@@ -61,6 +61,11 @@ set tw=79
 set nowrap
 set fo-=t
 
+"indentation
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+
 "visually highlight at 80 & 120 characters
 let &colorcolumn="80,".join(range(120,999),",")
 
@@ -71,9 +76,6 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=yellow
 set history=700
 set undolevels=700
 
-"set indentation on specific filetypes
-autocmd FileReadPost,BufReadPost *.* set sw=4 expandtab tabstop=4
-autocmd FileReadPost,BufReadPost *.html set sw=2 expandtab tabstop=2
 
 "search case insensitive
 set hlsearch
