@@ -2,17 +2,21 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=$HOME/vimfiles/bundle/Vundle.vim
-call vundle#begin('$HOME/vimfiles/bundle')
+if has("win32")
+	set rtp+=$HOME/vimfiles/bundle/Vundle.vim
+	call vundle#begin('$HOME/vimfiles/bundle')
+elseif has("unix")
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin('~/.vim/bundle')
+endif
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
+Plugin 'rust-lang/rust.vim'
 
 " Fix for Vundle not loading all plugins
 "call vundle#config#require(g:bundles)
@@ -22,7 +26,11 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Set font
-set guifont=Consolas:h11
+if has("win32")
+	set guifont=Consolas:h11
+elseif has("unix")
+	set guifont=DejaVu\ Sans\ Mono:h11
+endif
 
 " Remove tool-, menu- and scrollbars
 set guioptions-=m
