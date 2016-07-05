@@ -12,11 +12,15 @@ endif
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'rust-lang/rust.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Fix for Vundle not loading all plugins
 "call vundle#config#require(g:bundles)
@@ -68,9 +72,12 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+"gruvbox settings
+let g:gruvbox_italic=1
+
 "colorscheme
 set background=dark
-colors solarized
+colors gruvbox
 
 "syntax highlighting
 syntax on
