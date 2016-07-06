@@ -14,7 +14,7 @@ endif
 Plugin 'VundleVim/Vundle.vim'
 "Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'morhetz/gruvbox'
@@ -65,6 +65,12 @@ map <Leader>d <esc>:tabprevious<CR>
 map <Leader>f <esc>:tabnext<CR>
 map <Leader>t <esc>:tabnew<CR>
 
+"split movement
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "map sort function to a key
 vnoremap <Leader>s :sort<CR>
 
@@ -76,6 +82,7 @@ vnoremap > >gv
 let g:gruvbox_italic=1
 
 "colorscheme
+set t_Co=256
 set background=dark
 colors gruvbox
 
