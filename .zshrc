@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$USER/.oh-my-zsh
-export GIT_MERGE_AUTOEDIT=no
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
