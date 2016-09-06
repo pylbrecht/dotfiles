@@ -12,107 +12,98 @@ endif
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
-Plugin 'rust-lang/rust.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 
-" Fix for Vundle not loading all plugins
-"call vundle#config#require(g:bundles)
-
-" All of your Plugins must be added before the following line
+" all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Set font
+" set font for gVim
 if has("win32")
 	set guifont=Consolas:h11
 elseif has("unix")
 	set guifont=DejaVu\ Sans\ Mono:h11
 endif
 
-" Remove tool-, menu- and scrollbars
+" remove tool-, menu- and scrollbar
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 
-"remove trailing whitespace on write
+" remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
 
-"backspace
+" backspace
 set backspace=indent,eol,start
 
-"clear last search pattern
+" clear last search pattern
 nnoremap <BACKSPACE> :noh<CR>
 
-"rebind <Leader> key
-let mapleader=","
+" rebind <Leader> key to space
+let mapleader = "\<SPACE>"
 
-"highlight current line
+" highlight current line
 set cursorline
 
-"show line numbers
+" show line numbers
 set number
 
-"tab manipulation
-map <Leader>d <esc>:tabprevious<CR>
-map <Leader>f <esc>:tabnext<CR>
+" tab motion
+map <Leader>h <esc>:tabprevious<CR>
+map <Leader>l <esc>:tabnext<CR>
 map <Leader>t <esc>:tabnew<CR>
+map <Leader>q <esc>:tabclose<CR>
 
-"split movement
+" split motion
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"map sort function to a key
+" map sort function
 vnoremap <Leader>s :sort<CR>
 
-"easier moving code blocks
+" easier moving code blocks
 vnoremap < <gv
 vnoremap > >gv
 
-"gruvbox settings
-let g:gruvbox_italic=1
-
-"colorscheme
+" colorscheme
 set t_Co=256
 set background=dark
+let g:gruvbox_italic=1
 colors gruvbox
 
-"syntax highlighting
+" syntax highlighting
 syntax on
 filetype indent plugin on
 
-"window size
+" window size
 set lines=80
 set columns=200
 
-"indentation
+" indentation
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
 
-"visually highlight at 80 & 120 characters
+" visually highlight at 80 & 120 characters
 let &colorcolumn="80,".join(range(120,999),",")
 
-"search case insensitive
+" search case insensitive
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-"NERDtree
-"set toggle key
-map <Leader>m :NERDTreeToggle<CR>
-
-"Syntastic
+" syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -120,3 +111,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" notes
+let g:notes_suffix = '.txt'
+let g:whereami = $WHEREAMI
+
+if $WHEREAMI == 'work'
+    let g:notes_directories = ['D:\Notes']
+elseif $WHEREAMI == 'home'
+	let g:notes_directories = ['~/notes']
+endif
