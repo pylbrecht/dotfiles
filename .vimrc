@@ -18,8 +18,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
+Plugin 'vimwiki/vimwiki'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,12 +112,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" notes
-let g:notes_suffix = '.txt'
-let g:whereami = $WHEREAMI
-
+" vimwiki
 if $WHEREAMI == 'work'
-    let g:notes_directories = ['D:\Notes']
+    let g:vimwiki_list = [{'path': 'D:\Notes', 'path_html': 'D:\Notes\html'}]
 elseif $WHEREAMI == 'home'
-	let g:notes_directories = ['~/notes']
+    let g:vimwiki_list = [{'path': '~/Notes', 'path_html': '~/Notes/html'}]
 endif
