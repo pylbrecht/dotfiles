@@ -13,13 +13,13 @@ endif
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
-Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'nvie/vim-flake8'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,16 +27,20 @@ filetype plugin indent on    " required
 
 " set font for gVim
 if has("win32")
-	set guifont=Consolas:h11
+	set guifont=Consolas:h12
 elseif has("unix")
 	set guifont=DejaVu\ Sans\ Mono:h11
 endif
 
+" directX
+set enc=utf-8
+set rop=type:directx
+
 " remove tool-, menu- and scrollbar
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
+"set guioptions-=m
+"set guioptions-=T
+"set guioptions-=r
+"set guioptions-=L
 
 " remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
@@ -103,18 +107,9 @@ set incsearch
 set ignorecase
 set smartcase
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " vimwiki
 if $WHEREAMI == 'work'
-    let g:vimwiki_list = [{'path': 'D:\Notes', 'path_html': 'D:\Notes\html'}]
+	let g:vimwiki_list = [{'path': 'D:\Notes', 'path_html': 'D:\Notes\html'}]
 elseif $WHEREAMI == 'home'
-    let g:vimwiki_list = [{'path': '~/Notes', 'path_html': '~/Notes/html'}]
+	let g:vimwiki_list = [{'path': '~/Notes', 'path_html': '~/Notes/html'}]
 endif
