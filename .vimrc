@@ -82,16 +82,12 @@ vnoremap > >gv
 " colorscheme
 set t_Co=256
 set background=dark
-let g:gruvbox_italic=1
+let g:gruvbox_italic=0
 colors gruvbox
 
 " syntax highlighting
 syntax on
 filetype indent plugin on
-
-" window size
-set lines=80
-set columns=200
 
 " indentation
 set tabstop=4
