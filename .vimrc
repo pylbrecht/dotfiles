@@ -20,6 +20,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'nvie/vim-flake8'
+Plugin 'majutsushi/tagbar'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -109,3 +110,6 @@ if $WHEREAMI == 'work'
 elseif $WHEREAMI == 'home'
 	let g:vimwiki_list = [{'path': '~/Notes', 'path_html': '~/Notes/html'}]
 endif
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
