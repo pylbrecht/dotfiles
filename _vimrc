@@ -16,18 +16,25 @@ Plugin 'jiangmiao/auto-pairs'
 "Plugin 'scrooloose/syntastic'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'nvie/vim-flake8'
 Plugin 'chriskempson/base16-vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'jnurmine/Zenburn'
+Plugin 'ChrisKempson/Tomorrow-Theme'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim'
 " > snippet related
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " < snippet related
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,20 +42,17 @@ filetype plugin indent on    " required
 
 " set font for gVim
 if has("win32")
-	set guifont=Consolas:h12
+	"set guifont=Consolas:h12
+	set guifont=Source\ Code\ Pro:h12
+	"set guifont=Inconsolata:h14
 elseif has("unix")
 	set guifont=DejaVu\ Sans\ Mono:h11
 endif
 
-" directX
-set enc=utf-8
-set rop=type:directx
-
 " remove tool-, menu- and scrollbar
-"set guioptions-=m
-"set guioptions-=T
-"set guioptions-=r
-"set guioptions-=L
+set guioptions-=m
+set guioptions-=T
+set guioptions-=L
 
 " remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
@@ -106,7 +110,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" visually highlight at 81 characters
+" visually highlight at 81
 highlight ColorColumn ctermbg=magenta guibg=#fb4934
 call matchadd('ColorColumn', '\%81v', 100)
 
@@ -117,8 +121,7 @@ set ignorecase
 set smartcase
 
 " vimwiki
-if $WHEREAMI == 'work'
-	let g:vimwiki_list = [{'path': 'D:\Notes', 'path_html': 'D:\Notes\html'}]
-elseif $WHEREAMI == 'home'
-	let g:vimwiki_list = [{'path': '~/Notes', 'path_html': '~/Notes/html'}]
-endif
+let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html'}]
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
