@@ -21,6 +21,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'nvie/vim-flake8'
 Plugin 'majutsushi/tagbar'
+"snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'lervag/vimtex'
+Plugin 'rust-lang/rust.vim'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -96,7 +103,7 @@ set shiftwidth=4
 set noexpandtab
 
 " visually highlight at 80 & 120 characters
-let &colorcolumn="80,".join(range(120,999),",")
+"let &colorcolumn="80,".join(range(120,999),",")
 
 " search case insensitive
 set hlsearch
@@ -105,11 +112,13 @@ set ignorecase
 set smartcase
 
 " vimwiki
-if $WHEREAMI == 'work'
-	let g:vimwiki_list = [{'path': 'D:\Notes', 'path_html': 'D:\Notes\html'}]
-elseif $WHEREAMI == 'home'
-	let g:vimwiki_list = [{'path': '~/Notes', 'path_html': '~/Notes/html'}]
-endif
+let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html'}]
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" required for transparency
+highlight Normal ctermbg=None
+
+" Rust
+let g:rustfmt_autosave = 1
