@@ -5,7 +5,7 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="xiong-chiamiov-plus"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +49,7 @@ ZSH_THEME="xiong-chiamiov-plus"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux git ssh-agent sudo systemd pip python)
+plugins=(archlinux git ssh-agent sudo systemd pip python virtualenvwrapper)
 
 # User configuration
 
@@ -83,4 +83,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gdb="gdb -q"
+alias vim="vim --servername VIM"
 alias v="vim"
+alias reboot="sudo systemctl reboot"
+alias poweroff="sudo systemctl poweroff"
+alias quartus64="quartus --64bit"
+export SCRIPT_DIR="$HOME/.config/i3blocks/scripts"
+export WORKON_HOME="$HOME/.venvs"
+source /usr/bin/virtualenvwrapper.sh
