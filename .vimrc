@@ -121,4 +121,4 @@ nmap <F8> :TagbarToggle<CR>
 highlight Normal ctermbg=None
 
 " Rust
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
