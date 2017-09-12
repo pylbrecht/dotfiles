@@ -28,6 +28,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'lervag/vimtex'
 Plugin 'rust-lang/rust.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -122,3 +123,5 @@ highlight Normal ctermbg=None
 
 " Rust
 let g:rustfmt_autosave = 0
+let g:ycm_rust_src_path = '~/dev/rust/src'
+nnoremap <Leader>o :YcmCompleter GoTo<CR>
