@@ -35,6 +35,7 @@ Plugin 'honza/vim-snippets'
 " < snippet related
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Valloric/YouCompleteMe'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,9 +43,9 @@ filetype plugin indent on    " required
 
 " set font for gVim
 if has("win32")
-	"set guifont=Consolas:h12
-	set guifont=Source\ Code\ Pro:h12
-	"set guifont=Inconsolata:h14
+    "set guifont=Consolas:h12
+    set guifont=Source\ Code\ Pro\ Medium:h11
+	"set guifont=Inconsolata:h12
 elseif has("unix")
 	set guifont=DejaVu\ Sans\ Mono:h11
 endif
@@ -125,3 +126,18 @@ let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html'}]
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+let g:airline_powerline_fonts = 1
+
+" Open vertical splits on the right side
+set splitright
+
+"""""""""""""""""""""""
+"       Plugins       "
+"""""""""""""""""""""""
+
+" Open already open file in new pane instead of switching to it.
+let g:ctrlp_switch_buffer = 'et'
+
+" YouCompleteMe
+set encoding=utf-8
