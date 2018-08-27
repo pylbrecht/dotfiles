@@ -2,54 +2,27 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-if has("win32")
-	set rtp+=$HOME/vimfiles/bundle/Vundle.vim
-	call vundle#begin('$HOME/vimfiles/bundle')
-elseif has("unix")
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin('~/.vim/bundle')
-endif
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'scrooloose/syntastic'
 Plugin 'morhetz/gruvbox'
+Plugin 'nvie/vim-flake8'
+Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vimwiki/vimwiki'
-Plugin 'nvie/vim-flake8'
-Plugin 'majutsushi/tagbar'
-"snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'lervag/vimtex'
-Plugin 'rust-lang/rust.vim'
-Plugin 'Valloric/YouCompleteMe'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" set font for gVim
-if has("win32")
-	set guifont=Consolas:h12
-elseif has("unix")
-	set guifont=DejaVu\ Sans\ Mono:h11
-endif
-
-" directX
-set enc=utf-8
-set rop=type:directx
-
-" remove tool-, menu- and scrollbar
-"set guioptions-=m
-"set guioptions-=T
-"set guioptions-=r
-"set guioptions-=L
 
 " remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
@@ -96,15 +69,10 @@ colors gruvbox
 
 " syntax highlighting
 syntax on
-filetype indent plugin on
 
 " indentation
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
-
-" visually highlight at 80 & 120 characters
-"let &colorcolumn="80,".join(range(120,999),",")
 
 " search case insensitive
 set hlsearch
@@ -115,13 +83,5 @@ set smartcase
 " vimwiki
 let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html'}]
 
-" tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" required for transparency
-highlight Normal ctermbg=None
-
-" Rust
-let g:rustfmt_autosave = 0
-let g:ycm_rust_src_path = '~/dev/rust/src'
-nnoremap <Leader>o :YcmCompleter GoTo<CR>
+" CtrlP show hidden files
+let g:ctrlp_show_hidden = 1
