@@ -2,18 +2,12 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-if has("win32")
-	set rtp+=$HOME/vimfiles/bundle/Vundle.vim
-	call vundle#begin('$HOME/vimfiles/bundle')
-elseif has("unix")
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin('~/.vim/bundle')
-endif
+set rtp+=$HOME/vimfiles/bundle/Vundle.vim
+call vundle#begin('$HOME/vimfiles/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'scrooloose/syntastic'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
@@ -21,34 +15,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'nvie/vim-flake8'
-Plugin 'chriskempson/base16-vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'jnurmine/Zenburn'
-Plugin 'ChrisKempson/Tomorrow-Theme'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'dracula/vim'
-" > snippet related
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-" < snippet related
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" set font for gVim
-if has("win32")
-    "set guifont=Consolas:h12
-    set guifont=Source\ Code\ Pro\ Medium:h11
-	"set guifont=Inconsolata:h12
-elseif has("unix")
-	set guifont=DejaVu\ Sans\ Mono:h11
-endif
+set guifont=Consolas:h12
 
 " remove tool-, menu- and scrollbar
 set guioptions-=m
@@ -100,20 +74,11 @@ colors gruvbox
 
 " syntax highlighting
 syntax on
-filetype indent plugin on
-
-" window size
-set lines=80
-set columns=200
 
 " indentation
 set tabstop=4
 set shiftwidth=4
-set expandtab
 
-" visually highlight at 81
-highlight ColorColumn ctermbg=magenta guibg=#fb4934
-call matchadd('ColorColumn', '\%81v', 100)
 
 " search case insensitive
 set hlsearch
@@ -132,12 +97,5 @@ let g:airline_powerline_fonts = 1
 " Open vertical splits on the right side
 set splitright
 
-"""""""""""""""""""""""
-"       Plugins       "
-"""""""""""""""""""""""
-
 " Open already open file in new pane instead of switching to it.
 let g:ctrlp_switch_buffer = 'et'
-
-" YouCompleteMe
-set encoding=utf-8
