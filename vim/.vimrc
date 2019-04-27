@@ -8,8 +8,8 @@ call vundle#begin('~/.vim/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'junegunn/fzf.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'nvie/vim-flake8'
 Plugin 'rust-lang/rust.vim'
@@ -80,7 +80,7 @@ set ignorecase
 set smartcase
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html'}]
+let g:vimwiki_list = [{'path': '~/.notes', 'path_html': '~/.notes/html'}]
 
-" CtrlP show hidden files
-let g:ctrlp_show_hidden = 1
+" Map :Files to CTRL-P
+nnoremap <C-p> :Files<Cr>
