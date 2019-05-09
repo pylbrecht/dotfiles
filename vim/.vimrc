@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
 Plugin 'nvie/vim-flake8'
 Plugin 'rust-lang/rust.vim'
@@ -46,6 +47,10 @@ map <Leader>h <esc>:tabprevious<CR>
 map <Leader>l <esc>:tabnext<CR>
 map <Leader>t <esc>:tabnew<CR>
 map <Leader>q <esc>:tabclose<CR>
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
 
 " split motion
 nnoremap <C-J> <C-W><C-J>
