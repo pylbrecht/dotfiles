@@ -40,6 +40,7 @@ set cursorline
 
 " show line numbers
 set number
+set relativenumber
 
 " tab motion
 map <Leader>h <esc>:tabprevious<CR>
