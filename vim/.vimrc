@@ -42,12 +42,6 @@ set cursorline
 set number
 set relativenumber
 
-" tab motion
-map <Leader>h <esc>:tabprevious<CR>
-map <Leader>l <esc>:tabnext<CR>
-map <Leader>t <esc>:tabnew<CR>
-map <Leader>q <esc>:tabclose<CR>
-
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
