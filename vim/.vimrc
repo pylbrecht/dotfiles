@@ -32,9 +32,6 @@ set backspace=indent,eol,start
 " clear last search pattern
 nnoremap <BACKSPACE> :noh<CR>
 
-" rebind <Leader> key to space
-let mapleader = "\<SPACE>"
-
 " highlight current line
 set cursorline
 
@@ -52,9 +49,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" map sort function
-vnoremap <Leader>s :sort<CR>
-
 " easier moving code blocks
 vnoremap < <gv
 vnoremap > >gv
@@ -71,6 +65,7 @@ syntax on
 " indentation
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " search case insensitive
 set hlsearch
