@@ -4,3 +4,11 @@
 URxvt.font: xft:Source Code Pro Medium:size=12
 
 URxvt.scrollBar: false
+URxvt.fading: 35
+URxvt.saveLines: 10000
+URxvt.pointerBlank: true
+
+! Make URLs clickable
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
