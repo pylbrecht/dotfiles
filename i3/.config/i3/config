@@ -43,7 +43,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec --no-startup-id "rofi -show run"
+bindsym $mod+d exec --no-startup-id "rofi -show run -theme gruvbox-dark"
 
 # change focus
 bindsym $mod+h focus left
@@ -149,11 +149,33 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
 
 # Set all windows' borders to 1 pixel
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # Gaps
 smart_gaps inverse_outer
 gaps inner 7
+
+# Colors
+set_from_resource $black i3wm.color0
+set_from_resource $darkgrey i3wm.color8
+set_from_resource $darkred i3wm.color1
+set_from_resource $red i3wm.color9
+set_from_resource $darkgreen i3wm.color2
+set_from_resource $green i3wm.color10
+set_from_resource $darkyellow i3wm.color3
+set_from_resource $yellow i3wm.color11
+set_from_resource $darkblue i3wm.color4
+set_from_resource $blue i3wm.color12
+set_from_resource $darkmagenta i3wm.color5
+set_from_resource $magenta i3wm.color13
+set_from_resource $darkcyan i3wm.color6
+set_from_resource $cyan i3wm.color14
+set_from_resource $lightgrey i3wm.color7
+set_from_resource $white i3wm.color15
+
+set $background $black
+set $foreground $white
