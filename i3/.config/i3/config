@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:DejaVu Sans Mono 11
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -58,7 +58,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in vertical orientation
-bindsym $mod+v split toggle
+bindsym $mod+v split vertical
+bindsym $mod+Shift+v split horizontal
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -133,9 +134,9 @@ mode "resize" {
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
-        bindsym l resize grow height 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
-        bindsym j resize grow width 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -159,9 +160,9 @@ for_window [class=".*"] border pixel 0
 smart_gaps inverse_outer
 gaps inner 7
 
-# Colors
-set_from_resource $black i3wm.color0
-set_from_resource $darkgrey i3wm.color8
+# Gruvbox colors
+set_from_resource $bg i3wm.color0
+set_from_resource $darkgray i3wm.color8
 set_from_resource $darkred i3wm.color1
 set_from_resource $red i3wm.color9
 set_from_resource $darkgreen i3wm.color2
@@ -170,12 +171,39 @@ set_from_resource $darkyellow i3wm.color3
 set_from_resource $yellow i3wm.color11
 set_from_resource $darkblue i3wm.color4
 set_from_resource $blue i3wm.color12
-set_from_resource $darkmagenta i3wm.color5
-set_from_resource $magenta i3wm.color13
-set_from_resource $darkcyan i3wm.color6
-set_from_resource $cyan i3wm.color14
-set_from_resource $lightgrey i3wm.color7
-set_from_resource $white i3wm.color15
+set_from_resource $darkpurple i3wm.color5
+set_from_resource $purple i3wm.color13
+set_from_resource $darkaqua i3wm.color6
+set_from_resource $aqua i3wm.color14
+set_from_resource $lightgray i3wm.color7
+set_from_resource $fg i3wm.color15
+set $orange #fe8019
+set $darkorange #d65d0e
+set $bg1 #3c3836
+set $bg2 #504945
+set $bg3 #665c54
+set $bg4 #7c6f64
 
-set $background $black
-set $foreground $white
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	font pango:DejaVu Sans Mono 11
+        status_command SCRIPT_DIR=~/.config/i3blocks/blockets i3blocks
+        position top
+	
+	colors {
+		background $bg
+		statusline $fg
+		separator $aqua
+		# <border> <background> <text>
+		focused_workspace $yellow $darkyellow $bg
+		inactive_workspace $bg $bg $darkyellow
+		active_workspace $bg $bg $darkyellow
+		urgent_workspace $red $darkred $bg
+	}
+}
+
+# <border> <background> <text> <indicator> <child_border>
+client.focused $darkyellow $yellow $bg $darkorange $darkyellow
+client.unfocused $bg2 $bg $bg4 $red $red
+client.urgent $red $darkred $bg $red $red
