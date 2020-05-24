@@ -151,7 +151,7 @@ for_window [class=".*"] border pixel 0
 
 # Gaps
 smart_gaps inverse_outer
-gaps inner 7
+gaps inner 5
 
 # Gruvbox colors
 set_from_resource $bg i3wm.color0
