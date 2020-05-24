@@ -198,5 +198,6 @@ bar {
 
 # <border> <background> <text> <indicator> <child_border>
 client.focused $darkyellow $yellow $bg $darkorange $darkyellow
+client.focused_inactive $darkyellow $yellow $bg $darkorange $darkyellow
 client.unfocused $bg2 $bg $bg4 $red $red
 client.urgent $red $darkred $bg $red $red
