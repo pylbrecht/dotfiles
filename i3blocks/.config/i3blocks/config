@@ -1,0 +1,37 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=false
+separator_block_width=5
+
+[battery2]
+command=~/.config/i3blocks/blocklets/battery/battery2
+markup=pango
+interval=30
+
+[bandwidth]
+command=~/.config/i3blocks/blocklets/bandwidth/bandwidth2
+interval=perist
+markup=pango
+interface=enp0s3
+
+[wifi]
+command=~/.config/i3blocks/blocklets/wifi/wifi
+interval=60
+label= 
+
+[spacer]
+full_text=<b>|</b>
+markup=pango
+color=#d79921
+
+[time]
+command=date '+%a %d.%m.%Y %H:%M '
+interval=60
+label= 
