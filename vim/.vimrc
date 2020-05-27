@@ -23,14 +23,13 @@ Plugin 'vimwiki/vimwiki'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" remove trailing whitespace on write
-autocmd BufWritePre * :%s/\s\+$//e
-
 " backspace
 set backspace=indent,eol,start
 
 " clear last search pattern
 nnoremap <BACKSPACE> :noh<CR>
+
+nnoremap ; :
 
 " highlight current line
 set cursorline
