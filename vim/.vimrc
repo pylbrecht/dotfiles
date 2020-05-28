@@ -29,7 +29,9 @@ set backspace=indent,eol,start
 " clear last search pattern
 nnoremap <BACKSPACE> :noh<CR>
 
+" remap colon
 nnoremap ; :
+nnoremap q; q:
 
 " highlight current line
 set cursorline
