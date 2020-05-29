@@ -23,6 +23,17 @@ Plugin 'vimwiki/vimwiki'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" open splits more naturally
+set splitright
+set splitbelow
+
+" set backup/swap dir
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
+
+" remap yank inconsistency
+nnoremap Y y$
+
 " backspace
 set backspace=indent,eol,start
 
