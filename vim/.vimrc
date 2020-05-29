@@ -26,6 +26,9 @@ filetype plugin indent on    " required
 " backspace
 set backspace=indent,eol,start
 
+" encoding
+set encoding=utf-8
+
 " clear last search pattern
 nnoremap <BACKSPACE> :noh<CR>
 
