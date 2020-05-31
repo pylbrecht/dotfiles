@@ -1,7 +1,7 @@
 ! gruvbox colors
 #include "gruvbox-dark.xresources"
 
-URxvt.font: xft:Source Code Pro Medium:size=12
+URxvt.font: xft:SauceCodePro Nerd Font Mono:medium:size=12
 
 URxvt.scrollBar: false
 URxvt.saveLines: 10000
