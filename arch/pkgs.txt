@@ -32,6 +32,7 @@ patch
 picom
 pkgconf
 polkit
+qutebrowser
 ranger
 ripgrep
 rofi
