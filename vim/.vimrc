@@ -1,27 +1,26 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" auto-install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
+     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
+Plug 'morhetz/gruvbox'
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vimwiki/vimwiki'
 
-Plugin 'junegunn/fzf.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'morhetz/gruvbox'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpared'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'vimwiki/vimwiki'
+call plug#end()
 
-" all of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
 
 " open splits more naturally
 set splitright
