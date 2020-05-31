@@ -2,6 +2,7 @@
 #include "gruvbox-dark.xresources"
 
 URxvt.font: xft:SauceCodePro Nerd Font Mono:medium:size=12
+URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:bold:size=12
 
 URxvt.scrollBar: false
 URxvt.saveLines: 10000

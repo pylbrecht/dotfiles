@@ -1,3 +1,4 @@
 nerd-fonts-dejavu-complete
 nerd-fonts-source-code-pro
 oh-my-zsh-git
+rxvt-unicode-patched
