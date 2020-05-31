@@ -26,6 +26,11 @@ command=~/.config/i3blocks/blocklets/wifi/wifi
 interval=60
 label= 
 
+[key_layout]
+command=setxkbmap -query | tail -1 | awk '{ print $2 }'
+label= 
+interval=30
+
 [spacer]
 full_text=<b>|</b>
 markup=pango
