@@ -14,12 +14,6 @@ command=~/.config/i3blocks/blocklets/battery/battery2
 markup=pango
 interval=30
 
-[bandwidth]
-command=~/.config/i3blocks/blocklets/bandwidth/bandwidth2
-interval=perist
-markup=pango
-interface=enp0s3
-
 [wifi]
 command=~/.config/i3blocks/blocklets/wifi/wifi
 interval=60
@@ -27,20 +21,32 @@ label=
 
 [key_layout]
 command=setxkbmap -query | tail -1 | awk '{ print $2 }'
-label= 
+label=<span color="#d79921" font_weight="bold"> </span>
 interval=30
+markup=pango
+align=center
 
 [spacer]
-full_text=<b>|</b>
+full_text=" "
+
+[date]
+command=date '+%a %d.%m.%Y'
+interval=60
+label=<span color="#d79921"> </span>
 markup=pango
-color=#d79921
+
+[spacer]
+full_text=" "
 
 [time]
-command=date '+%a %d.%m.%Y %H:%M '
+command=date '+%H:%M'
 interval=60
-label= 
+label=<span color="#d79921"> </span>
+markup=pango
 
 [arch-logo]
 full_text=<span font_weight="bold" size="xx-large"> </span>
 markup=pango
 color=#d79921
+min_width=50
+align=right
