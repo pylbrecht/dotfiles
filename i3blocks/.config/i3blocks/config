@@ -5,7 +5,6 @@
 #
 #     https://vivien.github.io/i3blocks
 
-
 # Global properties
 separator=false
 separator_block_width=5
@@ -40,3 +39,8 @@ color=#d79921
 command=date '+%a %d.%m.%Y %H:%M '
 interval=60
 label= 
+
+[arch-logo]
+full_text=<span font_weight="bold" size="xx-large"> </span>
+markup=pango
+color=#d79921

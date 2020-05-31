@@ -1,1 +1,2 @@
+nerd-fonts-dejavu-complete
 oh-my-zsh-git
