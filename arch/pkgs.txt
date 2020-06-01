@@ -1,3 +1,4 @@
+acpi
 adobe-source-code-pro-fonts
 autoconf
 automake
@@ -33,6 +34,7 @@ patch
 picom
 pkgconf
 polkit
+python
 ripgrep
 rofi
 stow
@@ -46,7 +48,6 @@ vim
 wget
 which
 xdg-user-dirs
-xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
