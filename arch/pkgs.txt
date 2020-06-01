@@ -29,6 +29,7 @@ linux-firmware
 lvm2
 m4
 make
+networkmanager
 openssh
 patch
 picom
