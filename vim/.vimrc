@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-commentary'
