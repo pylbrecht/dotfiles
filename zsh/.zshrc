@@ -62,7 +62,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux git ssh-agent systemd fzf common-aliases taskwarrior z)
+plugins=(archlinux docker docker-compose git ssh-agent sudo systemd fzf common-aliases taskwarrior z)
 
 source $ZSH/oh-my-zsh.sh
 
