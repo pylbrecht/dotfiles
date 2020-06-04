@@ -9,10 +9,13 @@
 separator=false
 separator_block_width=5
 
-[battery2]
-command=~/.config/i3blocks/blocklets/battery/battery2
+[battery]
+command=~/.config/i3blocks/blocklets/battery/battery
 markup=pango
 interval=30
+
+[spacer]
+full_text=" "
 
 [wifi]
 command=~/.config/i3blocks/blocklets/wifi/wifi
@@ -20,7 +23,7 @@ interval=60
 label= 
 
 [key_layout]
-command=setxkbmap -query | tail -1 | awk '{ print $2 }'
+command=setxkbmap -query | grep layout | awk '{ print $2 }'
 label=<span color="#d79921" font_weight="bold"> </span>
 interval=30
 markup=pango
