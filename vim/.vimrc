@@ -31,6 +31,9 @@ set splitbelow
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
 
+" copy everything to system's clipboard
+set clipboard=unnamed
+
 " remap yank inconsistency
 nnoremap Y y$
 
