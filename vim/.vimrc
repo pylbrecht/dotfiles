@@ -18,6 +18,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vimwiki/vimwiki'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -96,3 +97,11 @@ let g:vimwiki_list = [{'path': '~/.notes', 'path_html': '~/.notes/html'}]
 
 " Map :Files to CTRL-P
 nnoremap <C-p> :Files<Cr>
+" vim-airline
+let g:airline#extensions#cursormode#enabled = 0
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = ''
