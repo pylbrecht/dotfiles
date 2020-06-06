@@ -17,4 +17,3 @@ URxvt.url-select.launcher:  /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-s:           perl:keyboard-select:searc
