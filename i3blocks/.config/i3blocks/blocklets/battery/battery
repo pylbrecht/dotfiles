@@ -175,7 +175,7 @@ def generate_markup(battery: Battery, adapter: Adapter) -> str:
         charge = Discharging.dispatch(battery.level)
 
     if charge.is_critical():
-        markup = f"{colorize(charge, '#dff0000')} {battery.level}%"
+        markup = f"{colorize(charge, '#ff0000')} {battery.level}%"
     else:
         markup = f"{colorize(charge, '#d79921')} {battery.level}%"
 
