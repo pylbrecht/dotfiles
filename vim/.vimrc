@@ -99,7 +99,7 @@ let g:vimwiki_list = [{'path': '~/.notes', 'path_html': '~/.notes/html'}]
 nnoremap <C-p> :Files<Cr>
 
 " Map :Buffers to CTRL-M
-nnoremap <C-m> :Buffers<Cr>
+nnoremap <C-l> :Buffers<Cr>
 
 " vim-airline
 let g:airline#extensions#cursormode#enabled = 0
