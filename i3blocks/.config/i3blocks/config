@@ -18,9 +18,14 @@ interval=30
 full_text=" "
 
 [wifi]
-command=~/.config/i3blocks/blocklets/wifi/wifi
-interval=60
-label= 
+command=~/.config/i3blocks/blocklets/wifi/ssid
+INTERFACE=wlp0s20f3
+interval=30
+markup=pango
+label=<span color="#d79921"> </span>
+
+[spacer]
+full_text=" "
 
 [key_layout]
 command=setxkbmap -query | grep layout | awk '{ print $2 }'
