@@ -171,4 +171,6 @@ if __name__ == "__main__":
     acpi = subprocess.run(["acpi", "-ab"], capture_output=True, encoding="utf-8")
     status = BatteryStatus.create_from(acpi.stdout)
     markup = generate_markup(status.battery, status.adapter)
-    print(markup)
+
+    print(markup)  # full_text
+    print(markup)  # short_text
