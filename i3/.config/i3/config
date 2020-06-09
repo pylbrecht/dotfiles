@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 font pango:DejaVu Sans Mono Nerd Font 11
 
-set $lock "i3lock"
+set $lock "convert ~/Pictures/bsod.png -resize $(xrandr | grep ' connected primary' | awk '{print $4}' | rg -o '\d+x\d+') /tmp/lock.png && i3lock -n -i /tmp/lock.png -c 000000"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
