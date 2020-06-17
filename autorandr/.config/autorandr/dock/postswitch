@@ -1,0 +1,7 @@
+#!/bin/sh
+
+xrandr --output DP-1-1 --primary
+i3-msg 'restart'
+
+xmodmap ~/.Xmodmap
+feh --bg-fill ~/Pictures/wallpapers/lazy-bird-minimalist-wallpaper-dark.png
