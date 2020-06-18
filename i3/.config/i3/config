@@ -214,7 +214,7 @@ bar {
         # <border> <background> <text>
         focused_workspace $yellow $darkyellow $bg
         inactive_workspace $bg $bg $darkyellow
-        active_workspace $bg $bg $darkyellow
+        active_workspace $bg $bg $yellow
         urgent_workspace $red $darkred $bg
     }
 }
