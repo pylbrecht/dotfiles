@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
+Plug 'mattn/calendar-vim'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'rust-lang/rust.vim'
@@ -97,7 +98,7 @@ set ignorecase
 set smartcase
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html'}]
+let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html', 'ext': '.md', 'syntax': 'markdown'}]
 
 " Map :Files to CTRL-P
 nnoremap <C-p> :Files<Cr>
