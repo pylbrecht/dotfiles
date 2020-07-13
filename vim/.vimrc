@@ -78,6 +78,9 @@ nnoremap <C-H> <C-W><C-H>
 vnoremap < <gv
 vnoremap > >gv
 
+" keep 5 lines on top/bottom while scrolling
+set scrolloff=5
+
 " colorscheme
 set t_Co=256
 set background=dark
