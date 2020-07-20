@@ -206,6 +206,7 @@ bar {
     position top
     strip_workspace_numbers yes
     height 30
+    tray_output primary
 
     colors {
         background $bg
