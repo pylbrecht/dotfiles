@@ -94,7 +94,7 @@ class Charging(enum.Enum):
             return cls.CHARGE_40
         elif level < 40 and level >= 30:
             return cls.CHARGE_30
-        elif level < 20:
+        else:
             return cls.CHARGE_20
 
     def is_critical(self):
