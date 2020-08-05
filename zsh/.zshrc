@@ -62,7 +62,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux docker docker-compose git ssh-agent sudo systemd fzf common-aliases taskwarrior z)
+plugins=(archlinux docker docker-compose git ssh-agent sudo systemd fzf common-aliases taskwarrior z kubectl ripgrep)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 export SUDO_EDITOR="rvim"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.poetry/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -99,3 +99,10 @@ export PATH="$PATH:$HOME/.local/bin"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias xclip="xclip -selection c"
+alias st="secret-tool"
+alias sts="secret-tool store"
+alias stl="secret-tool lookup"
+alias stc="secret-tool clear"
+
+alias kp="secret-tool lookup keepass keepass | xclip -selection c"
