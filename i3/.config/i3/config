@@ -227,5 +227,4 @@ client.unfocused $bg2 $bg $bg4 $red $red
 client.urgent $red $darkred $bg $red $red
 
 # Assign apps to workspaces
-assign [class="^qutebrowser$"] $ws2
 assign [class="^Slack$"] $ws3
