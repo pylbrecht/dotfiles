@@ -36,6 +36,7 @@ fi
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
+redshift -l 52:13 &
 ~/.fehbg &
 picom -b &
 autocutsel -fork &
