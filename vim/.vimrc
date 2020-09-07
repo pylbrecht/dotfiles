@@ -107,6 +107,10 @@ let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html', 'ext': '.
 " Map :Files to CTRL-P
 nnoremap <C-p> :Files<Cr>
 
+" Use ripgrep as grep prog
+set grepprg=rg\ -S\ --vimgrep
+set grepformat^=%f:%l:%c:%m
+
 " vim-airline
 let g:airline#extensions#cursormode#enabled = 0
 let g:airline_powerline_fonts = 1
