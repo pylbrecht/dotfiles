@@ -107,4 +107,7 @@ alias stc="secret-tool clear"
 
 alias kp="secret-tool lookup keepass keepass | xclip -selection c"
 
-alias -g vpn-="openvpn-client@"
+alias -g vpn-google="openvpn-client@google"
+alias -g vpn-momox="openvpn-client@momox"
+
+alias bt="bluetoothctl"
