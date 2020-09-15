@@ -8,6 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/calendar-vim'
 Plug 'mhinz/vim-startify'
@@ -26,6 +27,16 @@ Plug 'vim-airline/vim-airline'
 call plug#end()
 
 filetype plugin indent on
+
+" gVim related settings
+if has('gui_running')
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+    set guifont=SauceCodePro\ Nerd\ Font\ Medium\ 12
+endif
+
 
 " open splits more naturally
 set splitright
