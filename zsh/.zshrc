@@ -62,7 +62,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux docker docker-compose git ssh-agent sudo systemd fzf common-aliases taskwarrior z kubectl ripgrep)
+plugins=(archlinux docker docker-compose gcloud git ssh-agent sudo systemd fzf common-aliases taskwarrior z kubectl ripgrep)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,5 +109,14 @@ alias kp="secret-tool lookup keepass keepass | xclip -selection c"
 
 alias -g vpn-google="openvpn-client@google"
 alias -g vpn-momox="openvpn-client@momox"
+alias -g PY="--glob **/*.py"
 
 alias bt="bluetoothctl"
+
+# Custom functions
+fpath+=~/.momox/zshfunctions
+autoload db
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source "$HOME/.rvm/scripts/rvm"

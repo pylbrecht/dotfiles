@@ -37,6 +37,11 @@ if has('gui_running')
     set guifont=SauceCodePro\ Nerd\ Font\ Medium\ 12
 endif
 
+" auto-wrap long lines for markdown files
+augroup Markdown
+  autocmd!
+  autocmd FileType markdown set wrap
+augroup END
 
 " open splits more naturally
 set splitright
@@ -113,7 +118,16 @@ set ignorecase
 set smartcase
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/notes', 'path_html': '~/notes/html', 'ext': '.md', 'syntax': 'markdown'}]
+let g:vimwiki_list = [{
+	\ 'path': '~/notes',
+	\ 'template_path': '~/.config/vimwiki/templates',
+	\ 'template_default': 'default',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+	\ 'path_html': '~/notes/html/',
+	\ 'custom_wiki2html': 'vimwiki_markdown',
+    \ 'html_filename_parameterization': 1,
+	\ 'template_ext': '.html'}]
 
 " Map :Files to CTRL-P
 nnoremap <C-p> :Files<Cr>

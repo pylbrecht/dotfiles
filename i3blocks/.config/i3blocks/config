@@ -9,6 +9,13 @@
 separator=false
 separator_block_width=5
 
+[pomodoro]
+command=~/.config/i3blocks/blocklets/pomodoro/pomodoro
+interval=1
+
+[spacer]
+full_text=" "
+
 [battery]
 command=~/.config/i3blocks/blocklets/battery/battery
 markup=pango

@@ -41,4 +41,5 @@ redshift -l 52:13 &
 picom -b &
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
+autorandr --change &
 i3
