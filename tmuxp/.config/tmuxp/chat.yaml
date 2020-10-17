@@ -1,8 +1,0 @@
-session_name: chat
-windows:
-- window_name: twitter
-  panes:
-    - rainbowstream
-- window_name: slack
-  panes:
-    - weechat
