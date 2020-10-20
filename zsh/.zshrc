@@ -114,6 +114,7 @@ alias kp="secret-tool lookup keepass keepass | xclip -selection c"
 alias -g vpn-google="openvpn-client@google"
 alias -g vpn-momox="openvpn-client@momox"
 alias -g PY="--glob **/*.py"
+alias -g V="| xargs -o vim -p"
 
 alias bt="bluetoothctl"
 
@@ -124,3 +125,5 @@ autoload db
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 source "$HOME/.rvm/scripts/rvm"
+
+setopt nobanghist
