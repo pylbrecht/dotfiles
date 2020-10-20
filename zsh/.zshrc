@@ -72,6 +72,10 @@ export EDITOR="vim"
 export SUDO_EDITOR="rvim"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export PATH="$PATH:$HOME/.local/bin:$HOME/.poetry/bin"
+export DISABLE_AUTO_TITLE='true'
+
+# tmuxp completion
+eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
