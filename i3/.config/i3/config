@@ -50,8 +50,11 @@ bindsym $mod+q kill
 # lock screen
 bindsym $mod+Shift+q exec $lock
 
-# start rofi
-bindsym $mod+d exec --no-startup-id "rofi -show run -theme gruvbox-dark"
+# start rofi run
+bindsym $mod+d exec --no-startup-id "rofi -show run"
+
+# start rofi window
+bindsym $mod+w exec --no-startup-id "rofi -show window"
 
 # change focus
 bindsym $mod+h focus left
