@@ -13,6 +13,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mattn/calendar-vim'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -101,7 +102,7 @@ set scrolloff=5
 set t_Co=256
 set background=dark
 let g:gruvbox_italic=0
-colors gruvbox
+colors nord
 
 " syntax highlighting
 syntax on
