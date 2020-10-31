@@ -177,57 +177,44 @@ for_window [class=".*"] border pixel 0
 smart_gaps inverse_outer
 gaps inner 3
 
-# Gruvbox colors
-set_from_resource $bg i3wm.color0
-set_from_resource $darkgray i3wm.color8
-set_from_resource $darkred i3wm.color1
-set_from_resource $red i3wm.color9
-set_from_resource $darkgreen i3wm.color2
-set_from_resource $green i3wm.color10
-set_from_resource $darkyellow i3wm.color3
-set_from_resource $yellow i3wm.color11
-set_from_resource $darkblue i3wm.color4
-set_from_resource $blue i3wm.color12
-set_from_resource $darkpurple i3wm.color5
-set_from_resource $purple i3wm.color13
-set_from_resource $darkaqua i3wm.color6
-set_from_resource $aqua i3wm.color14
-set_from_resource $lightgray i3wm.color7
-set_from_resource $fg i3wm.color15
-set $orange #fe8019
-set $darkorange #d65d0e
-set $bg1 #3c3836
-set $bg2 #504945
-set $bg3 #665c54
-set $bg4 #7c6f64
+# nordtheme colors
+set $nord0 #2E3440
+set $nord1 #3B4252
+set $nord2 #434C5E
+set $nord3 #4C566A
+set $nord4 #D8DEE9
+set $nord5 #E5E9F0
+set $nord6 #ECEFF4
+set $nord7 #8FBCBB
+set $nord8 #88C0D0
+set $nord9 #81A1C1
+set $nord10 #5E81AC
+set $nord11 #BF616A
+set $nord12 #D08770
+set $nord13 #EBCB8B
+set $nord14 #A3BE8C
+set $nord15 #B48EAD
+
+set $bg_bar #2e3440cc
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    i3bar_command i3bar --transparency
     font pango:SauceCodePro Nerd Font Bold 12
     status_command SCRIPT_DIR=~/.config/i3blocks/blocklets i3blocks
     position top
     strip_workspace_numbers yes
     height 30
-    tray_output primary
+    tray_output none
 
     colors {
-        background $bg
-        statusline $fg
-        separator $aqua
+        background $bg_bar
         # <border> <background> <text>
-        focused_workspace $yellow $darkyellow $bg
-        inactive_workspace $bg $bg $darkyellow
-        active_workspace $bg $bg $yellow
-        urgent_workspace $red $darkred $bg
+        focused_workspace $nord9 $nord10 $bg_bar
+        inactive_workspace $bg_bar $bg_bar $nord10
+        active_workspace $bg_bar $bg_bar $nord9
+        urgent_workspace $nord12 $nord11 $bg_bar
     }
 }
-
-# <border> <background> <text> <indicator> <child_border>
-client.focused $darkyellow $yellow $bg $darkorange $darkyellow
-client.focused_inactive $darkyellow $yellow $bg $darkorange $darkyellow
-client.unfocused $bg2 $bg $bg4 $red $red
-client.urgent $red $darkred $bg $red $red
-
-# Assign apps to workspaces
-assign [class="^Slack$"] $ws3
