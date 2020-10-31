@@ -7,6 +7,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -144,3 +145,11 @@ let g:airline_symbols.linenr = ''
 
 " startify
 let g:startify_change_to_dir = 0
+
+" ALE
+let g:airline#extensions#ale#enabled = 1
+let g:ale_completion_enabled = 1
+
+let g:ale_python_flake8_options = '--ignore=Q000'
+map <Leader>d :ALEGoToDefinition<CR>
+map <Leader>r :ALEFindReferences<CR>
