@@ -159,16 +159,18 @@ bindsym $mod+r mode "resize"
 
 workspace_auto_back_and_forth yes
 
+set $secondary DP-1-3 eDP-1
+
 workspace $ws1 output primary
 workspace $ws2 output primary
 workspace $ws3 output primary
 workspace $ws4 output primary
 workspace $ws5 output primary
-workspace $ws6 output DP-1-3 eDP-1
-workspace $ws7 output DP-1-3 eDP-1
-workspace $ws8 output DP-1-3 eDP-1
-workspace $ws9 output DP-1-3 eDP-1
-workspace $ws10 output DP-1-3 eDP-1
+workspace $ws6 output $secondary
+workspace $ws7 output $secondary
+workspace $ws8 output $secondary
+workspace $ws9 output $secondary
+workspace $ws10 output $secondary
 
 # Set all windows' borders to 1 pixel
 for_window [class=".*"] border pixel 0
