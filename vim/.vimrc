@@ -150,6 +150,15 @@ let g:startify_change_to_dir = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_completion_enabled = 1
 
+let g:ale_python_pyls_config = {
+      \   'pyls': {
+      \     'plugins': {
+      \       'pycodestyle': {
+      \         'enabled': v:false
+      \       }
+      \     }
+      \   },
+      \ }
 let g:ale_python_flake8_options = '--ignore=Q000'
 map <Leader>d :ALEGoToDefinition<CR>
 map <Leader>r :ALEFindReferences<CR>
