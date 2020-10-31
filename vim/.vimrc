@@ -70,10 +70,6 @@ set encoding=utf-8
 " clear last search pattern
 nnoremap <BACKSPACE> :noh<CR>
 
-" remap colon
-nnoremap ; :
-nnoremap q; q:
-
 " highlight current line
 set cursorline
 
