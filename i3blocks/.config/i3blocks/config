@@ -8,13 +8,26 @@
 # Global properties
 separator=false
 separator_block_width=5
+color=#D8DEE9
 
 [pomodoro]
 command=~/.config/i3blocks/blocklets/pomodoro/pomodoro
 interval=1
 
 [spacer]
-full_text=" "
+full_text=" · "
+color=#5E81AC
+
+[wifi]
+command=~/.config/i3blocks/blocklets/wifi/ssid
+INTERFACE=wlp0s20f3
+interval=30
+markup=pango
+label=<span color="#88c0d0">  </span>
+
+[spacer]
+full_text=" · "
+color=#5E81AC
 
 [battery]
 command=~/.config/i3blocks/blocklets/battery/battery
@@ -22,46 +35,18 @@ markup=pango
 interval=30
 
 [spacer]
-full_text=" "
-
-[wifi]
-command=~/.config/i3blocks/blocklets/wifi/ssid
-INTERFACE=wlp0s20f3
-interval=30
-markup=pango
-label=<span color="#d79921"> </span>
-
-[spacer]
-full_text=" "
-
-[key_layout]
-command=setxkbmap -query | grep layout | awk '{ print $2 }'
-label=<span color="#d79921" font_weight="bold"> </span>
-interval=30
-markup=pango
-align=center
-
-[spacer]
-full_text=" "
-
-[date]
-command=date '+%a %d.%m.%Y'
-interval=60
-label=<span color="#d79921"> </span>
-markup=pango
-
-[spacer]
-full_text=" "
+full_text=" · "
+color=#5E81AC
 
 [time]
 command=date '+%H:%M'
 interval=60
-label=<span color="#d79921"> </span>
+label=<span color="#88c0d0"> </span>
 markup=pango
 
 [arch-logo]
 full_text=<span font_weight="bold" size="xx-large"> </span>
 markup=pango
-color=#d79921
+color=#88c0d0
 min_width=50
 align=right
