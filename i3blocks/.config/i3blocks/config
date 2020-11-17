@@ -38,6 +38,16 @@ interval=30
 full_text=" · "
 color=#5E81AC
 
+[date]
+command=date '+%a %d.%m.'
+interval=60
+label=<span color="#88c0d0"> </span>
+markup=pango
+
+[spacer]
+full_text=" · "
+color=#5E81AC
+
 [time]
 command=date '+%H:%M'
 interval=60
