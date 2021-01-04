@@ -18,6 +18,13 @@ interval=1
 full_text=" · "
 color=#5E81AC
 
+[iface]
+command=~/.config/i3blocks/blocklets/iface/iface
+LABEL=<span color="#88c0d0"></span> 
+IFACE=enp0s31f6
+markup=pango
+interval=30
+
 [wifi]
 command=~/.config/i3blocks/blocklets/wifi/ssid
 INTERFACE=wlp0s20f3
