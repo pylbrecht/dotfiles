@@ -62,11 +62,13 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux docker docker-compose gcloud git ssh-agent sudo systemd fzf common-aliases taskwarrior z kubectl ripgrep)
+plugins=(archlinux docker docker-compose gcloud git ssh-agent systemd fzf common-aliases taskwarrior z kubectl ripgrep tmux colored-man-pages vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+export VI_MODE_SET_CURSOR=false
 
 export EDITOR="vim"
 export SUDO_EDITOR="rvim"
