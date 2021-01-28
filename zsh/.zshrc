@@ -114,10 +114,17 @@ alias stc="secret-tool clear"
 
 alias kp="secret-tool lookup keepass keepass | xclip -selection c"
 
-alias -g vpn-google="openvpn-client@google"
-alias -g vpn-momox="openvpn-client@momox"
+alias x="xargs"
+
+alias gupd="gcm && gl && gco - && grbm"
+
+
+alias -g vpn="openvpn-client@google"
 alias -g PY="--glob **/*.py"
-alias -g V="| xargs -o vim -p"
+alias -g NT="--glob !'**/tests/**'"
+alias -g PYNT="--glob **/*.py !'**/tests/**'"
+alias -g V="| xargs -o vim"
+alias -g X="| xargs -o"
 
 alias bt="bluetoothctl"
 
