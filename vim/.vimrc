@@ -10,25 +10,29 @@ set hidden
 
 call plug#begin('~/.vim/plugged')
 
+
+Plug 'arcticicestudio/nord-vim'
 Plug 'dense-analysis/ale'
+Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/calendar-vim'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
-
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 filetype plugin indent on
