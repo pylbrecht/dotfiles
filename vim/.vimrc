@@ -5,6 +5,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+set nocompatible
+set hidden
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale'
