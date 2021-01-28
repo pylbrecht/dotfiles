@@ -137,3 +137,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 source "$HOME/.rvm/scripts/rvm"
 
 setopt nobanghist
+
+# pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
