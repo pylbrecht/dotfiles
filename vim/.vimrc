@@ -134,8 +134,11 @@ let g:vimwiki_list = [{
     \ 'html_filename_parameterization': 1,
 	\ 'template_ext': '.html'}]
 
-" Map :Files to CTRL-P
-nnoremap <C-p> :Files<Cr>
+" fzf mappings
+map <Leader>f :GFiles!<Cr>
+map <Leader><Leader>f :Files!<Cr>
+map <Leader>b :Buffers!<Cr>
+map <Leader>g :Rg!<Cr>
 
 " Use ripgrep as grep prog
 set grepprg=rg\ -S\ --vimgrep
