@@ -1,0 +1,4 @@
+function sens() {
+    DEVICE_ID=$(xinput list | awk 'BEGIN {FS="\t"} /MX Ergo Mouse/ { print $2 }' | awk 'BEGIN {FS="="} { print $2 }')
+    xinput set-prop $DEVIDE_ID 179 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.400000
+}
