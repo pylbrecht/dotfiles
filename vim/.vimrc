@@ -144,6 +144,13 @@ map <Leader>g :Rg!<Cr>
 set grepprg=rg\ -S\ --vimgrep
 set grepformat^=%f:%l:%c:%m
 
+" nord theme
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_underline = 1
+
 " vim-airline
 let g:airline#extensions#cursormode#enabled = 0
 let g:airline_powerline_fonts = 1
