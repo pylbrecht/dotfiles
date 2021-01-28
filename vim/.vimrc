@@ -64,7 +64,7 @@ set directory=~/.vim/swap
 set clipboard=unnamed
 
 " map leader to SPACE
-let mapleader = ","
+let mapleader = " "
 
 " remap yank inconsistency
 nnoremap Y y$
