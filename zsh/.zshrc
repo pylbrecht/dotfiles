@@ -117,6 +117,7 @@ alias kp="secret-tool lookup keepass keepass | xclip -selection c"
 alias x="xargs"
 
 alias gupd="gcm && gl && gco - && grbm"
+alias glom="glo master.."
 
 
 alias -g vpn="openvpn-client@google"
