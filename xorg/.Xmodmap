@@ -2,6 +2,3 @@ clear lock
 clear control
 keycode 66 = Escape
 add control = Control_L Control_R
-
-remove mod4 = Super_L
-add control = Super_L
