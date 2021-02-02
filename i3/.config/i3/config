@@ -211,7 +211,7 @@ bar {
     status_command SCRIPT_DIR=~/.config/i3blocks/blocklets i3blocks
     position top
     strip_workspace_numbers yes
-    height 30
+    height 27
     tray_output none
 
     colors {
