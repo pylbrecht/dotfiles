@@ -118,6 +118,7 @@ alias x="xargs"
 
 alias gupd="gcm && gl && gco - && grbm"
 alias glom="glo master.."
+alias grbim="git rebase -i master"
 
 
 alias -g vpn="openvpn-client@google"
