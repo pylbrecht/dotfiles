@@ -68,7 +68,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
-export VI_MODE_SET_CURSOR=false
+export VI_MODE_SET_CURSOR=true
 
 export EDITOR="vim"
 export SUDO_EDITOR="rvim"
