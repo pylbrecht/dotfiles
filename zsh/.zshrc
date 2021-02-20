@@ -115,10 +115,13 @@ alias stc="secret-tool clear"
 alias kp="secret-tool lookup keepass keepass | xclip -selection c"
 
 alias x="xargs"
+alias -g X=" | xargs"
 
 alias gupd="gcm && gl && gco - && grbm"
 alias glom="glo master.."
 alias grbim="git rebase -i master"
+
+alias r="ranger"
 
 
 alias -g vpn="openvpn-client@google"
