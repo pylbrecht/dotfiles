@@ -125,6 +125,7 @@ set smartcase
 " vimwiki
 let g:vimwiki_list = [{
 	\ 'path': '~/notes',
+    \ 'auto_tags': 1,
 	\ 'template_path': '~/.config/vimwiki/templates',
 	\ 'template_default': 'default',
 	\ 'syntax': 'markdown',
