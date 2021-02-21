@@ -26,6 +26,7 @@ bindkey '^r' history-incremental-search-backward
 bindkey '^s' history-incremental-search-forward
 
 
-# https://github.com/rupa/z
-_Z_DATA="$ZDOTDIR/plugins/z/.z"
-. $ZDOTDIR/plugins/z/z.sh
+# source plugins
+for plugin in $ZDOTDIR/plugins/*.zsh ; do
+    source $plugin
+done
