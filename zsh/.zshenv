@@ -4,4 +4,6 @@ HISTFILE=$ZDOTDIR/.zsh_history
 SAVEHIST=5000
 HISTSIZE=2000
 
-PROMPT=$'\n'"%~"$'\n'"%F{cyan}%#%f "
+PROMPT='
+%b%F{blue}%~%f
+%(!.%F{red}.%F{white})%#%f '
