@@ -22,6 +22,10 @@ zle -N edit-command-line
 bindkey -M vicmd '^e' edit-command-line
 
 # allow ctrl-r and ctrl-s to search the history
+bindkey '^p' up-history
+bindkey '^n' down-history
+
+# allow ctrl-r and ctrl-s to search the history
 bindkey '^r' history-incremental-search-backward
 bindkey '^s' history-incremental-search-forward
 
