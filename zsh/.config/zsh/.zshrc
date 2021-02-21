@@ -34,3 +34,8 @@ bindkey '^s' history-incremental-search-forward
 for plugin in $ZDOTDIR/plugins/*.zsh ; do
     source $plugin
 done
+
+# source aliases
+for _alias in $ZDOTDIR/aliases/*.zsh ; do
+    source $_alias
+done
