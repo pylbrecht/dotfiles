@@ -5,5 +5,5 @@ SAVEHIST=5000
 HISTSIZE=2000
 
 PROMPT='
-%b%F{blue}%~%f
+%B%F{blue}%~%f%b
 %(!.%F{red}.%F{white})%#%f '
