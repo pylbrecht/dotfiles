@@ -5,7 +5,7 @@ setopt CORRECT_ALL
 
 autoload -Uz compinit && compinit
 
-# case insensitive, partial completion 
+# case insensitive, partial completion
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
 
 # vi mode
