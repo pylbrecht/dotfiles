@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'dense-analysis/ale'
 Plug 'jeetsukumaran/vim-pythonsense'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
