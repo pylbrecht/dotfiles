@@ -1,8 +1,8 @@
 ZDOTDIR=$HOME/.config/zsh
 
-HISTFILE=$ZDOTDIR/.zsh_history
-SAVEHIST=5000
-HISTSIZE=2000
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
 
 PROMPT='
 %B%F{blue}%~%f%b
