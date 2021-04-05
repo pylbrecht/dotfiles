@@ -23,9 +23,9 @@ function _user_host() {
     local me
 
     if [[ -n $SSH_CONNECTION ]]; then
-        me="%F{cyan}%n%f@%F{cyan}%m%f:"
+        me="%F{cyan}%n%f@%F{cyan}%m%f "
     elif [[ $LOGNAME != $USERNAME ]]; then
-        me="%F{cyan}%n%f:"
+        me="%F{cyan}%n%f "
     fi
 
     if [[ -n $me ]] ; then
