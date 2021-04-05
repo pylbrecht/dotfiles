@@ -1,7 +1,8 @@
 setopt NO_CASE_GLOB
 setopt AUTO_CD
-setopt CORRECT
-setopt CORRECT_ALL
+
+unsetopt CORRECT
+unsetopt CORRECT_ALL
 
 autoload -Uz compinit && compinit
 
