@@ -6,3 +6,5 @@ fi
 
 alias ll='ls -l'
 alias la='ls -al'
+
+alias pydoc="python3 -m pydoc"
