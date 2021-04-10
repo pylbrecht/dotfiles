@@ -6,6 +6,9 @@ unsetopt CORRECT_ALL
 
 autoload -Uz compinit && compinit
 
+# use menu selection
+zstyle ':completion*:default' menu 'select=0'
+
 # case insensitive, partial completion
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
 
