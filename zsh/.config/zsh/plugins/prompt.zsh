@@ -9,9 +9,9 @@ precmd () { vcs_info }
 
 PROMPT='
 $(_user_host)%F{blue}%~%f
-%(!.%F{red}.%F{default})%f '
+%(!.%F{red}.%F{default})%#%f '
 
-PROMPT2=' '
+PROMPT2='< '
 
 RPROMPT='%{$(echotc UP 1)%}${vcs_info_msg_0_}%{$(echotc DO 1)%}'
 
