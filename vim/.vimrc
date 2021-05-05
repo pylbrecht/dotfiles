@@ -126,17 +126,31 @@ set ignorecase
 set smartcase
 
 " vimwiki
-let g:vimwiki_list = [{
-	\ 'path': '~/notes',
+let wiki_default = {
+	\ 'path': '~/notes/default',
     \ 'auto_tags': 1,
 	\ 'template_path': '~/.config/vimwiki/templates',
 	\ 'template_default': 'default',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
-	\ 'path_html': '~/notes/html/',
+	\ 'path_html': '~/notes/default/html/',
 	\ 'custom_wiki2html': 'vimwiki_markdown',
     \ 'html_filename_parameterization': 1,
-	\ 'template_ext': '.html'}]
+	\ 'template_ext': '.html'}
+
+let wiki_investigations = {
+    \ 'path': '~/notes/investigations',
+    \ 'auto_tags': 1,
+	\ 'template_path': '~/.config/vimwiki/templates',
+	\ 'template_default': 'default',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+	\ 'path_html': '~/notes/investigations/html/',
+	\ 'custom_wiki2html': 'vimwiki_markdown',
+    \ 'html_filename_parameterization': 1,
+	\ 'template_ext': '.html'}
+
+let g:vimwiki_list = [wiki_default, wiki_investigations]
 
 " fzf mappings
 map <Leader>f :GFiles<Cr>
