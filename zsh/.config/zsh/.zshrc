@@ -1,5 +1,6 @@
-setopt NO_CASE_GLOB
-setopt AUTO_CD
+setopt no_case_glob
+setopt auto_cd
+setopt menu_complete
 
 unsetopt CORRECT
 unsetopt CORRECT_ALL
