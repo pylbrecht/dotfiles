@@ -1,4 +1,5 @@
 ZDOTDIR=$HOME/.config/zsh
+PATH="$HOME/.local/bin:$PATH"
 
 HISTSIZE=10000
 SAVEHIST=10000
