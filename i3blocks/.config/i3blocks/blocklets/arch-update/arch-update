@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #
 # Copyright (C) 2017 Marcel Patzwahl
+# Copyright (C) 2021 Philipp Albrecht
 # Licensed under the terms of the GNU GPL v3 only.
 #
 # i3blocks blocklet script to see the available updates of pacman and the AUR
@@ -62,7 +63,8 @@ def create_argparse():
 
 
 def get_updates():
-    output = check_output(['checkupdates']).decode('utf-8')
+    checkupdates = subprocess.run(['checkupdates'], capture_output=True)
+    output = checkupdates.stdout.decode()
     if not output:
         return []
 
