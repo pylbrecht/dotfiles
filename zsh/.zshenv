@@ -7,3 +7,7 @@ HISTFILE=~/.cache/zsh/history
 
 EDITOR=vim
 TERM='xterm-256color'
+
+# pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
