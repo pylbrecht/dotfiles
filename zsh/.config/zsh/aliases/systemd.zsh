@@ -1,0 +1,6 @@
+alias sc-enable="sudo systemctl enable"
+alias sc-disable="sudo systemctl disable"
+alias sc-start="sudo systemctl start"
+alias sc-stop="sudo systemctl stop"
+alias sc-restart="sudo systemctl restart"
+alias sc-status="systemctl status"
