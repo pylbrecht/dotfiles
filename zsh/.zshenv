@@ -11,3 +11,6 @@ TERM='xterm-256color'
 # pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# tmuxp
+export DISABLE_AUTO_TITLE='true'
