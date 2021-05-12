@@ -6,6 +6,7 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 EDITOR=vim
+VIM=$HOME/.vim
 TERM='xterm-256color'
 
 # pyenv

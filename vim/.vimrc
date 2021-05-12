@@ -10,7 +10,7 @@ set hidden
 
 call plug#begin('~/.vim/plugged')
 
-
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' | Plug 'mlaursen/vim-react-snippets'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dense-analysis/ale'
 Plug 'jeetsukumaran/vim-pythonsense'
@@ -36,6 +36,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
 Plug 'yuezk/vim-js'
+
 call plug#end()
 
 filetype plugin indent on
@@ -210,3 +211,10 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 map <Leader>d :ALEGoToDefinition<CR>
 map <Leader>r :ALEFindReferences<CR>
+
+" snippets
+let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
