@@ -10,8 +10,10 @@ VIM=$HOME/.vim
 TERM='xterm-256color'
 
 # pyenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [ $(type pyenv &> /dev/null) ] ; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # tmuxp
 export DISABLE_AUTO_TITLE='true'
