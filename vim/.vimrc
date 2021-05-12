@@ -36,6 +36,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
 Plug 'yuezk/vim-js'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 
