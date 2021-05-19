@@ -71,8 +71,23 @@ set clipboard=unnamed
 " map leader to SPACE
 let mapleader = " "
 
-" remap yank inconsistency
+" mappings to make my life easier
 nnoremap Y y$
+nnoremap H ^
+nnoremap Q @@
+
+command! Vimrc :vs $MYVIMRC
+
+" persistent undo
+set undofile
+
+" turn off relativenumber in insert mode
+augroup every
+  autocmd!
+  au InsertEnter * set norelativenumber
+  au InsertLeave * set relativenumber
+augroup END
+
 
 " backspace
 set backspace=indent,eol,start
