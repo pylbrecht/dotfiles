@@ -74,6 +74,8 @@ let mapleader = " "
 " mappings to make my life easier
 nnoremap Y y$
 nnoremap H ^
+onoremap H ^
+vnoremap H ^
 nnoremap Q @@
 
 command! Vimrc :vs $MYVIMRC
