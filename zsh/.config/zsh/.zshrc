@@ -20,6 +20,11 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'q' send-break
 bindkey -M menuselect '\e' accept-line
 
+# menuselect bindings
+bindkey -M menuselect '\C-o' accept-and-menu-complete
+# accept line on ENTER
+bindkey -M menuselect '^M' .accept-line
+
 # case insensitive, partial completion
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
 
