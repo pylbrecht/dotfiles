@@ -1,4 +1,6 @@
-if [[ `uname` == "Darwin" ]] ; then
+if type lsd &> /dev/null ; then
+    alias ls='lsd'
+elif [[ `uname` == "Darwin" ]] ; then
     alias ls='ls -G'
 else
     alias ls='ls --color'
