@@ -17,6 +17,9 @@ Plug 'majutsushi/tagbar'
 Plug 'mattn/calendar-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mhinz/vim-startify'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -31,7 +34,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
 Plug 'yuezk/vim-js'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 
@@ -44,3 +46,12 @@ let g:config_file_list = ['general.vim',
 for f in g:config_file_list
     execute 'source ' . g:nvim_config_root . '/' . f
 endfor
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    -- Modules and its options go here
+    highlight = { enable = true },
+    incremental_selection = { enable = true },
+    textobjects = { enable = true },
+    }
+EOF
