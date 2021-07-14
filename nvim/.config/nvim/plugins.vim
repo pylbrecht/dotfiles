@@ -23,7 +23,19 @@ let wiki_investigations = {
     \ 'html_filename_parameterization': 1,
 	\ 'template_ext': '.html'}
 
-let g:vimwiki_list = [wiki_default, wiki_investigations]
+let wiki_meetings = {
+    \ 'path': '~/notes/meetings',
+    \ 'auto_tags': 1,
+	\ 'template_path': '~/.config/vimwiki/templates',
+	\ 'template_default': 'default',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+	\ 'path_html': '~/notes/meetings/html/',
+	\ 'custom_wiki2html': 'vimwiki_markdown',
+    \ 'html_filename_parameterization': 1,
+	\ 'template_ext': '.html'}
+
+let g:vimwiki_list = [wiki_default, wiki_investigations, wiki_meetings]
 
 " vim-airline
 let g:airline#extensions#cursormode#enabled = 0
