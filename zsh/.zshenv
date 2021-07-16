@@ -5,7 +5,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-EDITOR=vim
+EDITOR=nvim
+K9S_EDITOR=nvim
 VIM=$HOME/.vim
 TERM='xterm-256color'
 
