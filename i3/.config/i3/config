@@ -178,6 +178,9 @@ workspace $ws10 output $secondary
 # Set all windows' borders to 1 pixel
 for_window [class=".*"] border pixel 0
 
+# default floating for certain apps
+for_window [class="Pavucontrol"] floating enable
+
 # Gaps
 smart_gaps inverse_outer
 gaps inner 3
