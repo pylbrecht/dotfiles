@@ -1,6 +1,6 @@
 [core]
     exludesfiles=$HOME/.config/git/.gitignore
-    editor=vim
+    editor=nvim
 
 [pull]
     rebase=true
