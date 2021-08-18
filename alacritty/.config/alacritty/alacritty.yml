@@ -1,21 +1,21 @@
 font:
   normal:
-    family: RobotoMono Nerd Font
-    style: Regular
+    family: SauceCodePro Nerd Font
+    style: Medium
 
   bold:
-    family: RobotoMono Nerd Font
+    family: SauceCodePro Nerd Font
     style: Bold
 
   italic:
-    family: RobotoMono Nerd Font
+    family: SauceCodePro Nerd Font
     style: Italic
 
   bold_italic:
-    family: RobotoMono Nerd Font
+    family: SauceCodePro Nerd Font
     style: Bold Italic
 
-  size: 13
+  size: 9
 
 # Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
 # Copyright (c) 2017-present Sven Greb <code@svengreb.de>
