@@ -1,0 +1,10 @@
+set imap_user = palbrecht@mailbox.org
+set imap_pass = `pass show palbrecht@mailbox.org`
+set folder = imaps://imap.mailbox.org/
+set spoolfile = +INBOX
+set postponed = +Drafts
+set imap_check_subscribed = yes
+
+set sidebar_visible = yes
+
+set header_cache = ~/.cache/neomutt
