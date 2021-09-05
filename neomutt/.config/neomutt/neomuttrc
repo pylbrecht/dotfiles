@@ -5,6 +5,25 @@ set spoolfile = +INBOX
 set postponed = +Drafts
 set imap_check_subscribed = yes
 
+# status bar
+color status black cyan
+
+# sidebar
 set sidebar_visible = yes
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+set sidebar_width = 25
+bind index,pager K sidebar-prev
+bind index,pager J sidebar-next
+bind index,pager O sidebar-open
+bind index,pager B sidebar-toggle-visible
+
+color sidebar_indicator black blue
+color sidebar_highlight black white
+color sidebar_spoolfile yellow default
+color sidebar_new bold white default
+color sidebar_ordinary default default
+color sidebar_flagged red default
+color sidebar_divider cyan default
 
 set header_cache = ~/.cache/neomutt
