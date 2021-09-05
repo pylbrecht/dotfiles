@@ -7,6 +7,15 @@ set imap_check_subscribed = yes
 
 mailboxes = +INBOX
 
+# index
+set date_format = "%Y/%m/%d"
+set index_format = "[%Z] %D %F %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+bind index g noop
+bind index gg first-entry
+bind index G last-entry
+
 # view html mails using lynx
 auto_view text/html
 
