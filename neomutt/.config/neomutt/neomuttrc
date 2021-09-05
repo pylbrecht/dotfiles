@@ -20,7 +20,10 @@ bind index G last-entry
 auto_view text/html
 
 # status bar
-color status black cyan
+color status cyan default
+set status_chars  = " *%A"
+set status_format = "───[ %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
 
 # sidebar
 set sidebar_visible = yes
