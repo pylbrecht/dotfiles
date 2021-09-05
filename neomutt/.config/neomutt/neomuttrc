@@ -5,6 +5,8 @@ set spoolfile = +INBOX
 set postponed = +Drafts
 set imap_check_subscribed = yes
 
+mailboxes = +INBOX
+
 # view html mails using lynx
 auto_view text/html
 
