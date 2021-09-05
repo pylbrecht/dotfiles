@@ -5,6 +5,9 @@ set spoolfile = +INBOX
 set postponed = +Drafts
 set imap_check_subscribed = yes
 
+# view html mails using lynx
+auto_view text/html
+
 # status bar
 color status black cyan
 
