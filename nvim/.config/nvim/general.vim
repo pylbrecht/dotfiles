@@ -26,3 +26,9 @@ set cursorline
 " Use ripgrep as grep prog
 set grepprg=rg\ -S\ --vimgrep\ --no-heading
 set grepformat^=%f:%l:%c:%m
+
+set hidden
+
+set ignorecase
+set smartcase
+set incsearch
