@@ -44,3 +44,12 @@ color sidebar_flagged red default
 color sidebar_divider cyan default
 
 set header_cache = ~/.cache/neomutt
+
+bind pager j next-line
+bind pager k previous-line
+bind pager l next-entry
+bind pager h previous-entry
+bind index j next-entry
+bind index k previous-entry
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down
