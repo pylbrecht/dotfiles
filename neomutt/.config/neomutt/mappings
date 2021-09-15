@@ -1,0 +1,17 @@
+# vim: syntax=neomuttrc
+
+bind index g noop
+bind index gg first-entry
+bind index G last-entry
+bind index,pager K sidebar-prev
+bind index,pager J sidebar-next
+bind index,pager O sidebar-open
+bind index,pager B sidebar-toggle-visible
+bind pager j next-line
+bind pager k previous-line
+bind pager l next-entry
+bind pager h previous-entry
+bind index j next-entry
+bind index k previous-entry
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down

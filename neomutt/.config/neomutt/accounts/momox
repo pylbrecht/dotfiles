@@ -1,0 +1,20 @@
+# vim: syntax=neomuttrc
+unmailboxes *
+
+set folder = "imaps://imap.gmail.com/"
+set realname = "Philipp Albrecht"
+set from = "philipp.albrecht@momox.biz"
+set imap_user = "philipp.albrecht@momox.biz"
+set imap_pass = `pass show philipp.albrecht@momox.biz`
+set smtp_url = "smtps://smtp.gmail.com/"
+set smtp_pass = `pass show philipp.albrecht@momox.biz`
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set trash = "+[Gmail]/Trash"
+set record = "+[Gmail]/Sent Mail"
+set imap_check_subscribed = yes
+
+unset imap_passive
+set imap_keepalive = 300
+
+account-hook $folder "imap_user=philipp.albrecht@momox.biz imap_pass=`pass show philipp.albrecht@momox.biz`"

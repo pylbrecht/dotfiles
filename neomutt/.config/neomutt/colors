@@ -1,0 +1,10 @@
+# vim: syntax=neomuttrc
+
+color status cyan default
+color sidebar_indicator black blue
+color sidebar_highlight black white
+color sidebar_spoolfile yellow default
+color sidebar_new bold white default
+color sidebar_ordinary default default
+color sidebar_flagged red default
+color sidebar_divider cyan default
