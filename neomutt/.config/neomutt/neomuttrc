@@ -14,6 +14,7 @@ set sort_aux = reverse-last-date-received
 
 # view html mails using lynx
 auto_view text/html
+set mailcap_path = "~/.config/neomutt/mailcap"
 
 # status bar
 set status_chars  = " *%A"
