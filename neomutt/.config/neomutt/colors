@@ -1,10 +1,28 @@
 # vim: syntax=neomuttrc
 
+color normal default default
+color indicator black white
+color error red default
+
 color status cyan default
 color sidebar_indicator black blue
 color sidebar_highlight black white
 color sidebar_spoolfile yellow default
-color sidebar_new bold white default
-color sidebar_ordinary default default
+color sidebar_new brightwhite default
+color sidebar_ordinary blue default
 color sidebar_flagged red default
 color sidebar_divider cyan default
+
+color index yellow default '.*'
+color index_date green default
+color index_author blue default '.*'
+color index_number default default
+color index_subject default default '.*'
+color index_flags red default '~F'
+color index_label yellow default
+
+
+color index brightyellow default '~N'
+color index_author brightblue default '~N'
+color index_subject brightdefault default '~N'
+color index_flags brightred default '~N'

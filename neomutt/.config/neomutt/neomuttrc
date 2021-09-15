@@ -23,6 +23,7 @@ set status_format = "───[ %f ]───[%r%m messages%?n? (%n new)?%?d? (%
 # sidebar
 set sidebar_visible = yes
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_divider_char = " │"
 set mail_check_stats
 set sidebar_width = 25
 
