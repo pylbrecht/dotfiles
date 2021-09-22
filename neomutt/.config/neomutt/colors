@@ -1,5 +1,22 @@
 # vim: syntax=neomuttrc
 
+set my_lightbg = color0
+set my_lightred = color1
+set my_lightgreen = color2
+set my_lightyellow = color3
+set my_lightblue = color4
+set my_lightpurple = color5
+set my_lightcyan = color6
+set my_lightfg = color7
+set my_bg = color8
+set my_red = color9
+set my_green = color10
+set my_yellow = color11
+set my_blue = color12
+set my_purple = color13
+set my_cyan = color14
+set my_fg = color15
+
 color normal default default
 color indicator black white
 color error red default
