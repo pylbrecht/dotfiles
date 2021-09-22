@@ -18,17 +18,20 @@ set my_cyan = color14
 set my_fg = color15
 
 color normal default default
-color indicator black white
+color indicator default $my_lightbg
 color error red default
 
-color status cyan default
-color sidebar_indicator black blue
+color status default $my_lightbg
+color status $my_lightbg $my_lightcyan "(.*)" 1
+color status $my_lightcyan $my_lightbg ""
+color status $my_lightcyan $my_lightbg ""
+color sidebar_indicator black cyan
 color sidebar_highlight black white
 color sidebar_spoolfile yellow default
 color sidebar_new brightwhite default
 color sidebar_ordinary blue default
 color sidebar_flagged red default
-color sidebar_divider cyan default
+color sidebar_divider $my_lightbg default
 
 color index yellow default '.*'
 color index_date green default
@@ -37,7 +40,6 @@ color index_number default default
 color index_subject default default '.*'
 color index_flags red default '~F'
 color index_label yellow default
-
 
 color index brightyellow default '~N'
 color index_author brightblue default '~N'
