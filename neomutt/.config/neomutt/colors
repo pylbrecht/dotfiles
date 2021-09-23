@@ -40,3 +40,11 @@ color index brightdefault default '~U'
 color index_author brightblue default '~U'
 color index_subject brightdefault default '~U'
 color index_flags brightyellow default '~U'
+
+color header brightdefault default '.*'
+color header brightgreen default '^(Date)'
+color header brightblue default '^(From|To)'
+color header brightblue default '^(CC|BCC)'
+color header brightyellow default '^(Subject)'
+
+color attach_headers $my_bg default '.*'
