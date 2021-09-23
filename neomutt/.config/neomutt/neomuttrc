@@ -8,6 +8,9 @@ source ~/.config/neomutt/powerline
 source ~/.config/neomutt/accounts/momox
 folder-hook $folder 'source ~/.config/neomutt/accounts/momox'
 
+source ~/.config/neomutt/accounts/mailbox.schulbrecht
+folder-hook $folder 'source ~/.config/neomutt/accounts/mailbox.schulbrecht'
+
 # index
 set sort = threads
 set sort_aux = reverse-last-date-received
