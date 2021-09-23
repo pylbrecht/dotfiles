@@ -183,7 +183,7 @@ for_window [class="Pavucontrol"] floating enable
 
 # Gaps
 smart_gaps inverse_outer
-gaps inner 3
+gaps inner 10
 
 # nordtheme colors
 set $nord0 #2E3440
