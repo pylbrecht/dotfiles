@@ -17,7 +17,7 @@ auto_view text/html
 set mailcap_path = "~/.config/neomutt/mailcap"
 
 # sidebar
-set sidebar_visible = yes
+set sidebar_visible = no
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set sidebar_divider_char = " │"
 set mail_check_stats
