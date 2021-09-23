@@ -24,5 +24,8 @@ bind index,pager,browser \Cd half-down
 bind index s sync-mailbox
 bind index L limit
 
+bind index n search-next
+bind index N search-opposite
+
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/momox<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/mailbox.palbrecht<enter><change-folder>!<enter>'
