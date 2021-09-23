@@ -24,3 +24,11 @@ set mail_check_stats
 set sidebar_width = 25
 
 set header_cache = ~/.cache/neomutt
+
+# useful things taken from https://gideonwolfe.com/posts/workflow/neomutt/intro/
+set askcc
+set fast_reply
+set status_on_top
+set quit
+set pager_index_lines = 10
+set edit_headers
