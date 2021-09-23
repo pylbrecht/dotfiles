@@ -11,9 +11,6 @@ folder-hook $folder 'source ~/.config/neomutt/accounts/momox'
 source ~/.config/neomutt/accounts/mailbox.palbrecht
 folder-hook $folder 'source ~/.config/neomutt/accounts/mailbox.palbrecht'
 
-source ~/.config/neomutt/accounts/mailbox.schulbrecht
-folder-hook $folder 'source ~/.config/neomutt/accounts/mailbox.schulbrecht'
-
 # index
 set sort = threads
 set sort_aux = reverse-last-date-received

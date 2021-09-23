@@ -29,4 +29,3 @@ bind index N search-opposite
 
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/momox<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/mailbox.palbrecht<enter><change-folder>!<enter>'
-macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/mailbox.schulbrecht<enter><change-folder>!<enter>'
