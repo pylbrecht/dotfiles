@@ -186,7 +186,7 @@ smart_gaps inverse_outer
 gaps inner 10
 
 # make space for top bar
-gaps top 40
+gaps top 5
 
 # nordtheme colors
 set $nord0 #2E3440

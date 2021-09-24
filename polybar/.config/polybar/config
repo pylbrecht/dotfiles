@@ -25,22 +25,27 @@ uname = 4
 [bar/top]
 bottom = false
 fixed-center = true
-width = 99%
-height = 35
-radius = 0
+width = 100%
+height = 30
+radius = 2
 offset-x = 10
-offset-y = 5
+offset-y = -3
 
-override-redirect = true
+override-redirect = false
 wm-restack = i3
 
 font-0 = RobotoMono Nerd Font:size=12:syle=Regular;3
-font-1 = Sauce Code Pro Nerd Font:size=18:weight=bold;3
-font-2 = Sauce Code Pro Nerd Font:size=14:weight=bold;3
-font-3 = RobotoMono Nerd Font:size=10:syle=Regular;10
+font-1 = Sauce Code Pro Nerd Font:size=16:weight=bold;3
+font-2 = Sauce Code Pro Nerd Font:size=13;3
+font-3 = RobotoMono Nerd Font:size=8:syle=Regular;8
 
 background = ${colors.nord0}
 foreground = ${colors.nord6}
+
+background-0 = ${colors.nord1}
+background-1 = ${colors.nord0}
+background-2 = ${colors.nord0}
+background-3 = ${colors.nord1}
 
 border-size =
 border-color =
@@ -96,6 +101,7 @@ type = internal/network
 interface = enp0s31f6
 format-connected-foreground = ${colors.nord9}
 format-connected = 
+format-connected-font = ${fonts.icons}
 format-connected-padding = 2
 format-disconnected = 
 
@@ -103,7 +109,8 @@ format-disconnected =
 type = internal/network
 interface = wlan0
 format-connected-foreground = ${colors.nord9}
-format-connected = %{T3}%{T-}
+format-connected = 
+format-connected-font = ${fonts.icons}
 format-connected-padding = 2
 format-disconnected = 
 
