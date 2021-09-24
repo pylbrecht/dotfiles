@@ -185,6 +185,9 @@ for_window [class="Pavucontrol"] floating enable
 smart_gaps inverse_outer
 gaps inner 10
 
+# make space for top bar
+gaps top 40
+
 # nordtheme colors
 set $nord0 #2E3440
 set $nord1 #3B4252
@@ -205,28 +208,7 @@ set $nord15 #B48EAD
 
 set $bg_bar #2e3440cc
 
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    i3bar_command i3bar --transparency
-    font pango:SauceCodePro Nerd Font Bold 12
-    status_command SCRIPT_DIR=~/.config/i3blocks/blocklets i3blocks
-    position top
-    strip_workspace_numbers yes
-    height 27
-    tray_output none
-
-    colors {
-        background $bg_bar
-        # <border> <background> <text>
-        focused_workspace $nord9 $nord10 $bg_bar
-        inactive_workspace $bg_bar $bg_bar $nord10
-        active_workspace $bg_bar $bg_bar $nord9
-        urgent_workspace $nord12 $nord11 $bg_bar
-    }
-}
-
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bar {
     i3bar_command i3bar --transparency
