@@ -1,0 +1,42 @@
+bottom = false
+fixed-center = true
+width = 100%
+height = 30
+radius = 2
+offset-x = 10
+offset-y = -3
+
+border-bottom-size = 2
+border-bottom-color = ${colors.nord1}
+
+line-size = 2
+
+override-redirect = false
+wm-restack = i3
+
+font-0 = RobotoMono Nerd Font:size=12:syle=Regular;3
+font-1 = Sauce Code Pro Nerd Font:size=16:weight=bold;3
+font-2 = Sauce Code Pro Nerd Font:size=13;3
+font-3 = RobotoMono Nerd Font:size=8:syle=Regular;8
+
+background = ${colors.nord0}
+foreground = ${colors.nord6}
+
+background-0 = ${colors.nord1}
+background-1 = ${colors.nord0}
+background-2 = ${colors.nord0}
+background-3 = ${colors.nord1}
+
+border-size =
+border-color =
+
+padding = 0
+module-margin = 0
+
+modules-left = arch-logo spacer i3
+modules-center = date
+modules-right = wired-network wireless-network battery
+
+separator =
+
+tray-position = none

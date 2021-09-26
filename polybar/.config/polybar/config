@@ -8,43 +8,7 @@ icons = 3
 uname = 4
 
 [bar/top]
-bottom = false
-fixed-center = true
-width = 100%
-height = 30
-radius = 2
-offset-x = 10
-offset-y = -3
-
-override-redirect = false
-wm-restack = i3
-
-font-0 = RobotoMono Nerd Font:size=12:syle=Regular;3
-font-1 = Sauce Code Pro Nerd Font:size=16:weight=bold;3
-font-2 = Sauce Code Pro Nerd Font:size=13;3
-font-3 = RobotoMono Nerd Font:size=8:syle=Regular;8
-
-background = ${colors.nord0}
-foreground = ${colors.nord6}
-
-background-0 = ${colors.nord1}
-background-1 = ${colors.nord0}
-background-2 = ${colors.nord0}
-background-3 = ${colors.nord1}
-
-border-size =
-border-color =
-
-padding = 0
-module-margin = 0
-
-modules-left = arch-logo uname
-modules-center = date
-modules-right = wired-network wireless-network battery
-
-separator =
-
-tray-position = none
+include-file=~/.config/polybar/top
 
 [module/date]
 type = internal/date
@@ -103,3 +67,67 @@ format-disconnected =
 type = custom/script
 exec = uname -r
 format-font = ${fonts.uname}
+
+[module/spacer]
+type = custom/text
+content = " "
+content-padding = 1
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+label-focused = %index%
+label-focused-underline = ${colors.nord8}
+label-focused-padding = 1
+
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = ${colors.nord9}
+label-visible-padding = 1
+
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-underline = ${colors.nord11}
+label-urgent-padding = 1
