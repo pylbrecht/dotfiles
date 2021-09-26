@@ -209,24 +209,3 @@ set $nord15 #B48EAD
 set $bg_bar #2e3440cc
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-bar {
-    i3bar_command i3bar --transparency
-    font pango:SauceCodePro Nerd Font Medium 11
-    status_command SCRIPT_DIR=~/.config/i3blocks/blocklets i3blocks -c ~/.config/i3blocks/bottom
-    position bottom
-    workspace_buttons no
-    height 23
-    tray_output primary
-    tray_padding 1
-
-    colors {
-        background $bg_bar
-        # <border> <background> <text>
-        focused_workspace $nord9 $nord10 $bg_bar
-        inactive_workspace $bg_bar $bg_bar $nord10
-        active_workspace $bg_bar $bg_bar $nord9
-        urgent_workspace $nord12 $nord11 $bg_bar
-    }
-}
-
