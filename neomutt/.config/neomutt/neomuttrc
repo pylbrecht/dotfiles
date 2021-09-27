@@ -35,3 +35,4 @@ set status_on_top
 set quit
 set pager_index_lines = 10
 set edit_headers
+unset help
