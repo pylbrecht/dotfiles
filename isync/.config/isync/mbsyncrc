@@ -1,0 +1,46 @@
+Create Both
+Expunge Both
+SyncState *
+
+IMAPAccount momox
+Host imap.gmail.com
+User philipp.albrecht@momox.biz
+PassCmd "pass show philipp.albrecht@momox.biz"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore momox-remote
+Account momox
+
+MaildirStore momox-local
+Subfolders Verbatim
+Path ~/.mail/momox/
+Inbox ~/.mail/momox/inbox
+
+Channel momox-inbox
+Far :momox-remote:
+Near :momox-local:
+Patterns "INBOX"
+
+Channel momox-sent
+Far :momox-remote:"[Gmail]/Sent Mail"
+Near :momox-local:sent
+
+Channel momox-trash
+Far :momox-remote:"[Gmail]/Trash"
+Near :momox-local:trash
+
+Channel momox-drafts
+Far :momox-remote:"[Gmail]/Drafts"
+Near :momox-local:drafts
+
+Channel momox-spam
+Far :momox-remote:"[Gmail]/Spam"
+Near :momox-local:spam
+
+Group momox
+Channel momox-inbox
+Channel momox-trash
+Channel momox-sent
+Channel momox-drafts
+Channel momox-spam
