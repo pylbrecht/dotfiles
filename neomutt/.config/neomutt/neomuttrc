@@ -36,3 +36,4 @@ set quit
 set pager_index_lines = 10
 set edit_headers
 unset help
+set delete
