@@ -5,9 +5,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-EDITOR=nvim
-K9S_EDITOR=nvim
-KUBE_EDITOR=nvim
+export EDITOR=nvim
+export K9S_EDITOR=nvim
+export KUBE_EDITOR=nvim
+export BROWSER=qutebrowser
+
 VIM=$HOME/.vim
 TERM='xterm-256color'
 
