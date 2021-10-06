@@ -1,0 +1,98 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="momox GmbH">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+		body {
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+			font-size: 12px;
+			color: #333333;
+		}
+		a {
+			text-decoration: none;
+		}
+		img {
+			margin-top: 10px;
+		}
+		.small {
+			font-size: 10px;
+			color: #999999;
+		}
+        .small2 {
+			font-size: 10px;
+			color: #666666;
+		}
+		hr {
+			display: block;
+			height: 1px;
+			border: 0;
+			border-top: 1px solid #cccccc;
+			margin: 1em 0;
+			padding: 0;
+		}
+    </style>
+</head>
+<body>
+<hr>
+<p><b>Philipp Albrecht</b><br>
+Software Engineer<br><br>
+<b>E-Mail:</b> philipp.albrecht@momox.biz<br>
+<b>Web:</b> <a target="_blank" href="https://www.momox.biz/">www.momox.biz</a>
+</p>
+
+
+<table>
+    <tr>
+    <td><a target="_blank" href="https://www.momox.biz/" border="0">
+        <img alt="momox Logo" title="momox Logo" width="90" height="60" border="0" src="https://signature.momox.biz/momox_logo_180x120.png">
+        </a></td>
+</tr>
+</table>
+
+<!--
+<a target="_blank" href="https://www.momox.biz/" border="0">    
+<img alt="momox Logo" title="momox Logo" width="90" height="60" border="0" src="https://signature.momox.biz/momox_logo_180x120.png"></a>
+-->
+    
+<p><b>momox GmbH</b><br>
+Schreiberhauer Straße 30<br>
+10317 Berlin</p>
+
+<br>
+    
+<a target="_blank" href="https://www.momox.de/">www.momox.de</a><br>
+<a target="_blank" href="https://www.medimops.de/">www.medimops.de</a><br>
+<a target="_blank" href="https://www.momoxfashion.com/">www.momoxfashion.com</a><br>
+
+
+<table>
+    <tr>
+    <td><a target="_blank" href="https://de.linkedin.com/company/momox-gmbh" border="0">
+        <img alt="momox linkedin" title="momox linkedin" width="23" height="23" border="0" src="https://signature.momox.biz/signatur_linkedin.png">
+        </a></td>
+    <td><a target="_blank" href="https://www.facebook.com/momox.de" border="0">
+        <img alt="momox facebook" title="momox facebook" width="23" height="23" border="0" src="https://signature.momox.biz/signatur_facebook.png">
+        </a></td>
+    <td><a target="_blank" href="https://twitter.com/momox_de?lang=de" border="0">
+        <img alt="momox twitter" title="momox twitter" width="23" height="23" border="0" src="https://signature.momox.biz/signatur_twitter.png">
+        </a></td>
+    <td><a target="_blank" href="https://www.youtube.com/channel/UCJvz2P0O9nBq-lGEaWRuykg" border="0">
+        <img alt="momox youtube" title="momox youtube" width="23" height="23" border="0" src="https://signature.momox.biz/signatur_youtube.png">
+        </a></td>
+    </tr>
+</table>
+
+<br>          
+<p class="small2" style="color:#666666; font-size: 10px;">Vertreten durch die Geschäftsführer Heiner Kroke (Sprecher) und Christian von Hohnhorst | Handelsregister HRB 121313, Berlin Charlottenburg | USTID: DE266608643</p>
+
+<p class="small" style="color:#999999; font-size: 10px;">Diese E-Mail enthält vertrauliche und/oder rechtlich geschützte Informationen. Wenn Sie nicht der richtige Adressat sind oder diese E-Mail irrtümlich erhalten haben, informieren Sie bitte sofort den Absender und löschen Sie diese Mail. Das unerlaubte Kopieren sowie die unbefugte Weitergabe dieser Mail und der darin enthaltenen Informationen ist nicht gestattet.</p>
+
+<p class="small" style="color:#999999; font-size: 10px; font-style: italic;"><i>This e-mail may contain confidential and/or privileged information. If you are not the intended recipient (or have received this email in error) please notify the sender immediately and delete this e-mail. Any unauthorized copying, disclosure or distribution of the material in this e-mail is strictly forbidden.</i></p>
+    
+<p class="small" style="color: green; font-size: 10px;">Bitte denken Sie an die Umwelt, bevor Sie diese E-Mail ausdrucken!<i>  – Please consider the environment before printing this email! </i></p>    
+    
+</body>
+</html>

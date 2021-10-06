@@ -13,6 +13,8 @@ set postponed = "+Drafts"
 set trash = "+Trash"
 set record = "+Sent Mail"
 set imap_check_subscribed = yes
+set signature = ""
+set content_type = "text/plain"
 
 mailboxes "+INBOX"
 

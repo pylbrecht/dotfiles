@@ -11,6 +11,8 @@ set spoolfile = "+inbox"
 set postponed = "+drafts"
 set trash = "+trash"
 set record = "+sent"
+set signature = "~/.config/neomutt/accounts/signature.momox"
+set content_type = "text/html"
 
 mailboxes =inbox =trash =sent =drafts =spam
 
