@@ -38,3 +38,4 @@ set edit_headers
 unset help
 set delete
 unset sig_dashes
+set recall = "no"
