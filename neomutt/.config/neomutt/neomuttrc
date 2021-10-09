@@ -39,3 +39,4 @@ unset help
 set delete
 unset sig_dashes
 set recall = "no"
+set forward_format = "Fwd: %s"
