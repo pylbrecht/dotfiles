@@ -13,10 +13,10 @@ include-file=~/.config/polybar/top
 [module/date]
 type = internal/date
 interval = 1.0
-date = %a %d %b
+date = %b %d,
 time = %H:%M
 
-label = %time%
+label = %date% %time%
 label-padding = 0
 
 format-foreground = ${colors.nord6}
