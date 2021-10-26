@@ -26,7 +26,9 @@ set sidebar_divider_char = " │"
 set mail_check_stats
 set sidebar_width = 25
 
-set header_cache = ~/.cache/neomutt
+set header_cache = "~/.cache/neomutt/header"
+set message_cachedir = "~/.cache/neomutt/messages"
+set message_cache_clean = yes
 
 # useful things taken from https://gideonwolfe.com/posts/workflow/neomutt/intro/
 set askcc
