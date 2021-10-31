@@ -56,3 +56,7 @@ require'nvim-treesitter.configs'.setup {
     indent = { enable = true },
     }
 EOF
+
+" Fix weird resizing issue when running 'alacritty --command nvim'
+" https://github.com/neovim/neovim/issues/11330#issuecomment-723667383
+autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
