@@ -209,3 +209,5 @@ set $nord15 #B48EAD
 set $bg_bar #2e3440cc
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+bindsym $mod+Escape exec --no-startup-id dunstctl close
