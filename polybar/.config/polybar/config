@@ -8,7 +8,12 @@ icons = 3
 uname = 4
 
 [bar/top]
+monitor = ${env:MONITOR:}
 include-file=~/.config/polybar/top
+
+[bar/top-dummy]
+monitor = ${env:MONITOR:}
+include-file=~/.config/polybar/top-dummy
 
 [module/date]
 type = internal/date
