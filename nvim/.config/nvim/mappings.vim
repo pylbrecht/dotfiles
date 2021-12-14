@@ -31,9 +31,6 @@ map <Leader>g :Rg<Cr>
 map <Leader>l :Lines<Cr>
 map <Leader>t :Tags<Cr>
 
-" ale mappings
-map <Leader>d :ALEGoToDefinition<CR>
-map <Leader>r :ALEFindReferences<CR>
 
 " requires vim-eunuch
 cmap w!! SudoWrite
