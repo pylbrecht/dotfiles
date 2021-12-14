@@ -25,10 +25,10 @@ vnoremap > >gv
 
 " fzf mappings
 map <Leader>f :GFiles<Cr>
-map <Leader><Leader>f :Files<Cr>
+map <Leader>F :Files<Cr>
 map <Leader>b :Buffers<Cr>
-map <Leader>g :Rg<Cr>
-map <Leader>l :Lines<Cr>
+map <Leader>g :Rg <C-r><C-w><Cr>
+map <Leader>G :Rg<Cr>
 map <Leader>t :Tags<Cr>
 
 
