@@ -34,3 +34,16 @@ map <Leader>t :Tags<Cr>
 
 " requires vim-eunuch
 cmap w!! SudoWrite
+" Things I picked up from this talk: https://www.youtube.com/watch?v=434tljD-5C8
+map gf :edit <cfile><cr>
+
+nmap <silent> <leader>ve :edit $MYVIMRC<cr>
+nmap <silent> <leader>vs :source $MYVIMRC<cr>
+
+" https://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap y myy`y
+vnoremap Y myY`y
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap J mzJ`z
