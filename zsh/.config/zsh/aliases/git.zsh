@@ -40,6 +40,7 @@ alias gpsup='git push --set-upstream origin $(git branch --show-current)'
 
 alias gl='git pull'
 alias glr='git log --extended-regexp  --regexp-ignore-case --grep'
+alias gls='git log -S'
 alias glo='git log --oneline --decorate'
 alias glom='git log --oneline --decorate master..'
 alias glog='git log --oneline --decorate --graph'
