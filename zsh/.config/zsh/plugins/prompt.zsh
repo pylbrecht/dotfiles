@@ -8,12 +8,10 @@ precmd () { vcs_info }
 
 
 PROMPT='
-$(_user_host)%F{blue}%~%f
+$(_user_host)%F{blue}%~%f  ${vcs_info_msg_0_}
 %(!.%F{red}.%F{default})%#%f '
 
 PROMPT2='< '
-
-RPROMPT='%{$(echotc UP 1)%}${vcs_info_msg_0_}%{$(echotc DO 1)%}'
 
 function _user_host() {
     local me
