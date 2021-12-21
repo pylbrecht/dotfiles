@@ -79,7 +79,7 @@ alias grv='git remote -v'
 
 alias gst='git status'
 
-alias gsta='git stash push'
+alias gsta='git stash push --include-untracked'
 alias gstaa='git stash apply'
 alias gstc='git stash clear'
 alias gstd='git stash drop'
