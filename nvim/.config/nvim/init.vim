@@ -8,6 +8,7 @@ endif
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'arcticicestudio/nord-vim'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

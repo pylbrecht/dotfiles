@@ -56,3 +56,7 @@ let g:startify_change_to_dir = 0
 " ALE
 let g:airline#extensions#ale#enabled = 1
 let g:ale_completion_enabled = 1
+
+" vim-tmux-navigator
+" automatically rebalance windows on resize
+autocmd VimResized * :wincmd =
