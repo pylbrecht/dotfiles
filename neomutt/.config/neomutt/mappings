@@ -6,10 +6,11 @@ bind index <enter> display-message
 bind index g noop
 bind index gg first-entry
 bind index G last-entry
-bind pager,browser gg top-page
-bind pager,browser G bottom-page
-bind index,pager \Ck sidebar-prev
-bind index,pager \Cj sidebar-next
+bind pager g noop
+bind pager gg top
+bind pager G bottom
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
 bind index,pager \Co sidebar-open
 bind index,pager b sidebar-toggle-visible
 bind pager j next-line
@@ -21,7 +22,8 @@ bind index j next-entry
 bind index k previous-entry
 bind index,pager,browser \Cu half-up
 bind index,pager,browser \Cd half-down
-bind index s sync-mailbox
+bind index S sync-mailbox
+bind index s save-message
 bind index L limit
 
 bind index n search-next
