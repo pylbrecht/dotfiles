@@ -1,0 +1,8 @@
+session_name: warehouse
+start_directory: '~/lf/warehouse'
+windows:
+- window_name: code
+  panes:
+    - shell_command:
+      - pyenv activate warehouse
+      - nvim "+GitFiles"
