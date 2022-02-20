@@ -211,3 +211,7 @@ set $bg_bar #2e3440cc
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bindsym $mod+Escape exec --no-startup-id dunstctl close
+
+# put my notes into the scratchpad on startup
+exec --no-startup-id alacritty --class AlacrittyNotes,AlacrittyNotes --command nvim +VimwikiIndex
+for_window [class="AlacrittyNotes"] move scratchpad, resize set 1024 768, move absolute position center
