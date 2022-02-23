@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+
+import argparse
+import json
+import os
+import subprocess
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('env', default='stage', choices=('stage', 'live'))
+    parser.add_argument('-ro' ,'--read-only', action='store_true', dest='read_only')
+
+    return parser.parse_args()
+
+
+def _retrieve_session_token():
+        op = subprocess.run(['op', 'signin', 'momox', '--raw'], capture_output=True)
+        return op.stdout.decode().strip()
+
+
+if __name__ == '__main__':
+    args = parse_args()
+
+    # FIXME: hardcoded token env var
+    session_token = os.environ.get('OP_SESSION_momox', None) or _retrieve_session_token()
+
+    # TODO: get item names from env vars
+    if args.env == 'stage':
+        item_name = 'MongoDB: warehouse stage'
+    else:
+        item_name = 'MongoDB: warehouse live'
+
+    if args.read_only:
+        item_name += ' READ-ONLY'
+
+    op = subprocess.run(['op', 'get', 'item', item_name, '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
+    attrs = json.loads(op.stdout)
+
+    username = attrs['username']
+    password = attrs['password']
+    server = attrs['server']
+    database = attrs['database']
+
+    uri = f"mongodb://{username}:{password}@{server}/{database}"
+
+    subprocess.run(['/usr/bin/mongosh', uri])
