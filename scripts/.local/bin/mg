@@ -36,6 +36,10 @@ if __name__ == '__main__':
         item_name += ' READ-ONLY'
 
     op = subprocess.run(['op', 'get', 'item', item_name, '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
+
+    if op.returncode != 0:
+        raise SystemExit(op.stderr.decode().strip())
+
     attrs = json.loads(op.stdout)
 
     username = attrs['username']
