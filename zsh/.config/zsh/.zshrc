@@ -1,6 +1,7 @@
 setopt no_case_glob
 setopt auto_cd
 setopt menu_complete
+setopt globdots
 
 unsetopt CORRECT
 unsetopt CORRECT_ALL
