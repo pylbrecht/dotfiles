@@ -15,3 +15,5 @@ TERM='xterm-256color'
 
 # tmuxp
 export DISABLE_AUTO_TITLE='true'
+
+PYFLYBY_PATH=~/.config/pyflyby/.pyflyby:-
