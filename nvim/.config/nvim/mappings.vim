@@ -24,12 +24,15 @@ vnoremap < <gv
 vnoremap > >gv
 
 " fzf mappings
-map <Leader>f :GFiles<Cr>
-map <Leader>F :Files<Cr>
-map <Leader>b :Buffers<Cr>
-map <Leader>g :Rg <C-r><C-w><Cr>
-map <Leader>G :Rg<Cr>
-map <Leader>t :Tags<Cr>
+map <Leader>f :GFiles!<Cr>
+map <Leader>F :Files!<Cr>
+map <Leader>b :Buffers!<Cr>
+map <Leader>/ :Rg!<Cr>
+map <Leader>t :Tags!<Cr>
+map <Leader>c :BCommits!<Cr>
+map <Leader>C :Commits!<Cr>
+
+map <Leader>g :tab :Git<Cr>
 
 
 " requires vim-eunuch
