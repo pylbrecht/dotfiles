@@ -35,8 +35,6 @@ map <Leader>C :Commits!<Cr>
 map <Leader>g :tab :Git<Cr>
 
 
-" requires vim-eunuch
-cmap w!! SudoWrite
 " Things I picked up from this talk: https://www.youtube.com/watch?v=434tljD-5C8
 map gf :edit <cfile><cr>
 
