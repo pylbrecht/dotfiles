@@ -1,0 +1,6 @@
+session_name: mail
+start_directory: '~'
+windows:
+- window_name: neomutt
+  panes:
+    - mbsync -Va && neomutt
