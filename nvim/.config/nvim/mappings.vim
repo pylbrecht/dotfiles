@@ -42,7 +42,7 @@ nmap <silent> <leader>ve :edit $MYVIMRC<cr>
 nmap <silent> <leader>vs :source $MYVIMRC<cr>
 
 " https://ddrscott.github.io/blog/2016/yank-without-jank/
-vnoremap y myy`y
+vnoremap <expr>y "my\"" . v:register . "y`y"
 vnoremap Y myY`y
 
 nnoremap n nzz
