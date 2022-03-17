@@ -1,0 +1,6 @@
+session_name: notes
+start_directory: '~'
+windows:
+- window_name: notes
+  panes:
+    - nvim "+VimwikiIndex"

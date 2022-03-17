@@ -6,3 +6,8 @@ windows:
     - shell_command:
       - pyenv activate warehouse
       - nvim "+GitFiles"
+- window_name: tests
+  panes:
+    - shell_command:
+      - pyenv activate warehouse
+      - clear
