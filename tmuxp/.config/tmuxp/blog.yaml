@@ -1,0 +1,9 @@
+session_name: blog
+start_directory: '~/dev/pylbrecht.github.io/'
+windows:
+- window_name: draft
+  panes:
+    - nvim '+Files! _drafts'
+- window_name: publish
+  panes:
+    - null 
