@@ -12,7 +12,7 @@ line-size = 2
 override-redirect = false
 wm-restack = i3
 
-font-0 = RobotoMono Nerd Font:size=12:syle=Regular;3
+font-0 = RobotoMono Nerd Font:size=11:style=Regular;3
 font-1 = Sauce Code Pro Nerd Font:size=16:weight=bold;3
 font-2 = Sauce Code Pro Nerd Font:size=13;3
 font-3 = RobotoMono Nerd Font:size=8:syle=Regular;8
