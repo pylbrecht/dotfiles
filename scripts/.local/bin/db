@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+
+import argparse
+import json
+import os
+import pathlib
+import subprocess
+
+
+def _parsed_query(string):
+    try:
+        path = pathlib.Path(string)
+        if path.exists():
+            return path.read_text()
+    except OSError:
+        pass
+
+    return string
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('database', choices=('lesemops', 'prototype-adapter'))
+    parser.add_argument('-ro' ,'--read-only', action='store_true', dest='read_only')
+    parser.add_argument('-q' ,'--query', type=_parsed_query, dest='query')
+
+    return parser.parse_args()
+
+
+def _retrieve_session_token():
+        op = subprocess.run(['op', 'signin', 'momox', '--raw'], capture_output=True)
+        return op.stdout.decode().strip()
+
+
+if __name__ == '__main__':
+    args = parse_args()
+
+    # FIXME: hardcoded token env var
+    session_token = os.environ.get('OP_SESSION_momox', None) or _retrieve_session_token()
+
+    # TODO: make translation to item name dynamic
+    if args.database == 'lesemops':
+        item_name = 'lesemops live'
+    elif args.database == 'prototype-adapter':
+        item_name = 'prototype-adapter'
+        # we only have credentials for read-only here
+        args.read_only = True
+    else:
+        raise SystemExit(f'unknown database: {args.database}')
+
+    if args.read_only:
+        item_name += ' READ-ONLY'
+
+    op = subprocess.run(['op', 'get', 'item', item_name, '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
+
+    if op.returncode != 0:
+        raise SystemExit(op.stderr.decode().strip())
+
+    attrs = json.loads(op.stdout)
+
+    username = attrs['username']
+    password = attrs['password']
+    server = attrs['server']
+    database = attrs['database']
+
+    mysql_args = [
+        '/usr/bin/mysql',
+        f'--host={server}',
+        f'--user={username}',
+        f'--password={password}',
+        f'--database={database}',
+    ]
+
+
+    if args.query:
+        input_ = args.query.encode()
+    elif args.query_file:
+        input_ = args.query_file.read_bytes()
+    else:
+        input_ = None
+
+    subprocess.run(mysql_args, input=input_)
