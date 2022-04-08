@@ -11,3 +11,8 @@ windows:
     - shell_command:
       - pyenv activate warehouse
       - clear
+- window_name: tree
+  panes:
+    - shell_command:
+      - pyenv activate warehouse
+      - ranger
