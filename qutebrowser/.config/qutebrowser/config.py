@@ -6,3 +6,4 @@ c.editor.command = ["alacritty", "--command", "nvim", "{file}", "-c", "normal {l
 
 config.bind(",m", "spawn mpv {url}")
 config.bind(",M", "hint links spawn mpv {hint-url}")
+config.bind(",v", "spawn --userscript qute-bitwarden")  # v for vault
