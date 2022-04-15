@@ -11,8 +11,21 @@ set spoolfile = "+inbox"
 set postponed = "+drafts"
 set trash = "+trash"
 set record = "+sent"
-set signature = "~/.config/neomutt/accounts/signature.momox"
-set content_type = "text/html"
+unset signature
+set content_type = "text/plain"
+
+# Inspired by:
+# https://tom.wemyss.net/posts/neomutt-markdown-email#2-set-up-a-pandoc-template-for-html-emails
+macro compose m \
+"<enter-command>set pipe_decode<enter>\
+<enter-command>unset wait_key<enter>\
+<pipe-entry>pandoc --quiet --standalone --from gfm --output /tmp/msg.html --resource-path ~/.config/neomutt/templates/ --template momox.html<enter>\
+<enter-command>unset pipe_decode<enter>\
+<enter-command>set wait_key<enter>\
+<attach-file>/tmp/msg.html<enter>\
+<toggle-unlink>\
+<toggle-disposition><previous-entry><detach-file>" \
+"Convert markdown to HTML5 and plaintext alternative content types"
 
 mailboxes =inbox =trash =sent =drafts =spam
 
