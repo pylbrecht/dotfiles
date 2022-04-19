@@ -6,6 +6,8 @@ import os
 import pathlib
 import subprocess
 
+from typing import NamedTuple
+
 
 def _parsed_query(string):
     try:
@@ -16,6 +18,43 @@ def _parsed_query(string):
         pass
 
     return string
+
+
+class Credentials(NamedTuple):
+    database: str
+    username: str
+    password: str
+    server: str
+
+
+def get_credentials(db, read_only=False):
+    if db == 'lesemops':
+        item_name = 'lesemops live'
+    elif db == 'prototype-adapter':
+        item_name = 'prototype-adapter'
+        # we only have credentials for read-only here
+        args.read_only = True
+    elif db == 'storage-service':
+        item_name = 'storage-service live'
+    else:
+        raise SystemExit(f'unknown database: {db}')
+
+    if read_only:
+        item_name += ' READ-ONLY'
+
+    op = subprocess.run(['op', 'get', 'item', item_name, '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
+
+    if op.returncode != 0:
+        raise SystemExit(op.stderr.decode().strip())
+
+    attrs = json.loads(op.stdout)
+
+    return Credentials(
+        server=attrs['server'],
+        database=attrs['database'],
+        username=attrs['username'],
+        password=attrs['password'],
+    )
 
 
 def parse_args():
@@ -39,39 +78,15 @@ if __name__ == '__main__':
     # FIXME: hardcoded token env var
     session_token = os.environ.get('OP_SESSION_momox', None) or _retrieve_session_token()
 
-    # TODO: make translation to item name dynamic
-    if args.database == 'lesemops':
-        item_name = 'lesemops live'
-    elif args.database == 'prototype-adapter':
-        item_name = 'prototype-adapter'
-        # we only have credentials for read-only here
-        args.read_only = True
-    else:
-        raise SystemExit(f'unknown database: {args.database}')
-
-    if args.read_only:
-        item_name += ' READ-ONLY'
-
-    op = subprocess.run(['op', 'get', 'item', item_name, '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
-
-    if op.returncode != 0:
-        raise SystemExit(op.stderr.decode().strip())
-
-    attrs = json.loads(op.stdout)
-
-    username = attrs['username']
-    password = attrs['password']
-    server = attrs['server']
-    database = attrs['database']
+    creds = get_credentials(args.database, args.read_only)
 
     mysql_args = [
         '/usr/bin/mysql',
-        f'--host={server}',
-        f'--user={username}',
-        f'--password={password}',
-        f'--database={database}',
+        f'--host={creds.server}',
+        f'--user={creds.username}',
+        f'--password={creds.password}',
+        f'--database={creds.database}',
     ]
-
 
     if args.query:
         input_ = args.query.encode()
