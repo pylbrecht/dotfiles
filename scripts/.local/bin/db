@@ -6,6 +6,7 @@ import os
 import pathlib
 import subprocess
 
+from abc import ABC, abstractmethod
 from typing import NamedTuple
 
 
@@ -57,10 +58,60 @@ def get_credentials(db, read_only=False):
     )
 
 
+class IConnection(ABC):
+    def __init__(self, creds):
+        self._server = creds.server
+        self._database = creds.database
+        self._username = creds.username
+        self._password = creds.password
+
+    @abstractmethod
+    def shell(self):
+        pass
+
+
+class MySQLConnection(IConnection):
+    def shell(self):
+        mysql_args = [
+            '/usr/bin/mysql',
+            f'--host={self._server}',
+            f'--user={self._username}',
+            f'--password={self._password}',
+            f'--database={self._database}',
+        ]
+
+        subprocess.run(mysql_args)
+
+    def query(self, query):
+        mysql_args = [
+            '/usr/bin/mysql',
+            f'--host={self._server}',
+            f'--user={self._username}',
+            f'--password={self._password}',
+            f'--database={self._database}',
+        ]
+        subprocess.run(mysql_args, input=query.encode())
+
+
+class CloudSQLProxyConnection(IConnection):
+    def shell(self):
+        pass
+
+    def query(self, query):
+        raise NotImplementedError
+
+
+def create_connection(creds):
+    if creds.database == 'storage_service':
+        return CloudSQLProxyConnection(creds)
+    return MySQLConnection(creds)
+
+
+
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('database', choices=('lesemops', 'prototype-adapter'))
+    parser.add_argument('database', choices=('lesemops', 'prototype-adapter', 'storage-service'))
     parser.add_argument('-ro' ,'--read-only', action='store_true', dest='read_only')
     parser.add_argument('-q' ,'--query', type=_parsed_query, dest='query')
 
@@ -80,19 +131,9 @@ if __name__ == '__main__':
 
     creds = get_credentials(args.database, args.read_only)
 
-    mysql_args = [
-        '/usr/bin/mysql',
-        f'--host={creds.server}',
-        f'--user={creds.username}',
-        f'--password={creds.password}',
-        f'--database={creds.database}',
-    ]
+    connection = create_connection(creds)
 
     if args.query:
-        input_ = args.query.encode()
-    elif args.query_file:
-        input_ = args.query_file.read_bytes()
+        connection.query(args.query)
     else:
-        input_ = None
-
-    subprocess.run(mysql_args, input=input_)
+        connection.shell()
