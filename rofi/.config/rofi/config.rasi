@@ -6,4 +6,4 @@ configuration {
 	kb-row-up: "Control+k";
 }
 
-@theme "nord.rasi"
+@theme "nord-custom.rasi"
