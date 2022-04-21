@@ -6,4 +6,7 @@ c.editor.command = ["alacritty", "--command", "nvim", "{file}", "-c", "normal {l
 
 config.bind(",m", "spawn mpv {url}")
 config.bind(",M", "hint links spawn mpv {hint-url}")
-config.bind(",v", "spawn --userscript qute-bitwarden")  # v for vault
+
+# bitwarden auto-fill (v stands for vault)
+config.bind(",vv", "spawn --userscript qute-bitwarden --auto-lock 300")
+config.bind(",vp", "spawn --userscript qute-bitwarden --password-only --auto-lock 300")
