@@ -43,3 +43,11 @@ c.colors.tabs.selected.even.bg = selected
 c.colors.tabs.selected.even.fg = bg
 c.colors.tabs.selected.odd.bg = selected
 c.colors.tabs.selected.odd.fg = bg
+
+c.colors.downloads.bar.bg = bg
+c.colors.downloads.error.bg = nord['nord11']
+c.colors.downloads.error.fg = bg
+c.colors.downloads.start.bg = bg
+c.colors.downloads.start.fg = fg
+c.colors.downloads.stop.fg = bg
+c.colors.downloads.stop.bg = nord['nord14']
