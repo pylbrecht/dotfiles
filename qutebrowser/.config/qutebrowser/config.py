@@ -29,3 +29,17 @@ nord = {
     "nord14": "#a3be8c",
     "nord15": "#b48ead",
 }
+
+fg = nord['nord4']
+bg = nord['nord1']
+selected = nord['nord8']
+
+c.colors.tabs.bar.bg = bg
+c.colors.tabs.even.bg = bg
+c.colors.tabs.even.fg = fg
+c.colors.tabs.odd.bg = bg
+c.colors.tabs.odd.fg = fg
+c.colors.tabs.selected.even.bg = selected
+c.colors.tabs.selected.even.fg = bg
+c.colors.tabs.selected.odd.bg = selected
+c.colors.tabs.selected.odd.fg = bg
