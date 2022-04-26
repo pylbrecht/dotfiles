@@ -5,9 +5,11 @@ import json
 import os
 import pathlib
 import subprocess
+import time
 
 from abc import ABC, abstractmethod
 from typing import NamedTuple
+from multiprocessing import Process
 
 
 def _parsed_query(string):
@@ -95,7 +97,35 @@ class MySQLConnection(IConnection):
 
 class CloudSQLProxyConnection(IConnection):
     def shell(self):
-        pass
+        port = 8888
+        project = 'momox-fs'
+        zone = 'europe-west3'
+        instance = 'fashion-2'
+        socket = '/tmp/cloud_sql_proxy'
+        connection_name = f'{project}:{zone}:{instance}=unix:{instance}'
+
+        if not os.path.exists(socket):
+            os.mkdir(socket)
+
+        args = [
+            'cloud_sql_proxy',
+            f'-instances={connection_name}',
+            f'-dir={socket}'
+        ]
+        cloud_sql_proxy = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        # FIXME
+        time.sleep(5)
+
+        mysql_args = [
+            '/usr/bin/mysql',
+            f'--socket={socket}/{instance}',
+            f'--user={self._username}',
+            f'--password={self._password}',
+            f'--database={self._database}',
+        ]
+        subprocess.run(mysql_args)
+        cloud_sql_proxy.terminate()
 
     def query(self, query):
         raise NotImplementedError
