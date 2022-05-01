@@ -32,4 +32,11 @@ bind index N search-opposite
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/momox<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/mailbox.palbrecht<enter><change-folder>!<enter>'
 
-macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+macro index,pager \cb \
+"<enter-command>unset wait_key<Enter>\
+<pipe-message> urlscan<Enter>\
+<enter-command>set wait_key<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb \
+"<enter-command>unset wait_key<Enter>\
+<pipe-entry> urlscan<Enter>\
+<enter-command>set wait_key<Enter>" "call urlscan to extract URLs out of a message"
