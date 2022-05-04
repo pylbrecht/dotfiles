@@ -211,6 +211,7 @@ set $bg_bar #2e3440cc
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bindsym $mod+Escape exec --no-startup-id dunstctl close
+bindsym $mod+x exec --no-startup-id flameshot gui
 
 # put my notes into the scratchpad on startup
 exec --no-startup-id alacritty --class AlacrittyNotes,AlacrittyNotes --command nvim +VimwikiIndex
