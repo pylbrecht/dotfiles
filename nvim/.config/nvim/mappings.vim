@@ -32,7 +32,8 @@ map <Leader>t :Tags!<Cr>
 map <Leader>c :BCommits!<Cr>
 map <Leader>C :Commits!<Cr>
 
-map <Leader>g :tab :Git<Cr>
+map <Leader>gs :tab :Git<Cr>
+map <Leader>gl :tab :Git log<Cr>
 
 " Things I picked up from this talk: https://www.youtube.com/watch?v=434tljD-5C8
 map gf :edit <cfile><cr>
