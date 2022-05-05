@@ -10,6 +10,7 @@ set nocompatible
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'arcticicestudio/nord-vim'
+Plug 'caenrique/nvim-maximize-window-toggle'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
