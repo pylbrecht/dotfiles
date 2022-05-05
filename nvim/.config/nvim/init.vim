@@ -37,6 +37,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'yuezk/vim-js'
 
 call plug#end()
@@ -52,13 +53,7 @@ for f in g:config_file_list
 endfor
 
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    -- Modules and its options go here
-    highlight = { enable = true },
-    incremental_selection = { enable = true },
-    textobjects = { enable = true },
-    indent = { enable = false },
-    }
+require("nvim-lsp-installer").setup {}
 
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local nvim_lsp = require('lspconfig')
