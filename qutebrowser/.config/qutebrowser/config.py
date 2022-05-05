@@ -9,6 +9,11 @@ c.tabs.select_on_remove = 'last-used'
 c.tabs.title.format = '{audio}{relative_index}: {current_title}'
 c.tabs.max_width = 500
 
+c.fonts.default_family = "SauceCodePro Nerd Font"
+c.fonts.default_size = "15px"
+c.fonts.tabs.selected = '17px SauceCodePro Nerd Font'
+c.fonts.tabs.unselected = '17px SauceCodePro Nerd Font'
+
 config.bind(",m", "spawn mpv {url}")
 config.bind(",M", "hint links spawn mpv {hint-url}")
 
