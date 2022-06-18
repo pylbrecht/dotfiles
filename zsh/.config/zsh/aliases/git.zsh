@@ -88,3 +88,7 @@ alias gup='git pull --rebase'
 alias gupv='git pull --rebase -v'
 alias gupa='git pull --rebase --autostash'
 alias gupav='git pull --rebase --autostash -v'
+
+alias gwa='git worktree add'
+alias gwl='git worktree list'
+alias gwr='git worktree remove'
