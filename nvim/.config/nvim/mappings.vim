@@ -49,7 +49,8 @@ nnoremap N Nzz
 nnoremap J mzJ`z
 
 " inspired by https://www.reddit.com/r/vim/comments/uatzky/my_favorite_way_to_leave_insert_mode/i60y33b/
-nnoremap zd :bd!<cr>
+nnoremap <silent> zd :bd!<cr>
+nnoremap <silent> zq :bufdo! bd!<cr>
 nnoremap <Leader><Leader>ft :set ft=
 nnoremap <Leader><Leader>w :w<cr>
 nnoremap <Leader><Leader>co :copen<cr>
