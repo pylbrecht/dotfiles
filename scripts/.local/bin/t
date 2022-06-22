@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# dependencies:
+# - httpie
+# - jq
+#
+# TODO:
+# - check if issue already exists (and prompt for replacing it?)
+# - integrate bitwarden for getting the token
+
+JIRA_TOKEN=$(pass jira-token)
+
+TICKET_ID="LFNEW-${1}"
+TICKET_PATH=~/notes/lf/tickets/${TICKET_ID}
+TICKET_INDEX=~/notes/lf/tickets/index.md
+TICKET_TITLE=$(http GET https://momox.atlassian.net/rest/api/3/issue/${TICKET_ID} "Authorization: Basic ${JIRA_TOKEN}" | jq .fields.summary | tr -d '"' | sed -e 's/\[/(/' -e 's/\]/)/')
+TICKET_LINK="[${TICKET_ID}: ${TICKET_TITLE}](https://momox.atlassian.net/browse/${TICKET_ID})"
+
+mkdir -p ${TICKET_PATH}
+echo "# ${TICKET_LINK}" > ${TICKET_PATH}/index.md
+echo "## $(date -I)" >> ${TICKET_PATH}/index.md
+
+echo "- [${TICKET_ID}: ${TICKET_TITLE}](${TICKET_ID}/index.md)" >> ${TICKET_INDEX}
