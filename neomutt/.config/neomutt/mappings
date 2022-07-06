@@ -25,6 +25,7 @@ bind index,pager,browser \Cd half-down
 bind index S sync-mailbox
 bind index s save-message
 bind index L limit
+bind index,pager R group-reply
 
 bind index n search-next
 bind index N search-opposite
