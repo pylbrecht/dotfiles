@@ -17,3 +17,8 @@ TERM='xterm-256color'
 export DISABLE_AUTO_TITLE='true'
 
 PYFLYBY_PATH=~/.config/pyflyby/.pyflyby:-
+
+
+if type bat &> /dev/null ; then
+    export PAGER="bat"
+fi
