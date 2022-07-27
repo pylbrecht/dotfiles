@@ -60,3 +60,6 @@ let g:ale_completion_enabled = 1
 " vim-tmux-navigator
 " automatically rebalance windows on resize
 autocmd VimResized * :wincmd =
+
+" emmet-vim
+let g:user_emmet_settings = { 'typescript' : { 'extends' : 'jsx' } }
