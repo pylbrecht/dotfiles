@@ -38,7 +38,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'williamboman/mason.nvim'
 Plug 'yuezk/vim-js'
 
 call plug#end()
@@ -54,7 +55,10 @@ for f in g:config_file_list
 endfor
 
 lua <<EOF
-require("nvim-lsp-installer").setup {}
+require("mason").setup()
+require("mason-lspconfig").setup({
+    automatic_installation = true
+})
 
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local nvim_lsp = require('lspconfig')
