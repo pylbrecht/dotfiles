@@ -1,0 +1,10 @@
+session_name: storage-service-webapp
+start_directory: '~/lf/storage-service-webapp'
+windows:
+- window_name: code
+  panes:
+    - nvim '+GitFiles!'
+- window_name: tests
+  panes:
+    - npx tsc --watch
+    - 
