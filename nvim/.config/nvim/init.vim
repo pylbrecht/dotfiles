@@ -15,6 +15,7 @@ Plug 'dhruvasagar/vim-zoom'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'kylechui/nvim-surround'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/calendar-vim'
@@ -34,7 +35,6 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
@@ -59,6 +59,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     automatic_installation = true
 })
+require("nvim-surround").setup()
 
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local nvim_lsp = require('lspconfig')
