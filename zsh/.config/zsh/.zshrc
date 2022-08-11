@@ -40,3 +40,15 @@ if type pyenv &> /dev/null ; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+# FIXME: if tmux.service is not available this crashes the terminal resulting
+# in being locked out of entering my shell. Maybe adding a check like this should be included:
+# systemctl --user list-unit-files | grep "tmux\.service"
+#
+# This requires autostarting tmux with systemd: https://wiki.archlinux.org/title/Tmux#Autostart_with_systemd
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    if ! systemctl --user is-active --quiet tmux.service; then
+        systemctl --user start tmux.service
+    fi
+    exec tmux attach-session -d -t "${USER}" >/dev/null 2>&1
+fi
