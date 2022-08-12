@@ -218,3 +218,6 @@ exec --no-startup-id alacritty --class AlacrittyNotes,AlacrittyNotes --command n
 for_window [class="AlacrittyNotes"] move scratchpad, resize set 1024 768, move absolute position center
 
 exec_always --no-startup-id autotiling
+
+# required for redshift
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
