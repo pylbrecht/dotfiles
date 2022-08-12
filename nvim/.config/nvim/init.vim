@@ -12,6 +12,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'caenrique/nvim-maximize-window-toggle'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
