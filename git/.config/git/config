@@ -1,6 +1,7 @@
 [core]
     exludesfiles=$HOME/.config/git/.gitignore
     editor=nvim
+    pager="bat --style=changes"
 
 [pull]
     rebase=true
