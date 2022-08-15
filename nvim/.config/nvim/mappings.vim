@@ -55,3 +55,9 @@ nnoremap <Leader><Leader>ft :set ft=
 nnoremap <Leader><Leader>w :w<cr>
 nnoremap <Leader><Leader>co :copen<cr>
 nnoremap <Leader><Leader>cq :cclose<cr>
+
+" vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
