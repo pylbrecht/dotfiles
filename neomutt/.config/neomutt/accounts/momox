@@ -10,7 +10,9 @@ set smtp_pass = `pass show philipp.albrecht@momox.biz`
 set spoolfile = "+inbox"
 set postponed = "+drafts"
 set trash = "+trash"
-set record = "+sent"
+# Gmail automatically saves sent e-mail to +[Gmail]/Sent, so we do not want duplicates.
+# https://wiki.archlinux.org/title/Mutt#SMTP
+unset record
 unset signature
 set content_type = "text/plain"
 
