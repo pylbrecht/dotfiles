@@ -35,9 +35,6 @@ map <Leader>t :Tags!<Cr>
 map <Leader>c :BCommits!<Cr>
 map <Leader>C :Commits!<Cr>
 
-map <Leader>gs :tab :Git<Cr>
-map <Leader>gl :tab :Git log<Cr>
-
 nnoremap <Leader>o :ToggleOnly<cr>
 
 " Things I picked up from this talk: https://www.youtube.com/watch?v=434tljD-5C8
