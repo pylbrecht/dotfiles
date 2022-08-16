@@ -8,6 +8,9 @@ onoremap H ^
 vnoremap H ^
 nnoremap Q @@
 
+" Stolen from https://www.destroyallsoftware.com/screencasts/catalog/file-navigation-in-vim
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 command! Vimrc :vs $MYVIMRC
 
 " clear last search pattern
