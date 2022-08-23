@@ -16,6 +16,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" required by lualine to display icons in the statusline
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kylechui/nvim-surround'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -24,6 +26,7 @@ Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mhinz/vim-startify'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -37,7 +40,6 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline'
 Plug 'vim-test/vim-test'
 Plug 'vimwiki/vimwiki'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -57,6 +59,11 @@ for f in g:config_file_list
 endfor
 
 lua <<EOF
+require('lualine').setup({
+    options = {
+        extensions = { 'fugitive', 'fzf', 'quickfix' }
+    }
+})
 require("mason").setup()
 require("mason-lspconfig").setup({
     automatic_installation = true

@@ -1,3 +1,4 @@
+set termguicolors
 colors nord
 let g:nord_cursor_line_number_background = 1
 let g:nord_bold = 1
