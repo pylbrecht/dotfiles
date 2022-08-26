@@ -5,7 +5,7 @@ windows:
   panes:
     - shell_command:
       - pyenv activate storage-service
-      - nvim '+GitFiles!'
+      - nvim
 - window_name: tests
   panes:
     - shell_command:

@@ -3,7 +3,7 @@ start_directory: '~/dev/pylbrecht.github.io/'
 windows:
 - window_name: draft
   panes:
-    - nvim '+Files! _drafts'
+    - nvim
 - window_name: publish
   panes:
     - null 

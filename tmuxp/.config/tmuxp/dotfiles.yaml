@@ -3,4 +3,4 @@ start_directory: '~/.dotfiles'
 windows:
 - window_name: dotfiles
   panes:
-    - nvim '+GitFiles!'
+    - nvim

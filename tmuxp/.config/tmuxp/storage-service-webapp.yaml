@@ -3,7 +3,7 @@ start_directory: '~/lf/storage-service-webapp'
 windows:
 - window_name: code
   panes:
-    - nvim '+GitFiles!'
+    - nvim
 - window_name: tests
   panes:
     - npx tsc --watch

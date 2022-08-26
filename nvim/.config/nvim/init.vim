@@ -14,9 +14,6 @@ Plug 'caenrique/nvim-maximize-window-toggle'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jeetsukumaran/vim-pythonsense'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" required by lualine to display icons in the statusline
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kylechui/nvim-surround'
 Plug 'ludovicchabant/vim-gutentags'
@@ -26,7 +23,9 @@ Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mhinz/vim-startify'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -61,7 +60,7 @@ endfor
 lua <<EOF
 require('lualine').setup({
     options = {
-        extensions = { 'fugitive', 'fzf', 'quickfix' }
+        extensions = { 'fugitive', 'quickfix' }
     }
 })
 require("mason").setup()
@@ -86,13 +85,11 @@ local on_attach = function(client, bufnr)
   local opts = { noremap=true, silent=true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 end
 
+-- FIXME: is this covered by Mason?
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'pyright', 'rust_analyzer', 'tsserver' }

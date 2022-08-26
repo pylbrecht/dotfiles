@@ -26,14 +26,17 @@ nnoremap <C-H> <C-W><C-H>
 vnoremap < <gv
 vnoremap > >gv
 
-" fzf mappings
-map <Leader>f :GFiles!<Cr>
-map <Leader>F :Files!<Cr>
-map <Leader>b :Buffers!<Cr>
-map <Leader>/ :Rg!<Cr>
-map <Leader>t :Tags!<Cr>
-map <Leader>c :BCommits!<Cr>
-map <Leader>C :Commits!<Cr>
+" telescope mappings
+map <Leader>f :Telescope git_files<Cr>
+map <Leader>F :Telescope find_files<Cr>
+map <Leader>b :Telescope buffers<Cr>
+map <Leader>/ :Telescope live_grep<Cr>
+map <Leader>g :Telescope grep_string<Cr>
+map <Leader>t :Telescope tags<Cr>
+nnoremap gr :Telescope lsp_references<Cr>
+nnoremap gd :Telescope lsp_definitions<Cr>
+nnoremap q: :Telescope command_history<Cr>
+nnoremap q/ :Telescope search_history<Cr>
 
 nnoremap <Leader>o :ToggleOnly<cr>
 
