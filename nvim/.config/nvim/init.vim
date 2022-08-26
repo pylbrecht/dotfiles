@@ -68,6 +68,16 @@ require("mason-lspconfig").setup({
     automatic_installation = true
 })
 require("nvim-surround").setup()
+require("telescope").setup({
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-j>"] = "move_selection_next",
+                ["<C-k>"] = "move_selection_previous",
+            }
+        }
+    }
+})
 
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local nvim_lsp = require('lspconfig')
