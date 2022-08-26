@@ -106,16 +106,3 @@ EOF
 " Fix weird resizing issue when running 'alacritty --command nvim'
 " https://github.com/neovim/neovim/issues/11330#issuecomment-723667383
 autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
-
-" https://waylonwalker.com/pyflyby/#nvim-pyflyby-setup
-function! s:PyPostSave()
-    execute "silent !tidy-imports --unalign --quiet --replace-star-imports --replace " . bufname("%")
-    execute "e"
-endfunction
-
-:command! PyPostSave :call s:PyPostSave()
-
-augroup py
-    autocmd!
-    autocmd bufwritepost *.py execute 'PyPostSave'
-augroup end
