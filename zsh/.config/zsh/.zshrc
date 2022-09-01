@@ -52,3 +52,8 @@ if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     fi
     exec tmux attach-session -d -t "${USER}" >/dev/null 2>&1
 fi
+
+# Use lfcd if available for changing directories more conveniently
+if [ -x "$(command -v lf)" ] && [ -f "/usr/share/lf/lfcd.sh" ] ; then
+    source /usr/share/lf/lfcd.sh
+fi
