@@ -71,8 +71,7 @@ bindsym $mod+Shift+l move right
 bindsym $mod+Shift+s move scratchpad
 
 # split in vertical orientation
-bindsym $mod+v split vertical
-bindsym $mod+Shift+v split horizontal
+bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -173,7 +172,8 @@ workspace $ws9 output $secondary
 workspace $ws10 output $secondary
 
 # Set all windows' borders to 1 pixel
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
+hide_edge_borders smart
 
 # default floating for certain apps
 for_window [class="Pavucontrol"] floating enable
