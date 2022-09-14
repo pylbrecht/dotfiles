@@ -42,6 +42,6 @@ if type pyenv &> /dev/null ; then
 fi
 
 # Use lfcd if available for changing directories more conveniently
-if [ -x "$(command -v lf)" ] && [ -f "/usr/share/lf/lfcd.sh" ] ; then
-    source /usr/share/lf/lfcd.sh
+if [ -x "$(command -v lf)" ] && [ -f "/usr/share/lf-git/lfcd.sh" ] ; then
+    source /usr/share/lf-git/lfcd.sh
 fi
