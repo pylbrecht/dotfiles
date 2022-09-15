@@ -10,6 +10,8 @@ export K9S_EDITOR=nvim
 export KUBE_EDITOR=nvim
 export BROWSER=qutebrowser
 
+export BATTERY=`ls /sys/class/power_supply | grep BAT`
+
 VIM=$HOME/.vim
 TERM='xterm-256color'
 
