@@ -11,6 +11,7 @@ export KUBE_EDITOR=nvim
 export BROWSER=qutebrowser
 
 export BATTERY=`ls /sys/class/power_supply | grep BAT`
+export WIFI_DEVICE=`iw dev | awk '$1=="Interface"{print $2}'`
 
 VIM=$HOME/.vim
 TERM='xterm-256color'
