@@ -24,7 +24,13 @@ alias gca!='git commit -v -a --amend'
 alias gcan!='git commit -v -a --no-edit --amend'
 alias gcb='git checkout -b'
 alias gcf='git commit -v --fixup'
-alias gcl='git clone --recurse-submodules'
+
+_git_clone_from_arg_or_clipboard () {
+    local REPO_URL=$(xclip -o)
+    git clone --recurse-submodules ${1:-$REPO_URL}
+}
+alias gcl='_git_clone_from_arg_or_clipboard'
+
 alias gclean='git clean -id'
 alias gcm='git checkout master'
 alias gcd='git checkout develop'
