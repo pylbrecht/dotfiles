@@ -3,167 +3,101 @@
 import argparse
 import json
 import os
-import pathlib
 import subprocess
-import time
 
 from abc import ABC, abstractmethod
-from typing import NamedTuple
-from multiprocessing import Process
 
 
-def _parsed_query(string):
-    try:
-        path = pathlib.Path(string)
-        if path.exists():
-            return path.read_text()
-    except OSError:
+class IVault:
+    @abstractmethod
+    def get(self, key: str) -> dict:
         pass
 
-    return string
 
+class OnePasswordVault(IVault):
+    def __init__(self):
+        # FIXME: hardcoded token env var
+        self.session_token = (
+            os.environ.get("OP_SESSION_momox", None) or self._retrieve_session_token()
+        )
 
-class Credentials(NamedTuple):
-    database: str
-    username: str
-    password: str
-    server: str
+    def _retrieve_session_token(self):
+        # FIXME: hardcoded account
+        op = subprocess.run(
+            ["op", "signin", "--account", "momox", "--raw"], capture_output=True
+        )
+        return op.stdout.decode().strip()
 
+    def get(self, key: str, fields) -> dict:
+        op = subprocess.run(
+            [
+                "op",
+                "--session",
+                self.session_token,
+                "item",
+                "get",
+                key,
+                "--format",
+                "json",
+                "--fields",
+                ",".join(fields),
+            ],
+            capture_output=True,
+        )
 
-def get_credentials(db, read_only=False):
-    if db == 'lesemops':
-        item_name = 'lesemops live'
-    elif db == 'prototype-adapter':
-        item_name = 'prototype-adapter'
-        # we only have credentials for read-only here
-        args.read_only = True
-    elif db == 'storage-service':
-        item_name = 'storage-service live'
-    else:
-        raise SystemExit(f'unknown database: {db}')
+        if op.returncode != 0:
+            raise SystemExit(op.stderr.decode().strip())
 
-    if read_only:
-        item_name += ' READ-ONLY'
+        payload = json.loads(op.stdout)
 
-    op = subprocess.run(['op', 'get', 'item', item_name, '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
-
-    if op.returncode != 0:
-        raise SystemExit(op.stderr.decode().strip())
-
-    attrs = json.loads(op.stdout)
-
-    return Credentials(
-        server=attrs['server'],
-        database=attrs['database'],
-        username=attrs['username'],
-        password=attrs['password'],
-    )
+        # this relies on the order of fields returned by op being
+        # the same as the order of fields we passed via --fields
+        return {field: item["value"] for field, item in zip(fields, payload)}
 
 
 class IConnection(ABC):
-    def __init__(self, creds):
-        self._server = creds.server
-        self._database = creds.database
-        self._username = creds.username
-        self._password = creds.password
-
     @abstractmethod
     def shell(self):
         pass
 
 
-class MySQLConnection(IConnection):
-    def shell(self):
-        mysql_args = [
-            '/usr/bin/mysql',
-            f'--host={self._server}',
-            f'--user={self._username}',
-            f'--password={self._password}',
-            f'--database={self._database}',
-        ]
-
-        subprocess.run(mysql_args)
-
-    def query(self, query):
-        mysql_args = [
-            '/usr/bin/mysql',
-            f'--host={self._server}',
-            f'--user={self._username}',
-            f'--password={self._password}',
-            f'--database={self._database}',
-        ]
-        subprocess.run(mysql_args, input=query.encode())
-
-
 class CloudSQLProxyConnection(IConnection):
+    def __init__(self, username, password, database, project, instance):
+        self._username = username
+        self._password = password
+        self._database = database
+        self._project = project
+        self._instance = instance
+
     def shell(self):
-        port = 8888
-        project = 'momox-fs'
-        zone = 'europe-west3'
-        instance = 'fashion-2'
-        socket = '/tmp/cloud_sql_proxy'
-        connection_name = f'{project}:{zone}:{instance}=unix:{instance}'
-
-        if not os.path.exists(socket):
-            os.mkdir(socket)
-
-        args = [
-            'cloud_sql_proxy',
-            f'-instances={connection_name}',
-            f'-dir={socket}'
-        ]
-        cloud_sql_proxy = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-        # FIXME
-        time.sleep(5)
+        # this relies on cloud_sql_proxy already running with `-dir=/tmp/cloud_sql_proxy`
+        socket = f"/tmp/cloud_sql_proxy/{self._project}/{self._instance}"
 
         mysql_args = [
-            '/usr/bin/mysql',
-            f'--socket={socket}/{instance}',
-            f'--user={self._username}',
-            f'--password={self._password}',
-            f'--database={self._database}',
+            "/usr/bin/mysql",
+            f"--socket={socket}",
+            f"--user={self._username}",
+            f"--password={self._password}",
+            f"--database={self._database}",
         ]
+
         subprocess.run(mysql_args)
-        cloud_sql_proxy.terminate()
-
-    def query(self, query):
-        raise NotImplementedError
-
-
-def create_connection(creds):
-    if creds.database == 'storage_service':
-        return CloudSQLProxyConnection(creds)
-    return MySQLConnection(creds)
-
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('database', choices=('lesemops', 'prototype-adapter', 'storage-service'))
-    parser.add_argument('-ro' ,'--read-only', action='store_true', dest='read_only')
-    parser.add_argument('-q' ,'--query', type=_parsed_query, dest='query')
+    parser.add_argument("database", choices=("storage-service"))
+    parser.add_argument("-s", "--stage", action="store_true", dest="stage")
 
     return parser.parse_args()
 
 
-def _retrieve_session_token():
-        op = subprocess.run(['op', 'signin', 'momox', '--raw'], capture_output=True)
-        return op.stdout.decode().strip()
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     args = parse_args()
 
-    # FIXME: hardcoded token env var
-    session_token = os.environ.get('OP_SESSION_momox', None) or _retrieve_session_token()
+    fields = ["username", "password", "instance", "project", "database"]
+    creds = OnePasswordVault().get(args.database, fields)
 
-    creds = get_credentials(args.database, args.read_only)
-
-    connection = create_connection(creds)
-
-    if args.query:
-        connection.query(args.query)
-    else:
-        connection.shell()
+    connection = CloudSQLProxyConnection(**creds)
+    connection.shell()
