@@ -7,9 +7,6 @@ radius = 2
 border-bottom-size = 2
 border-bottom-color = #00000000
 
-line-size = 2
-
 override-redirect = false
-wm-restack = i3
 
 background = #00000000

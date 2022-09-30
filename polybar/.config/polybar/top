@@ -2,39 +2,24 @@ bottom = false
 fixed-center = true
 width = 100%
 height = 30
-radius = 2
 
-border-bottom-size = 0
-border-bottom-color = ${colors.nord10}
-
-line-size = 2
+border-bottom-size = 2
+border-bottom-color = ${colors.nord9}
 
 override-redirect = false
-wm-restack = i3
 
-font-0 = RobotoMono Nerd Font:size=11:style=Regular;3
-font-1 = Sauce Code Pro Nerd Font:size=16:weight=bold;3
-font-2 = Sauce Code Pro Nerd Font:size=13;3
-font-3 = RobotoMono Nerd Font:size=8:syle=Regular;8
+font-0 = RobotoMono Nerd Font:size=11:style=Regular;1
+font-1 = Sauce Code Pro Nerd Font:size=13;3
+font-2 = Hack Nerd Font Mono:size=27:weight=Regular;6
 
 background = ${colors.nord0}
-foreground = ${colors.nord6}
-
-background-0 = ${colors.nord1}
-background-1 = ${colors.nord0}
-background-2 = ${colors.nord0}
-background-3 = ${colors.nord1}
-
-border-size =
-border-color =
+foreground = ${colors.nord4}
 
 padding = 0
 module-margin = 0
 
-modules-left = arch-logo spacer i3
+modules-left = arch-logo separator-left spacer-lg i3
 modules-center = date
-modules-right = wired-network wireless-network battery
-
-separator =
+modules-right = wired-network wireless-network battery spacer separator-right bg-fill
 
 tray-position = none
