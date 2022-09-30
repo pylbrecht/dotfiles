@@ -19,6 +19,7 @@ floating_modifier $mod
 
 include workspaces.conf
 include bindings.conf
+include colors.conf
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -26,7 +27,6 @@ font pango:DejaVu Sans Mono Nerd Font 11
 
 # Set all windows' borders to 1 pixel
 for_window [class=".*"] border pixel 2
-hide_edge_borders smart
 
 # default floating for certain apps
 for_window [class="Pavucontrol"] floating enable
@@ -34,9 +34,6 @@ for_window [class="Pavucontrol"] floating enable
 # Gaps
 smart_gaps inverse_outer
 gaps inner 10
-
-# make space for top bar
-gaps top 5
 
 # put my notes into the scratchpad on startup
 exec --no-startup-id alacritty --class AlacrittyNotes,AlacrittyNotes --command nvim +VimwikiIndex
