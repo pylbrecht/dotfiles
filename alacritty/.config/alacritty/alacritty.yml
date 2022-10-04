@@ -17,6 +17,9 @@ font:
 
   size: 8.5
 
+mouse:
+  hide_when_typing: true
+
 window:
   padding:
     x: 8
