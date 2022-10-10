@@ -1,0 +1,5 @@
+#compdef db
+
+_arguments \
+    '1:project:(storage-service)' \
+    {-s,--stage}'[connect to stage database]'

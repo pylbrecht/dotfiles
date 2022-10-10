@@ -6,6 +6,9 @@ setopt globdots
 unsetopt CORRECT
 unsetopt CORRECT_ALL
 
+# completions
+fpath=($ZDOTDIR/completions $fpath)
+
 autoload -Uz compinit && compinit
 setopt menu_complete
 
