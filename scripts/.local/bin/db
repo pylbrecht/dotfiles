@@ -87,7 +87,7 @@ class CloudSQLProxyConnection(IConnection):
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("database", choices=("storage-service"))
+    parser.add_argument("database", choices=("storage-service", "prototype-adapter"))
     parser.add_argument("-s", "--stage", action="store_true", dest="stage")
 
     return parser.parse_args()
