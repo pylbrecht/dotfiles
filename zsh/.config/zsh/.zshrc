@@ -15,6 +15,9 @@ setopt menu_complete
 # use menu selection
 zstyle ':completion*:default' menu 'select=0'
 
+# show commits first when completing git rebase
+zstyle ':completion:*:complete:git-rebase:*argument-*:' tag-order 'commit-objects'
+
 # use the vi navigation keys in menu completion
 zmodload zsh/complist
 
