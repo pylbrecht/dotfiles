@@ -18,6 +18,10 @@ zstyle ':completion*:default' menu 'select=0'
 # show commits first when completing git rebase
 zstyle ':completion:*:complete:git-rebase:*argument-*:' tag-order 'commit-objects'
 
+# colorize commit completion output, example:
+# d60641c  -- [HEAD^]   Alacritty: hide mouse when typing (13 days ago)
+zstyle ':completion:*:complete:git*:commit*' list-colors '=(#b)([[:xdigit:]]*)  -- \[(*)\] * ([[:punct:]]*[[:punct:]])=37=33=31=32'
+
 # use the vi navigation keys in menu completion
 zmodload zsh/complist
 
