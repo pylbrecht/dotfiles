@@ -7,6 +7,7 @@ bindkey '^n' history-search-forward
 bindkey '^p' history-search-backward
 bindkey '^r' history-incremental-search-backward
 bindkey '^s' history-incremental-search-forward
+bindkey '^x^h' _complete_help
 bindkey '^w' backward-kill-word
 bindkey -M menuselect '\C-o' accept-and-menu-complete
 bindkey -M menuselect '\e' accept-line
