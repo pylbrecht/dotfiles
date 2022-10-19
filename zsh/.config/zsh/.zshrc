@@ -1,4 +1,5 @@
 setopt no_case_glob
+setopt extendedglob
 setopt auto_cd
 setopt menu_complete
 setopt globdots
