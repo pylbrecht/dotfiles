@@ -10,6 +10,8 @@ nnoremap Q @@
 
 " yank current buffer's file name to system clipboard
 nnoremap <Leader>yf :let @+ = expand("%")<Cr>
+vnoremap <Leader>j :!jq<cr>
+nnoremap <Leader>j :%!jq<cr>
 
 " Stolen from https://www.destroyallsoftware.com/screencasts/catalog/file-navigation-in-vim
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
