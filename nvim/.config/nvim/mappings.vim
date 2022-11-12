@@ -7,6 +7,10 @@ nnoremap H ^
 onoremap H ^
 vnoremap H ^
 nnoremap Q @@
+cnoreabbrev Q q
+cnoreabbrev W w
+cnoreabbrev Wq wq
+cnoreabbrev Qa qa
 
 " yank current buffer's file name to system clipboard
 nnoremap <Leader>yf :let @+ = expand("%")<Cr>
