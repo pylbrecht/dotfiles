@@ -12,6 +12,10 @@ cnoreabbrev W w
 cnoreabbrev Wq wq
 cnoreabbrev Qa qa
 
+" insert the contents of a register literally and don't auto-indent
+" :h i_CTRL-R_CTRL-O
+inoremap <C-r> <C-r><C-o>
+
 " yank current buffer's file name to system clipboard
 nnoremap <Leader>yf :let @+ = expand("%")<Cr>
 vnoremap <Leader>j :!jq<cr>
