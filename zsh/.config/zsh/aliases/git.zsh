@@ -41,6 +41,8 @@ alias gcpa='git cherry-pick --abort'
 alias gcpc='git cherry-pick --continue'
 
 alias gd='git diff'
+# list files with merge conflicts
+alias gdu='git diff --name-only --diff-filter=U'
 alias gds='git diff --staged'
 
 alias gf='git fetch'
