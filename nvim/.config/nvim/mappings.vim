@@ -1,17 +1,6 @@
 " map leader to SPACE
 let mapleader = " "
 
-" mappings to make my life easier
-nnoremap Y y$
-nnoremap H ^
-onoremap H ^
-vnoremap H ^
-nnoremap Q @@
-cnoreabbrev Q q
-cnoreabbrev W w
-cnoreabbrev Wq wq
-cnoreabbrev Qa qa
-
 " insert the contents of a register literally and don't auto-indent
 " :h i_CTRL-R_CTRL-O
 inoremap <C-r> <C-r><C-o>

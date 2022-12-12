@@ -58,6 +58,10 @@ for f in g:config_file_list
 endfor
 
 lua <<EOF
+-- personal stuff
+require("mappings")
+
+-- plugins
 require('lualine').setup({
     options = {
         extensions = { 'fugitive', 'quickfix' }
