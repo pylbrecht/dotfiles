@@ -47,6 +47,8 @@ Plug 'yuezk/vim-js'
 
 call plug#end()
 
+let g:python3_host_prog = "~/.pyenv/versions/neovim/bin/python"
+
 let g:nvim_config_root = stdpath('config')
 let g:config_file_list = ['general.vim',
     \ 'mappings.vim',
