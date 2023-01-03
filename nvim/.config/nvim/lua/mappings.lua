@@ -13,6 +13,11 @@ vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<cr>", {})
 
+-- vim-test
+vim.api.nvim_set_keymap("n", "<leader>tt", ":TestNearest<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>ta", ":TestFile<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>tl", ":TestLast<cr>", {})
+
 -- I am not a good typist
 vim.cmd([[
 	cnoreabbrev Q q
