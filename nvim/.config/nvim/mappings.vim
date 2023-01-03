@@ -29,7 +29,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 " telescope mappings
-map <Leader>f :Telescope git_files<Cr>
 map <Leader>F :Telescope find_files<Cr>
 map <Leader>b :Telescope buffers<Cr>
 map <Leader>/ :Telescope live_grep<Cr>

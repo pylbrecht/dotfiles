@@ -8,6 +8,11 @@ vim.api.nvim_set_keymap("v", "H", "^", {})
 
 vim.api.nvim_set_keymap("n", "Q", "@@", {})
 
+-- Git
+vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<cr>", {})
+
 -- I am not a good typist
 vim.cmd([[
 	cnoreabbrev Q q
