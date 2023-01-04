@@ -1,6 +1,10 @@
 session_name: dotfiles
-start_directory: '~/.dotfiles'
 windows:
 - window_name: dotfiles
+  start_directory: '~/.dotfiles'
   panes:
     - nvim
+- window_name: qmk
+  start_directory: '~/projects/qmk_firmware'
+  panes:
+    - pyenv activate qmk
