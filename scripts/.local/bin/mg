@@ -35,17 +35,23 @@ if __name__ == '__main__':
     if args.read_only:
         item_name += ' READ-ONLY'
 
-    op = subprocess.run(['op', 'get', 'item', item_name, '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
+    op = subprocess.run(['op', 'item', 'get', item_name, '--format', 'json', '--session', session_token, '--fields', 'username,password,server,database'], capture_output=True)
 
     if op.returncode != 0:
         raise SystemExit(op.stderr.decode().strip())
 
-    attrs = json.loads(op.stdout)
+    attrs = json.loads(op.stdout.decode())
 
-    username = attrs['username']
-    password = attrs['password']
-    server = attrs['server']
-    database = attrs['database']
+    for attr in attrs:
+        if attr['label'] == 'username':
+            username = attr['value']
+        elif attr['label'] == 'password':
+            password = attr['value']
+        elif attr['label'] == 'database':
+            database = attr['value']
+
+    # An SSH tunnel port-forwarding to the GCE instance must be running
+    server = "localhost:27017"
 
     uri = f"mongodb://{username}:{password}@{server}/{database}"
 
