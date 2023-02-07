@@ -3,6 +3,8 @@ fixed-center = true
 width = 100%
 height = 30
 
+enable-ipc = true
+
 border-bottom-size = 2
 border-bottom-color = ${colors.nord9}
 
@@ -20,6 +22,6 @@ module-margin = 0
 
 modules-left = arch-logo separator-left spacer-lg i3
 modules-center = date
-modules-right = wired-network wireless-network battery spacer separator-right bg-fill
+modules-right = dunst wired-network wireless-network battery spacer separator-right bg-fill
 
 tray-position = none
