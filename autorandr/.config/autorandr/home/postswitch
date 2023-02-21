@@ -1,4 +1,0 @@
-#!/bin/sh
-
-xrandr --output HDMI-1 --primary
-i3-msg 'restart'

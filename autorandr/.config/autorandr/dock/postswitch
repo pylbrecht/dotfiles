@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-xrandr --output DP-1-2 --primary
-xrandr --output DP-1-3 --right-of DP-1-2
-xrandr --output eDP-1 --off
-i3-msg 'restart'
-
-xmodmap $HOME/.Xmodmap
-feh --bg-fill ~/Pictures/wallpapers/lazy-bird-minimalist-wallpaper-dark.png
