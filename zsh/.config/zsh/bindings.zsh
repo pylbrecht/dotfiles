@@ -20,3 +20,8 @@ bindkey -M menuselect 'q' send-break
 bindkey -M vicmd '\C-o' accept-line-and-down-history
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M vicmd '^r' history-incremental-search-backward
+
+_tmux-sessionizer() tmux-sessionizer
+zle -N _tmux-sessionizer
+bindkey '^g' _tmux-sessionizer
+
