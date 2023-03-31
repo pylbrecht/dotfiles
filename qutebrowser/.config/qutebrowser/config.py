@@ -23,3 +23,7 @@ config.bind(",vp", "spawn --userscript qute-bitwarden --password-only --auto-loc
 
 # nord theme
 config.source(str(config.configdir / 'themes/nord/nord-qutebrowser.py'))
+
+# open jira tickets by id
+c.url.searchengines["jira"] = "https://momox.atlassian.net/browse/LFNEW-{}"
+config.bind(",jt", "set-cmd-text -s :open -t jira")
