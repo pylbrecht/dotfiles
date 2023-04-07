@@ -4,9 +4,6 @@
 [submodule "i3blocks-pomodoro"]
 	path = i3blocks-pomodoro
 	url = https://github.com/rkashapov/i3blocks-pomodoro
-[submodule "i3blocks/.config/i3blocks/blocklets/pomodoro"]
-	path = i3blocks/.config/i3blocks/blocklets/pomodoro
-	url = https://github.com/rkashapov/i3blocks-pomodoro
 [submodule "momox"]
 	path = momox
 	url = git@gitlab.bof.mm.local:palbrecht/dotfiles.git
