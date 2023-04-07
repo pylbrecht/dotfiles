@@ -41,6 +41,12 @@ done
 
 source $ZDOTDIR/bindings.zsh
 
+if [ -d "$HOME/.config/momox" ] ; then
+    for file in $HOME/.config/momox/**/*.zsh ; do
+        source $file
+    done
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
 
