@@ -8,6 +8,9 @@ vim.api.nvim_set_keymap("v", "H", "^", {})
 
 vim.api.nvim_set_keymap("n", "Q", "@@", {})
 
+-- general
+vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<cr>", {})
+
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
