@@ -5,7 +5,7 @@ c.content.blocking.method = "both"
 c.editor.command = ["alacritty", "--command", "nvim", "{file}", "-c", "normal {line}G{column0}l"]
 c.tabs.padding = {'bottom': 4, 'left': 5, 'right': 5, 'top': 4}
 c.tabs.indicator.padding = {'bottom': 0, 'left': 0, 'right': 4, 'top': 0}
-c.tabs.select_on_remove = 'last-used'
+c.tabs.select_on_remove = 'prev'
 c.tabs.title.format = '{audio}{relative_index}: {current_title}'
 c.tabs.max_width = 500
 
