@@ -27,3 +27,11 @@ config.source(str(config.configdir / 'themes/nord/nord-qutebrowser.py'))
 # open jira tickets by id
 c.url.searchengines["jira"] = "https://momox.atlassian.net/browse/LFNEW-{}"
 config.bind(",jt", "set-cmd-text -s :open -t jira")
+
+# make "click to copy link" work
+can_access_clipboard = (
+    "https://*.atlassian.net/*",
+    "https://github.com/*",
+)
+for url_pattern in can_access_clipboard:
+    config.set('content.javascript.can_access_clipboard', True, url_pattern)
