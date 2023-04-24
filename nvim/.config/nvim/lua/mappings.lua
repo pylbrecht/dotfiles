@@ -15,6 +15,9 @@ vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gw", ":Gwrite<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gr", ":Gread<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gc", ":G commit --verbose<cr>", {})
 
 -- vim-test
 vim.api.nvim_set_keymap("n", "<leader>tt", ":TestNearest<cr>", {})
