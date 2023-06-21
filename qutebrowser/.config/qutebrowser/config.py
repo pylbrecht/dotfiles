@@ -27,6 +27,7 @@ config.source(str(config.configdir / 'themes/nord/nord-qutebrowser.py'))
 # open jira tickets by id
 c.url.searchengines["jira"] = "https://momox.atlassian.net/browse/LFNEW-{}"
 config.bind(",jt", "set-cmd-text -s :open -t jira")
+c.url.searchengines["DEFAULT"] = "https://kagi.com/search?q={}"
 
 # make "click to copy link" work
 can_access_clipboard = (
