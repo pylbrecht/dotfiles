@@ -9,6 +9,7 @@ export EDITOR=nvim
 export K9S_EDITOR=nvim
 export KUBE_EDITOR=nvim
 export BROWSER=qutebrowser
+export QUTE_QT_WRAPPER=PyQt6
 
 export BATTERY=`ls /sys/class/power_supply | grep BAT`
 export WIFI_DEVICE=`iw dev | awk '$1=="Interface"{print $2}'`
