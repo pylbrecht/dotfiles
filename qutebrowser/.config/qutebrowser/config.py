@@ -35,4 +35,4 @@ can_access_clipboard = (
     "https://github.com/*",
 )
 for url_pattern in can_access_clipboard:
-    config.set('content.javascript.can_access_clipboard', True, url_pattern)
+    config.set('content.javascript.clipboard', 'access', url_pattern)
