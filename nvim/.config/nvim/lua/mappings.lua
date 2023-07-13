@@ -10,6 +10,8 @@ vim.api.nvim_set_keymap("n", "Q", "@@", {})
 
 -- general
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>/", ":Telescope live_grep<cr>", {})
 
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
