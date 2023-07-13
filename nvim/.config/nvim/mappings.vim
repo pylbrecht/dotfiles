@@ -34,8 +34,6 @@ map <Leader>b :Telescope buffers<Cr>
 map <Leader>/ :Telescope live_grep<Cr>
 map <Leader>g :Telescope grep_string<Cr>
 map <Leader>t :Telescope tags<Cr>
-nnoremap gr :Telescope lsp_references<Cr>
-nnoremap gd :Telescope lsp_definitions<Cr>
 nnoremap q: :Telescope command_history<Cr>
 nnoremap q/ :Telescope search_history<Cr>
 

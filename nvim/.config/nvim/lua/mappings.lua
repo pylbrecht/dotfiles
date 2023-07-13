@@ -19,6 +19,11 @@ vim.api.nvim_set_keymap("n", "<leader>gw", ":Gwrite<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gr", ":Gread<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gc", ":G commit --verbose<cr>", {})
 
+-- LSP
+vim.api.nvim_set_keymap("n", "<leader>ld", ":Telescope lsp_definitions<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>lr", ":Telescope lsp_references<cr>", {})
+
+
 -- vim-test
 vim.api.nvim_set_keymap("n", "<leader>tt", ":TestNearest<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>ta", ":TestFile<cr>", {})
