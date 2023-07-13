@@ -82,6 +82,11 @@ require("telescope").setup({
                 ["<C-k>"] = "move_selection_previous",
             }
         }
+    },
+    pickers = {
+        lsp_references = {
+            show_line = false,
+        }
     }
 })
 
