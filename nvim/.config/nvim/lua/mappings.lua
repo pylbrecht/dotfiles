@@ -15,6 +15,7 @@ vim.api.nvim_set_keymap("n", "<leader>/", ":Telescope live_grep<cr>", {})
 
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gl", ":tab Git log<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gw", ":Gwrite<cr>", {})
