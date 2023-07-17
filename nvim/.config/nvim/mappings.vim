@@ -29,8 +29,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 " telescope mappings
-map <Leader>g :Telescope grep_string<Cr>
-map <Leader>t :Telescope tags<Cr>
 nnoremap q: :Telescope command_history<Cr>
 nnoremap q/ :Telescope search_history<Cr>
 
