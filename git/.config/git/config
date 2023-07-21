@@ -1,7 +1,19 @@
 [core]
     exludesfiles=$HOME/.config/git/.gitignore
     editor=nvim
-    pager="bat --style=changes"
+    pager="delta"
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    line-numbers = true
+    map-styles = bold purple => syntax magenta, bold cyan => syntax blue
+
+[diff]
+    colorMoved = default
 
 [pull]
     rebase=true
