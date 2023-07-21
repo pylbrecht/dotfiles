@@ -24,5 +24,5 @@ PYFLYBY_PATH=~/.config/pyflyby/.pyflyby:-
 
 
 if type bat &> /dev/null ; then
-    export PAGER="bat"
+    export PAGER="bat --style=plain"
 fi
