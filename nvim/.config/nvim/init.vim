@@ -68,6 +68,7 @@ require('nvim-treesitter.configs').setup({
     highlight = { enable = true },
     sync_install = false,
     ensure_installed = {
+        "c",
         "python",
         "rust",
     },
