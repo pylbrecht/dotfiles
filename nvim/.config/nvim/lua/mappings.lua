@@ -12,6 +12,9 @@ vim.api.nvim_set_keymap("n", "Q", "@@", {})
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>/", ":Telescope live_grep<cr>", {})
+vim.api.nvim_set_keymap("n", "]b", ":bnext<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "[b", ":bprevious<cr>", { silent = true })
+
 
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
