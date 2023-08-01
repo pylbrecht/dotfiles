@@ -1,5 +1,5 @@
 [core]
-    excludesfile=$HOME/.config/git/.gitignore
+    excludesfile=~/.config/git/.gitignore
     editor=nvim
     pager="delta"
 
