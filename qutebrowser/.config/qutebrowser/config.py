@@ -32,6 +32,7 @@ config.bind(",jt", "set-cmd-text -s :open -t jira")
 c.url.searchengines["DEFAULT"] = "https://kagi.com/search?q={}"
 c.url.searchengines["imdb"] = "https://www.imdb.com/find/?s=all&q={}"
 c.url.searchengines["py"] = "https://docs.python.org/3/search.html?q={}"
+c.url.searchengines["dict"] = "https://www.dict.cc/?s={}"
 
 # make "click to copy link" work
 can_access_clipboard = (
