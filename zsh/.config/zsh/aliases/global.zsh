@@ -4,6 +4,7 @@ alias -g LC='--color=always | less -r'
 alias -g C=' | xclip -selection clipboard'
 alias -g X=' | xargs'
 alias -g F=' | fzf'
+alias -g BP=' | steck paste -'
 
 # taken from zsh-lovers
 alias -g ...='../..'
