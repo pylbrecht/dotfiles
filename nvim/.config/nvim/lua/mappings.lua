@@ -5,6 +5,10 @@ vim.api.nvim_set_keymap("n", "Y", "y$", {})
 vim.api.nvim_set_keymap("n", "H", "^", {})
 vim.api.nvim_set_keymap("o", "H", "^", {})
 vim.api.nvim_set_keymap("v", "H", "^", {})
+-- L is easier to type than $
+vim.api.nvim_set_keymap("n", "L", "$", {})
+vim.api.nvim_set_keymap("o", "L", "$", {})
+vim.api.nvim_set_keymap("v", "L", "$", {})
 
 vim.api.nvim_set_keymap("n", "Q", "@@", {})
 
