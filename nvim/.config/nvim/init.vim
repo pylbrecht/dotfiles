@@ -141,6 +141,9 @@ require("mason-lspconfig").setup({
 require("nvim-surround").setup()
 require("telescope").setup({
     defaults = {
+        layout_config = {
+            horizontal = { width = 0.99, height = 0.99 }
+        },
         mappings = {
             i = {
                 ["<C-j>"] = "move_selection_next",
