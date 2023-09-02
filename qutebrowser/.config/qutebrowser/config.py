@@ -21,6 +21,9 @@ config.bind(",M", "hint links spawn mpv {hint-url}")
 config.bind(",vv", "spawn --userscript qute-bitwarden --auto-lock 300")
 config.bind(",vp", "spawn --userscript qute-bitwarden --password-only --auto-lock 300")
 
+# 1password auto-fill
+config.bind(",op", "spawn --userscript qute-1pass")
+
 # nord theme
 config.source(str(config.configdir / 'themes/nord/nord-qutebrowser.py'))
 
