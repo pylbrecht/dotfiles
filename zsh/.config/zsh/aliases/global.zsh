@@ -1,7 +1,13 @@
 alias -g V=' | xargs nvim'
 alias -g L=' | less'
 alias -g LC='--color=always | less -r'
-alias -g C=' | xclip -selection clipboard'
+
+if [[ `uname` == "Darwin" ]] ; then
+    alias -g C=' | pbcopy'
+else
+    alias -g C=' | xclip -selection clipboard'
+fi
+
 alias -g X=' | xargs'
 alias -g F=' | fzf'
 alias -g BP=' | steck paste -'
