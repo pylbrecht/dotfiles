@@ -13,6 +13,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'caenrique/nvim-maximize-window-toggle'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'github/copilot.vim'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kylechui/nvim-surround'
