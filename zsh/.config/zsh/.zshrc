@@ -10,6 +10,11 @@ unsetopt CORRECT_ALL
 # completions
 fpath=($ZDOTDIR/completions $fpath)
 
+# homebrew completions
+if [[ `uname` == 'Darwin' ]] ; then
+    fpath=(/opt/homebrew/share/zsh/site-functions/ $fpath)
+fi
+
 autoload -Uz compinit && compinit
 setopt menu_complete
 
