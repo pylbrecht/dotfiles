@@ -37,10 +37,6 @@ vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<cr>", {})
 vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<cr>", {})
 
 
--- auto-session / session-lens
-vim.api.nvim_set_keymap("n", "<leader>ss", ":Telescope session-lens search_session<cr>", {})
-
-
 -- vim-test
 vim.api.nvim_set_keymap("n", "<leader>tt", ":TestNearest<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>ta", ":TestFile<cr>", {})

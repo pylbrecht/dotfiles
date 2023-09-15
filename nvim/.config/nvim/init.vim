@@ -29,8 +29,6 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-Plug 'rmagatti/auto-session'
-Plug 'rmagatti/session-lens'
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-abolish'
@@ -158,18 +156,6 @@ require("telescope").setup({
         }
     }
 })
-
-require("auto-session").setup {
-  bypass_session_save_file_types = nil, -- table: Bypass auto save when only buffer open is one of these file types
-  cwd_change_handling = { -- table: Config for handling the DirChangePre and DirChanged autocmds, can be set to nil to disable altogether
-    restore_upcoming_session = true, -- boolean: restore session for upcoming cwd on cwd change
-    pre_cwd_changed_hook = nil, -- function: This is called after auto_session code runs for the `DirChangedPre` autocmd
-    post_cwd_changed_hook = nil, -- function: This is called after auto_session code runs for the `DirChanged` autocmd
-  },
-}
-require('session-lens').setup {
-    path_display={'shorten'},
-}
 
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local nvim_lsp = require('lspconfig')
