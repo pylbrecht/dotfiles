@@ -12,6 +12,9 @@ vim.api.nvim_set_keymap("v", "L", "$", {})
 
 vim.api.nvim_set_keymap("n", "Q", "@@", {})
 
+-- toggle relativenumber (helpful during pairing)
+vim.api.nvim_set_keymap("n", "<leader><leader>rn", ":setl relativenumber!<cr>", { silent = true })
+
 -- general
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<cr>", {})
