@@ -1,5 +1,5 @@
 config.load_autoconfig(True)
-c.content.blocking.whitelist = ["http://sentry.os.mm.local/solaris"]
+c.content.blocking.whitelist = ["https://app.datadoghq.eu/account/saml/assertion"]
 c.content.blocking.method = "both"
 
 c.editor.command = ["alacritty", "--command", "nvim", "{file}", "-c", "normal {line}G{column0}l"]
