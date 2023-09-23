@@ -174,3 +174,6 @@ cmd + shift - 0 : yabai -m window --space 10
 cmd - f : yabai -m window --toggle zoom-fullscreen
 cmd - return : open -n /Applications/Alacritty.app
 cmd - b : yabai -m space --focus recent
+cmd - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')
+cmd - n : yabai -m window --focus stack.next
+cmd - p : yabai -m window --focus stack.prev
