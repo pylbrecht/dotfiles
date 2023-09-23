@@ -114,14 +114,6 @@ require('nvim-treesitter.configs').setup({
 				["[L"] = { query = "@loop.outer", desc = "go to end of previous loop" },
       }
 		},
-		lsp_interop = {
-			enable = true,
-			border = "rounded",
-			peek_definition_code = {
-				["gp"] = { query = "@function.outer", desc = "peek function definition" },
-				["gcp"] = { query = "@class.outer", desc = "peek class definition" },
-			},
-		},
 	},
 })
 
