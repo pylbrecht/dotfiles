@@ -21,6 +21,8 @@ vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>/", ":Telescope live_grep<cr>", {})
 vim.api.nvim_set_keymap("n", "]b", ":bnext<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "[b", ":bprevious<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "]c", ":cnext<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "[c", ":cprevious<cr>", { silent = true })
 
 
 -- Git
