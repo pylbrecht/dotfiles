@@ -10,3 +10,6 @@
 [submodule "qutebrowser/.config/qutebrowser/themes/nord"]
 	path = qutebrowser/.config/qutebrowser/themes/nord
 	url = git@github.com:Linuus/nord-qutebrowser.git
+[submodule "fzf/.config/fzf/fzf-tab"]
+	path = fzf/.config/fzf/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab

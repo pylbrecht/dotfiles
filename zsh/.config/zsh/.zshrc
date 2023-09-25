@@ -34,6 +34,9 @@ zmodload zsh/complist
 # case insensitive, partial completion
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
 
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+
 # source plugins
 for plugin in $ZDOTDIR/plugins/*.zsh ; do
     source $plugin
@@ -67,3 +70,5 @@ fi
 if [ -x "$(command -v lf)" ] && [ -f "/usr/share/lf-git/lfcd.sh" ] ; then
     source /usr/share/lf-git/lfcd.sh
 fi
+
+[ -f ~/.config/fzf/fzf-tab/fzf-tab.plugin.zsh ] && source ~/.config/fzf/fzf-tab/fzf-tab.plugin.zsh
