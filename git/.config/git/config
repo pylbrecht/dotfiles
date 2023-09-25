@@ -25,3 +25,6 @@
     updateRefs = true
     autosquash = true
     autoStash = true
+
+[commit]
+    verbose = true
