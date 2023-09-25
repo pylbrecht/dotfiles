@@ -23,3 +23,5 @@
 
 [rebase]
     updateRefs = true
+    autosquash = true
+    autoStash = true
