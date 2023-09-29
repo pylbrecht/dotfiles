@@ -257,6 +257,11 @@ require('lualine').setup({
         extensions = { 'fugitive', 'quickfix' }
     }
 })
+
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     automatic_installation = true
