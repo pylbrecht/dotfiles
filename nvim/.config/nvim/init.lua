@@ -1,55 +1,168 @@
+-- Based on https://github.com/nvim-lua/kickstart.nvim
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system {
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  }
+end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup({
+  'arcticicestudio/nord-vim',
+  'caenrique/nvim-maximize-window-toggle',
+  'dhruvasagar/vim-zoom',
+  'github/copilot.vim',
+  'jeetsukumaran/vim-pythonsense',
+  'kyazdani42/nvim-web-devicons',
+  'kylechui/nvim-surround',
+  'ludovicchabant/vim-gutentags',
+  'majutsushi/tagbar',
+  'mattn/calendar-vim',
+  'mattn/emmet-vim',
+  'maxmellon/vim-jsx-pretty',
+  'nvim-lua/plenary.nvim',
+  'nvim-lualine/lualine.nvim',
+  'rust-lang/rust.vim',
+  'tpope/vim-abolish',
+  'tpope/vim-commentary',
+  'tpope/vim-eunuch',
+  'tpope/vim-fugitive',
+  'tpope/vim-markdown',
+  'tpope/vim-obsession',
+  'tpope/vim-repeat',
+  'tpope/vim-rhubarb',
+  'tpope/vim-sensible',
+  'tpope/vim-sleuth',
+  'tpope/vim-unimpaired',
+  'vim-test/vim-test',
+  'vimwiki/vimwiki',
+  'yuezk/vim-js',
+
+  { 'fatih/vim-go', build = ':GoUpdateBinaries' },
+
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      { 'williamboman/mason.nvim', config = true },
+      'williamboman/mason-lspconfig.nvim',
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      'folke/neodev.nvim',
+    },
+  },
+
+  {
+      'hrsh7th/nvim-cmp',
+      dependencies = {
+          'L3MON4D3/LuaSnip',
+          'saadparwaiz1/cmp_luasnip',
+          'hrsh7th/cmp-nvim-lsp',
+          'rafamadriz/friendly-snippets',
+      },
+  },
+
+  { 'folke/which-key.nvim', opts = {} },
+
+  {
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      },
+      on_attach = function(bufnr)
+        vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+
+        -- don't override the built-in and fugitive keymaps
+        local gs = package.loaded.gitsigns
+        vim.keymap.set({'n', 'v'}, ']c', function()
+          if vim.wo.diff then return ']c' end
+          vim.schedule(function() gs.next_hunk() end)
+          return '<Ignore>'
+        end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
+        vim.keymap.set({'n', 'v'}, '[c', function()
+          if vim.wo.diff then return '[c' end
+          vim.schedule(function() gs.prev_hunk() end)
+          return '<Ignore>'
+        end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
+      end,
+    },
+  },
+  
+    {
+    -- Set lualine as statusline
+    'nvim-lualine/lualine.nvim',
+    -- See `:help lualine.txt`
+    opts = {
+      options = {
+        icons_enabled = true,
+        theme = 'nord',
+        component_separators = '|',
+        section_separators = '',
+      },
+    },
+  },
+
+  {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help indent_blankline.txt`
+    config = function()
+      require('ibl').setup {
+        char = '┊',
+        show_trailing_blankline_indent = false,
+      }
+    end,
+  },
+
+  -- "gc" to comment visual regions/lines
+  { 'numToStr/Comment.nvim', opts = {} },
+
+   -- Fuzzy Finder (files, lsp, etc)
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+      -- Only load if `make` is available. Make sure you have the system
+      -- requirements installed.
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        -- NOTE: If you are having trouble with this installation,
+        --       refer to the README for telescope-fzf-native for more instructions.
+        build = 'make',
+        cond = function()
+          return vim.fn.executable 'make' == 1
+        end,
+      },
+    },
+  },
+
+  {
+    -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    build = ':TSUpdate',
+  },
+}, {})
+
 vim.cmd([[
-" auto-install vim-plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 set nocompatible
-
-call plug#begin(stdpath('data') . '/plugged')
-
-Plug 'arcticicestudio/nord-vim'
-Plug 'caenrique/nvim-maximize-window-toggle'
-Plug 'dhruvasagar/vim-zoom'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'github/copilot.vim'
-Plug 'jeetsukumaran/vim-pythonsense'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kylechui/nvim-surround'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
-Plug 'mattn/calendar-vim'
-Plug 'mattn/emmet-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-Plug 'rust-lang/rust.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-" FIXME: currently interfering with treesitter-textobjects mappings
-" Plug 'tpope/vim-unimpaired'
-Plug 'vim-test/vim-test'
-Plug 'vimwiki/vimwiki'
-Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'williamboman/mason.nvim'
-Plug 'yuezk/vim-js'
-
-call plug#end()
-
 let g:python3_host_prog = "~/.pyenv/versions/neovim/bin/python"
 
 let g:nvim_config_root = stdpath('config')
