@@ -1,3 +1,4 @@
+vim.cmd([[
 " auto-install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -60,8 +61,8 @@ let g:config_file_list = ['general.vim',
 for f in g:config_file_list
     execute 'source ' . g:nvim_config_root . '/' . f
 endfor
+]])
 
-lua <<EOF
 -- personal stuff
 require("mappings")
 
@@ -204,8 +205,9 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
-EOF
 
+vim.cmd([[
 " Fix weird resizing issue when running 'alacritty --command nvim'
 " https://github.com/neovim/neovim/issues/11330#issuecomment-723667383
 autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+]])
