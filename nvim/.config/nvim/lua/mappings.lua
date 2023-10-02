@@ -34,8 +34,13 @@ vim.api.nvim_set_keymap("n", "<leader>gw", ":Gwrite<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gr", ":Gread<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gc", ":G commit --verbose<cr>", {})
 
+-- Github Copilot
+vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(copilot-next)", {})
+vim.api.nvim_set_keymap("i", "<C-k>", "<Plug>(copilot-previous)", {})
+
 -- LSP
 vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<cr>", {})
+vim.api.nvim_set_keymap("n", "gD", ":Telescope lsp_implementations<cr>", {})
 vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<cr>", {})
 
 
