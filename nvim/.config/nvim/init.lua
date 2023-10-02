@@ -123,6 +123,7 @@ require('lazy').setup({
       require('ibl').setup {
         char = '┊',
         show_trailing_blankline_indent = false,
+        scope = { show_start = false, show_end = false },
       }
     end,
   },
