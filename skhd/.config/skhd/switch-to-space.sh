@@ -3,11 +3,20 @@
 # Emulate i3wm's workspace switching behavior.
 # (https://i3wm.org/docs/userguide.html#workspace_auto_back_and_forth)
 
-ACTIVE_SPACE=$(yabai -m query --spaces --display | jq '.[] | select(."has-focus" == true).index'
-)
+RECENT_SPACE_FILE="/tmp/yabai-recent-space-index"
 
-if [[ "$ACTIVE_SPACE" == $1 ]]; then
-	yabai -m space --focus recent
+ACTIVE_SPACE=$(yabai -m query --spaces --display | jq '.[] | select(."has-focus" == true).index')
+
+if [ -f "${RECENT_SPACE_FILE}" ]; then
+	RECENT_SPACE=$(cat ${RECENT_SPACE_FILE})
 else
-	yabai -m space --focus $1
+	RECENT_SPACE=${ACTIVE_SPACE}
+fi
+
+echo $RECENT_SPACE > ${RECENT_SPACE_FILE}
+
+if [ "$ACTIVE_SPACE" == $1 ]; then
+	skhd -k "ctrl - ${RECENT_SPACE}"
+else
+	skhd -k "ctrl - $1"
 fi
