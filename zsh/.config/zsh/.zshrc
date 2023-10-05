@@ -70,5 +70,3 @@ fi
 if [ -x "$(command -v lf)" ] && [ -f "/usr/share/lf-git/lfcd.sh" ] ; then
     source /usr/share/lf-git/lfcd.sh
 fi
-
-[ -f ~/.config/fzf/fzf-tab/fzf-tab.plugin.zsh ] && source ~/.config/fzf/fzf-tab/fzf-tab.plugin.zsh
