@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+on_mac="test $(uname) = 'Darwin'"
+
+if $on_mac; then
+    sed() {
+        gsed "$@"
+    }
+fi
+
+session=$({ tmux list-sessions | sed -E 's/:.*$//' & tmuxp ls; } | sort | uniq | fzf --reverse)
+
+if [ -z $session ]; then
+    exit
+fi
+
+# TODO: there is a more efficient way to do this, but this works and I'm too
+# lazy to figure it out
+for tmuxp_session in $(tmuxp ls); do
+    if [ $tmuxp_session == $session ]; then
+        tmuxp load --yes $session > /dev/null
+        exit
+    fi
+done
+
+tmux switch-client -t $session
