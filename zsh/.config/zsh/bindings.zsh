@@ -24,3 +24,8 @@ bindkey -M menuselect 'q' send-break
 bindkey -M vicmd '\C-o' accept-line-and-down-history
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M vicmd '^r' history-incremental-search-backward
+
+tmux-session_widget() tmux-session
+zle -N tmux-session_widget
+bindkey '^g' tmux-session_widget
+bindkey -M vicmd '^g' tmux-session_widget
