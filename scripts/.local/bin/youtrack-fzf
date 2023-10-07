@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Youtrack issue browser
+#
+# Requirements:
+# * jq
+# * fzf
+# * 1Password CLI
+# * cloudflared
+#
+# You need a 1Password item with:
+# * a Youtrack access token stored in the password field
+# * the Youtrack base URL stored in the URL field
+
+op_item_name=${1:-"Youtrack access token"}
+
+read -r url token <<<$(op item get "${op_item_name}" --fields label=url,label=password | tr ',' '\n')
+
+# all issues somehow related to me sorted by last update
+query="for:%20me%20OR%20commenter:%20me%20OR%20by:%20me%20sort%20by:%20updated%20desc"
+issue=$(cloudflared access curl "$url/api/issues?fields=idReadable,summary&query=$query" --silent -H "Authorization: Bearer $token" | jq '.[] | {idReadable, summary} | join(": ")' | tr -d '"' | fzf | tr -d '\"' | awk -F: '{print $1}')
+
+if [ -n "$issue" ]; then
+	$BROWSER "https://youtrack.envelio.org/issue/$issue"
+fi
