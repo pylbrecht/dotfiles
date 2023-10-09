@@ -33,9 +33,10 @@ vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gl", ":tab Git log<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>gw", ":Gwrite<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gr", ":Gread<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gc", ":G commit --verbose<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gwl", ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gwn", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", {})
 
 -- Github Copilot
 vim.api.nvim_set_keymap("i", "<C-d>", "<Plug>(copilot-next)", {})

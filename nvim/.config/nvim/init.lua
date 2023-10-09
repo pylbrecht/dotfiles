@@ -47,6 +47,13 @@ require('lazy').setup({
   'vimwiki/vimwiki',
   'yuezk/vim-js',
 
+  {
+    'ThePrimeagen/git-worktree.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
+
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
 
   {
@@ -284,6 +291,9 @@ require("telescope").setup({
         lsp_references = {
             show_line = false,
         }
+    },
+    extensions = {
+      "git_worktree"
     }
 })
 
