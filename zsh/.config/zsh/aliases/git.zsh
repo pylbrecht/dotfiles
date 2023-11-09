@@ -1,3 +1,19 @@
+# fwip - checkout from recent git branches
+fwip() {
+  local recent_branches branch
+
+  recent_branches=$(
+    git for-each-ref --sort='authordate:iso8601' \
+      --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' \
+      --color=always \
+      refs/heads
+    ) || return
+
+  target=$(echo "$recent_branches" | tac | fzf --ansi) || return
+
+  git checkout $(echo $target | awk -F'\t' '{print $2}')
+}
+
 alias g='git'
 
 alias ga='git add'
