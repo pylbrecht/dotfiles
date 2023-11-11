@@ -1,1 +1,1 @@
-vim.api.nvim_set_keymap("n", "<leader>p", ":RustFmt<cr>", {silent = true})
+vim.api.nvim_set_keymap("n", "<leader>pa", ":RustFmt<cr>", {silent = true})
