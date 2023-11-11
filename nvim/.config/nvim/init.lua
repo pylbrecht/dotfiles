@@ -24,7 +24,6 @@ require('lazy').setup({
   'jeetsukumaran/vim-pythonsense',
   'kyazdani42/nvim-web-devicons',
   'kylechui/nvim-surround',
-  'ludovicchabant/vim-gutentags',
   'majutsushi/tagbar',
   'mattn/calendar-vim',
   'mattn/emmet-vim',
