@@ -46,6 +46,8 @@ require('lazy').setup({
   'vimwiki/vimwiki',
   'yuezk/vim-js',
 
+  { 'rose-pine/neovim', name = 'rose-pine' },
+
   {
     'ThePrimeagen/git-worktree.nvim',
     dependencies = {
@@ -113,7 +115,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'nord',
+        theme = 'rose-pine',
         component_separators = '|',
         section_separators = '',
       },
@@ -173,6 +175,7 @@ endfor
 
 -- personal stuff
 require("mappings")
+require("colorscheme")
 
 require('nvim-treesitter.configs').setup({
     highlight = { enable = true },
