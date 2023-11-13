@@ -45,13 +45,10 @@ vim.api.nvim_set_keymap("i", "<C-d>", "<Plug>(copilot-next)", {})
 vim.api.nvim_set_keymap("i", "<C-u>", "<Plug>(copilot-previous)", {})
 
 -- LSP
-vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<cr>", {})
-vim.api.nvim_set_keymap("n", "gD", ":Telescope lsp_implementations<cr>", {})
-vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<cr>", {})
 local builtin = require('telescope.builtin')
-vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<cr>", {silent = true})
+vim.keymap.set("n", "gd", builtin.lsp_definitions, {silent = true})
 vim.keymap.set("n", "gD", function() builtin.lsp_definitions({jump_type = "vsplit"}) end, {silent = true})
-vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<cr>", {silent = true})
+vim.keymap.set("n", "gr", builtin.lsp_references, {silent = true})
 
 
 -- vim-test
