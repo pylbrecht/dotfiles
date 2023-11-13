@@ -48,6 +48,10 @@ vim.api.nvim_set_keymap("i", "<C-u>", "<Plug>(copilot-previous)", {})
 vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<cr>", {})
 vim.api.nvim_set_keymap("n", "gD", ":Telescope lsp_implementations<cr>", {})
 vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<cr>", {})
+local builtin = require('telescope.builtin')
+vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<cr>", {silent = true})
+vim.keymap.set("n", "gD", function() builtin.lsp_definitions({jump_type = "vsplit"}) end, {silent = true})
+vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<cr>", {silent = true})
 
 
 -- vim-test
