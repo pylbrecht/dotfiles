@@ -187,6 +187,8 @@ require('nvim-treesitter.configs').setup({
         "csv",
         "diff",
         "dockerfile",
+        "gitcommit",
+        "git_rebase",
         "html",
         "htmldjango",
         "javascript",
