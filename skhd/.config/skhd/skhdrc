@@ -173,3 +173,5 @@ cmd + shift - 9 : yabai -m window --space 9
 cmd + shift - 0 : yabai -m window --space 10
 cmd - f : yabai -m window --toggle zoom-fullscreen
 cmd - return : open -n /Applications/Alacritty.app
+cmd - space : yabai -m window --toggle float
+cmd - s : yabai -m window --toggle split
