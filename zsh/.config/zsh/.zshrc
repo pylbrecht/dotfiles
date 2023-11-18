@@ -49,24 +49,7 @@ done
 
 source $ZDOTDIR/bindings.zsh
 
-if [ -d "$HOME/.config/momox" ] ; then
-    for file in $HOME/.config/momox/**/*.zsh ; do
-        source $file
-    done
-fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/completion.zsh.inc'; fi
-
 if type pyenv &> /dev/null ; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
-fi
-
-# Use lfcd if available for changing directories more conveniently
-if [ -x "$(command -v lf)" ] && [ -f "/usr/share/lf-git/lfcd.sh" ] ; then
-    source /usr/share/lf-git/lfcd.sh
 fi
