@@ -14,6 +14,26 @@ fwip() {
   git checkout $(echo $target | awk -F'\t' '{print $2}')
 }
 
+# fco - checkout git branch/tag
+fco() {
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+  target=$(
+    (echo "$branches"; echo "$tags") |
+    fzf --no-hscroll --no-multi -n 2 \
+        --ansi) || return
+  git checkout $(awk '{print $2}' <<<"$target" )
+}
+
+git_default_branch_name() {
+  git remote show origin | sed -n '/HEAD branch/s/.*: //p'
+}
+
 alias g='git'
 
 alias ga='git add'
@@ -43,13 +63,18 @@ alias gcb='git checkout -b'
 alias gcf='git commit -v --fixup'
 
 _git_clone_from_arg_or_clipboard () {
-    local REPO_URL=$(xclip -o)
+    if [[ $(uname) == "Darwin" ]] ; then
+      local REPO_URL=$(pbpaste)
+    else
+      local REPO_URL=$(xclip -o)
+    fi
+
     git clone --recurse-submodules ${1:-$REPO_URL}
 }
 alias gcl='_git_clone_from_arg_or_clipboard'
 
 alias gclean='git clean -id'
-alias gcm='git checkout master'
+alias gcm="git checkout $(git_default_branch_name)"
 alias gcd='git checkout develop'
 alias gco='git checkout'
 alias gcop='git checkout --patch'
@@ -94,7 +119,7 @@ alias grbi='git rebase -i'
 alias grbia='git rebase -i --autosquash'
 alias grbim='git rebase -i master'
 alias grbium='git rebase -i upstream/master'
-alias grbm='git rebase master'
+alias grbm="git rebase $(git_default_branch_name)"
 alias grbum='git rebase upstream/master'
 alias grbs='git rebase --skip'
 alias grh='git reset'
