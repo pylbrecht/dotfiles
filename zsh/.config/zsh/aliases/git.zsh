@@ -74,8 +74,13 @@ _git_clone_from_arg_or_clipboard () {
 alias gcl='_git_clone_from_arg_or_clipboard'
 
 alias gclean='git clean -id'
-alias gcm="git checkout $(git_default_branch_name)"
+
+git_checkout_main () {
+  git checkout $(git_default_branch_name)
+}
+alias gcm='git_checkout_main'
 alias gcd='git checkout develop'
+
 alias gco='git checkout'
 alias gcop='git checkout --patch'
 alias gcp='git cherry-pick'
@@ -119,7 +124,12 @@ alias grbi='git rebase -i'
 alias grbia='git rebase -i --autosquash'
 alias grbim='git rebase -i master'
 alias grbium='git rebase -i upstream/master'
-alias grbm="git rebase $(git_default_branch_name)"
+
+git_rebase_main () {
+  git rebase $(git_default_branch_name)
+}
+alias grbm='git_rebase_main'
+
 alias grbum='git rebase upstream/master'
 alias grbs='git rebase --skip'
 alias grh='git reset'
