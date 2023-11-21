@@ -34,6 +34,14 @@ git_default_branch_name() {
   git remote show origin | sed -n '/HEAD branch/s/.*: //p'
 }
 
+find_first_tag_containing() {
+  local ref tag
+  ref=${1:-"HEAD"}
+  # TODO: catch error and make output prettier
+  git describe --contains "${ref}" | sed 's/~.*//'
+}
+alias gcon='find_first_tag_containing'
+
 alias g='git'
 
 alias ga='git add'
