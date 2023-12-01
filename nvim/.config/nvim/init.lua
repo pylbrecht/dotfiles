@@ -49,6 +49,13 @@ require('lazy').setup({
   { 'rose-pine/neovim', name = 'rose-pine' },
 
   {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
     'ThePrimeagen/git-worktree.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -177,6 +184,7 @@ endfor
 -- personal stuff
 require("mappings")
 require("colorscheme")
+require("plugins")
 
 require('nvim-treesitter.configs').setup({
     highlight = { enable = true },
