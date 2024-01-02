@@ -210,6 +210,7 @@ require('nvim-treesitter.configs').setup({
         "sql",
         "typescript",
         "vimdoc",
+        "vue",
         "yaml",
     },
   -- gladfully taken from
@@ -317,7 +318,7 @@ end
 -- FIXME: is this covered by Mason?
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
+local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'volar' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
