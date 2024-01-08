@@ -259,9 +259,17 @@ require('nvim-treesitter.configs').setup({
 
 -- plugins
 require('lualine').setup({
-    options = {
-        extensions = { 'fugitive', 'quickfix' }
-    }
+  options = {
+    extensions = { 'fugitive', 'quickfix' }
+  },
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 3, -- 0 = just filename, 1 = relative path, 2 = absolute path
+      },
+    },
+  }
 })
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
