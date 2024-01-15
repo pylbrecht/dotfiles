@@ -46,6 +46,8 @@ require('lazy').setup({
   'vimwiki/vimwiki',
   'yuezk/vim-js',
 
+  { 'echasnovski/mini.nvim', version = false },
+
   { 'rose-pine/neovim', name = 'rose-pine' },
 
   {
