@@ -368,6 +368,16 @@ require('treesitter-context').setup({
   multiline_threshold = 1, -- Maximum number of lines to show for a single context
 })
 
+require('lspconfig').rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+
 require("mini.ai").setup({})
 
 vim.cmd([[
