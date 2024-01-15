@@ -76,13 +76,13 @@ require('lazy').setup({
   },
 
   {
-      'hrsh7th/nvim-cmp',
-      dependencies = {
-          'L3MON4D3/LuaSnip',
-          'saadparwaiz1/cmp_luasnip',
-          'hrsh7th/cmp-nvim-lsp',
-          'rafamadriz/friendly-snippets',
-      },
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'rafamadriz/friendly-snippets',
+    },
   },
 
   { 'folke/which-key.nvim', opts = {} },
@@ -115,8 +115,8 @@ require('lazy').setup({
       end,
     },
   },
-  
-    {
+
+  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -135,7 +135,7 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-   -- Fuzzy Finder (files, lsp, etc)
+  -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
@@ -173,215 +173,215 @@ let g:python3_host_prog = "~/.pyenv/versions/neovim/bin/python"
 
 let g:nvim_config_root = stdpath('config')
 let g:config_file_list = ['general.vim',
-    \ 'mappings.vim',
-    \ 'plugins.vim',
-    \ ]
+\ 'mappings.vim',
+\ 'plugins.vim',
+\ ]
 
 for f in g:config_file_list
-    execute 'source ' . g:nvim_config_root . '/' . f
-endfor
-]])
+  execute 'source ' . g:nvim_config_root . '/' . f
+  endfor
+  ]])
 
--- personal stuff
-require("mappings")
-require("colorscheme")
-require("plugins")
+  -- personal stuff
+  require("mappings")
+  require("colorscheme")
+  require("plugins")
 
-require('nvim-treesitter.configs').setup({
+  require('nvim-treesitter.configs').setup({
     highlight = { enable = true },
     sync_install = false,
     ensure_installed = {
-        "c",
-        "css",
-        "csv",
-        "diff",
-        "dockerfile",
-        "gitcommit",
-        "git_rebase",
-        "html",
-        "htmldjango",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "regex",
-        "rust",
-        "sql",
-        "typescript",
-        "vimdoc",
-        "vue",
-        "yaml",
+      "c",
+      "css",
+      "csv",
+      "diff",
+      "dockerfile",
+      "gitcommit",
+      "git_rebase",
+      "html",
+      "htmldjango",
+      "javascript",
+      "json",
+      "lua",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "regex",
+      "rust",
+      "sql",
+      "typescript",
+      "vimdoc",
+      "vue",
+      "yaml",
     },
-  -- gladfully taken from
-  -- https://github.com/gennaro-tedesco/dotfiles/blob/b18fd749d6eb17fc4a57ea09cb074b9a203b1e28/nvim/lua/plugins/treesitter.lua#L25-L64
-	textobjects = {
-		move = {
-			enable = true,
-			set_jumps = true,
-			goto_next_start = {
-				["]f"] = { query = "@function.outer", desc = "go to next function" },
-				["]]"] = { query = "@class.outer", desc = "go to next class" },
-				["]l"] = { query = "@loop.outer", desc = "go to next loop" },
-			},
-      goto_next_end = {
-				["]F"] = { query = "@function.outer", desc = "go to end of next function" },
-				["]["] = { query = "@class.outer", desc = "go to end of next class" },
-				["]L"] = { query = "@loop.outer", desc = "go to end of next loop end" },
-      },
-			goto_previous_start = {
-				["[f"] = { query = "@function.outer", desc = "go to previous function" },
-				["[["] = { query = "@class.outer", desc = "go to previous class" },
-				["[l"] = { query = "@loop.outer", desc = "go to previous loop" },
-			},
-      goto_previous_end = {
-				["[F"] = { query = "@function.outer", desc = "go to end of previous function" },
-				["[]"] = { query = "@class.outer", desc = "go to end of previous class" },
-				["[L"] = { query = "@loop.outer", desc = "go to end of previous loop" },
-      }
-		},
-	},
-})
-
--- plugins
-require('lualine').setup({
-  options = {
-    extensions = { 'fugitive', 'quickfix' }
-  },
-  sections = {
-    lualine_c = {
-      {
-        'filename',
-        path = 3, -- 0 = just filename, 1 = relative path, 2 = absolute path
-      },
-    },
-  }
-})
-
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-    automatic_installation = true
-})
-require("nvim-surround").setup()
-require("telescope").setup({
-    defaults = {
-        layout_config = {
-            horizontal = { width = 0.99, height = 0.99 }
+    -- gladfully taken from
+    -- https://github.com/gennaro-tedesco/dotfiles/blob/b18fd749d6eb17fc4a57ea09cb074b9a203b1e28/nvim/lua/plugins/treesitter.lua#L25-L64
+    textobjects = {
+      move = {
+        enable = true,
+        set_jumps = true,
+        goto_next_start = {
+          ["]f"] = { query = "@function.outer", desc = "go to next function" },
+          ["]]"] = { query = "@class.outer", desc = "go to next class" },
+          ["]l"] = { query = "@loop.outer", desc = "go to next loop" },
         },
-        mappings = {
-            i = {
-                ["<C-j>"] = "move_selection_next",
-                ["<C-k>"] = "move_selection_previous",
-            }
+        goto_next_end = {
+          ["]F"] = { query = "@function.outer", desc = "go to end of next function" },
+          ["]["] = { query = "@class.outer", desc = "go to end of next class" },
+          ["]L"] = { query = "@loop.outer", desc = "go to end of next loop end" },
+        },
+        goto_previous_start = {
+          ["[f"] = { query = "@function.outer", desc = "go to previous function" },
+          ["[["] = { query = "@class.outer", desc = "go to previous class" },
+          ["[l"] = { query = "@loop.outer", desc = "go to previous loop" },
+        },
+        goto_previous_end = {
+          ["[F"] = { query = "@function.outer", desc = "go to end of previous function" },
+          ["[]"] = { query = "@class.outer", desc = "go to end of previous class" },
+          ["[L"] = { query = "@loop.outer", desc = "go to end of previous loop" },
         }
+      },
+    },
+  })
+
+  -- plugins
+  require('lualine').setup({
+    options = {
+      extensions = { 'fugitive', 'quickfix' }
+    },
+    sections = {
+      lualine_c = {
+        {
+          'filename',
+          path = 3, -- 0 = just filename, 1 = relative path, 2 = absolute path
+        },
+      },
+    }
+  })
+
+  -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+  require("mason").setup()
+  require("mason-lspconfig").setup({
+    automatic_installation = true
+  })
+  require("nvim-surround").setup()
+  require("telescope").setup({
+    defaults = {
+      layout_config = {
+        horizontal = { width = 0.99, height = 0.99 }
+      },
+      mappings = {
+        i = {
+          ["<C-j>"] = "move_selection_next",
+          ["<C-k>"] = "move_selection_previous",
+        }
+      }
     },
     pickers = {
-        lsp_references = {
-            show_line = false,
-        }
+      lsp_references = {
+        show_line = false,
+      }
     },
     extensions = {
       "git_worktree"
     }
-})
+  })
 
--- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
-local nvim_lsp = require('lspconfig')
+  -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
+  local nvim_lsp = require('lspconfig')
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  -- Use an on_attach function to only map the following keys
+  -- after the language server attaches to the current buffer
+  local on_attach = function(client, bufnr)
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- Enable completion triggered by <c-x><c-o>
+    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
+    -- Mappings.
+    local opts = { noremap=true, silent=true }
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-end
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  end
 
--- FIXME: is this covered by Mason?
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'volar' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
+  -- FIXME: is this covered by Mason?
+  -- Use a loop to conveniently call 'setup' on multiple servers and
+  -- map buffer local keybindings when the language server attaches
+  local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'volar' }
+  for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {
+      on_attach = on_attach,
+      flags = {
+        debounce_text_changes = 150,
+      }
     }
-  }
-end
+  end
 
--- [[ Configure nvim-cmp ]]
--- See `:help cmp`
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
+  -- [[ Configure nvim-cmp ]]
+  -- See `:help cmp`
+  local cmp = require 'cmp'
+  local luasnip = require 'luasnip'
+  require('luasnip.loaders.from_vscode').lazy_load()
+  luasnip.config.setup {}
 
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+  cmp.setup {
+    snippet = {
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end,
     },
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
+    mapping = cmp.mapping.preset.insert {
+      ['<C-n>'] = cmp.mapping.select_next_item(),
+      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete {},
+      ['<CR>'] = cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = true,
+      },
+    },
+    sources = {
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+    },
+  }
 
-require("ibl").setup({
-  indent = {
-    char = '┊',
-  },
-  scope = { show_start = false, show_end = false },
-})
+  require("ibl").setup({
+    indent = {
+      char = '┊',
+    },
+    scope = { show_start = false, show_end = false },
+  })
 
-require('treesitter-context').setup({
-  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-  min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
-  line_numbers = true,
-  multiline_threshold = 1, -- Maximum number of lines to show for a single context
-})
+  require('treesitter-context').setup({
+    enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+    max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+    min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+    line_numbers = true,
+    multiline_threshold = 1, -- Maximum number of lines to show for a single context
+  })
 
-require('lspconfig').rust_analyzer.setup{
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
+  require('lspconfig').rust_analyzer.setup{
+    settings = {
+      ['rust-analyzer'] = {
+        diagnostics = {
+          enable = false;
+        }
       }
     }
   }
-}
 
-require("mini.ai").setup({})
+  require("mini.ai").setup({})
 
-vim.cmd([[
-" Fix weird resizing issue when running 'alacritty --command nvim'
-" https://github.com/neovim/neovim/issues/11330#issuecomment-723667383
-autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
-]])
+  vim.cmd([[
+  " Fix weird resizing issue when running 'alacritty --command nvim'
+  " https://github.com/neovim/neovim/issues/11330#issuecomment-723667383
+  autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+  ]])
