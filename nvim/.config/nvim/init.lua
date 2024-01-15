@@ -17,7 +17,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'arcticicestudio/nord-vim',
   'caenrique/nvim-maximize-window-toggle',
   'dhruvasagar/vim-zoom',
   'github/copilot.vim',
