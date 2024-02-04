@@ -20,30 +20,24 @@ require('lazy').setup({
   'caenrique/nvim-maximize-window-toggle',
   'dhruvasagar/vim-zoom',
   'github/copilot.vim',
-  'jeetsukumaran/vim-pythonsense',
   'kyazdani42/nvim-web-devicons',
   'kylechui/nvim-surround',
   'majutsushi/tagbar',
   'mattn/calendar-vim',
   'mattn/emmet-vim',
-  'maxmellon/vim-jsx-pretty',
   'nvim-lua/plenary.nvim',
   'nvim-lualine/lualine.nvim',
   'rust-lang/rust.vim',
   'tpope/vim-abolish',
-  'tpope/vim-commentary',
   'tpope/vim-eunuch',
   'tpope/vim-fugitive',
   'tpope/vim-markdown',
-  'tpope/vim-obsession',
   'tpope/vim-repeat',
-  'tpope/vim-rhubarb',
   'tpope/vim-sensible',
   'tpope/vim-sleuth',
   'tpope/vim-unimpaired',
   'vim-test/vim-test',
   'vimwiki/vimwiki',
-  'yuezk/vim-js',
 
   { 'echasnovski/mini.nvim', version = false },
 
@@ -54,13 +48,6 @@ require('lazy').setup({
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-
-  {
-    'ThePrimeagen/git-worktree.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
   },
 
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
