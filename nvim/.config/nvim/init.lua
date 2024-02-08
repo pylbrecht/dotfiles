@@ -204,6 +204,20 @@ for f in g:config_file_list
     -- gladfully taken from
     -- https://github.com/gennaro-tedesco/dotfiles/blob/b18fd749d6eb17fc4a57ea09cb074b9a203b1e28/nvim/lua/plugins/treesitter.lua#L25-L64
     textobjects = {
+      select = {
+        enable = true,
+        lookahead = true,
+        keymaps = {
+          ["af"] = { query = "@function.outer", desc = "select around function" },
+          ["if"] = { query = "@function.inner", desc = "select inside function" },
+          ["ac"] = { query = "@class.outer", desc = "select around class" },
+          ["ic"] = { query = "@class.inner", desc = "select inside class" },
+          ["al"] = { query = "@loop.outer", desc = "select around loop" },
+          ["il"] = { query = "@loop.inner", desc = "select inside loop" },
+          ["ab"] = { query = "@block.outer", desc = "select around block" },
+          ["ib"] = { query = "@block.inner", desc = "select inside block" },
+        },
+      },
       move = {
         enable = true,
         set_jumps = true,
