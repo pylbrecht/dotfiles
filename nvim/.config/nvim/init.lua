@@ -23,7 +23,6 @@ require('lazy').setup({
   'kyazdani42/nvim-web-devicons',
   'kylechui/nvim-surround',
   'majutsushi/tagbar',
-  'mattn/calendar-vim',
   'mattn/emmet-vim',
   'nvim-lua/plenary.nvim',
   'nvim-lualine/lualine.nvim',
