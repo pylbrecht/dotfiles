@@ -308,6 +308,7 @@ for f in g:config_file_list
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   end
 
   -- FIXME: is this covered by Mason?
