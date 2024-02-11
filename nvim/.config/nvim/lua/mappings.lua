@@ -12,6 +12,13 @@ vim.api.nvim_set_keymap("v", "L", "$", {})
 
 vim.api.nvim_set_keymap("n", "Q", "@@", {})
 
+-- keep cursor while scrolling
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
 -- toggle relativenumber (helpful during pairing)
 vim.api.nvim_set_keymap("n", "<leader><leader>rn", ":setl relativenumber!<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "zq", ":bufdo! bd!<cr>", { silent = true })
