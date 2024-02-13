@@ -13,9 +13,9 @@ else
 fi
 
 if [ "$ACTIVE_SPACE" == $1 ]; then
-	skhd -k "ctrl - $RECENT_SPACE"
+	skhd -k "ctrl - $(($RECENT_SPACE % 10))"
 else
-	skhd -k "ctrl - $1"
+	skhd -k "ctrl - $(($1 % 10))"
 fi
 
 echo $ACTIVE_SPACE > "$RECENT_SPACE_FILE"
