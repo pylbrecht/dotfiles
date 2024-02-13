@@ -29,6 +29,10 @@
 [commit]
     verbose = true
 
+[rerere]
+    enabled = true
+    autoUpdate = true
+
 [includeIf "gitdir:~/dev/work/"]
 path = ~/.config/git/config-work
 
