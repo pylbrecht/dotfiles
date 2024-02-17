@@ -3,6 +3,24 @@
     editor=nvim
     pager="delta"
 
+[fetch]
+    prune=true
+
+[log]
+    date = iso
+
+[branch]
+    sort = -committerdate
+
+[commit]
+    cleanup = scissors
+
+[init]
+    defaultBranch = main
+
+[merge]
+    conflictStyle = zdiff3
+
 [interactive]
     diffFilter = delta --color-only
 
@@ -14,6 +32,7 @@
 
 [diff]
     colorMoved = default
+    algorithm = histogram
 
 [pull]
     rebase=true
