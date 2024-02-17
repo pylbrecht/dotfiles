@@ -271,8 +271,10 @@ for f in g:config_file_list
   require("nvim-surround").setup()
   require("telescope").setup({
     defaults = {
+      layout_strategy = 'vertical',
       layout_config = {
-        horizontal = { width = 0.99, height = 0.99 }
+        horizontal = { width = 0.99, height = 0.99 },
+        vertical = { width = 0.99, height = 0.99, preview_height = 0.6 }
       },
       mappings = {
         i = {
