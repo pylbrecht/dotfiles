@@ -20,7 +20,7 @@ require('lazy').setup({
   'caenrique/nvim-maximize-window-toggle',
   'dhruvasagar/vim-zoom',
   'github/copilot.vim',
-  'kyazdani42/nvim-web-devicons',
+  'nvim-tree/nvim-web-devicons',
   'kylechui/nvim-surround',
   'majutsushi/tagbar',
   'mattn/emmet-vim',
