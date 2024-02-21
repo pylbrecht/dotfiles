@@ -21,7 +21,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- toggle relativenumber (helpful during pairing)
 vim.api.nvim_set_keymap("n", "<leader><leader>rn", ":setl relativenumber!<cr>", { silent = true })
