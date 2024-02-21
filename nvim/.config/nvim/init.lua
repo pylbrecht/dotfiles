@@ -37,6 +37,7 @@ require('lazy').setup({
   'tpope/vim-unimpaired',
   'vim-test/vim-test',
   'vimwiki/vimwiki',
+  'MunifTanjim/prettier.nvim',
 
   { 'echasnovski/mini.nvim', version = false },
 
@@ -347,6 +348,30 @@ for f in g:config_file_list
       }
     }
   }
+
+  require('prettier').setup({
+    bin = 'prettierd',
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "css",
+      "scss",
+      "json",
+      "graphql",
+      "markdown",
+      "vue",
+      "yaml",
+      "html",
+      "svelte",
+      "javascript.jsx",
+      "typescript.tsx",
+      "jsonc",
+      "json5",
+      "yaml"
+    }
+  })
 
   require("mini.ai").setup({})
 
