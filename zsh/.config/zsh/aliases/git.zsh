@@ -163,3 +163,11 @@ alias gupav='git pull --rebase --autostash -v'
 alias gwa='git worktree add'
 alias gwl='git worktree list'
 alias gwr='git worktree remove'
+
+_get_commit_message() {
+  local commit
+  commit=${1:-"HEAD"}
+  git log --format=%B -n 1 $commit
+}
+alias glm='_get_commit_message'
+alias glmc="_get_commit_message C"
