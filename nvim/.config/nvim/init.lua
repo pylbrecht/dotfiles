@@ -2,6 +2,7 @@
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.user_emmet_leader_key = '<leader>e'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -307,16 +308,15 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
-  preselect = cmp.PreselectMode.None,
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
-    ['<cr>'] = cmp.mapping.confirm {
+    ['<C-y>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = false,
+      select = true,
     },
   },
   sources = {
