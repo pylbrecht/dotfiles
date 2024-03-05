@@ -2,7 +2,7 @@
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.user_emmet_leader_key = '<leader>e'
+vim.g.user_emmet_leader_key = '<C-e>'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
