@@ -26,6 +26,13 @@ dap.configurations.python = {
     },
 }
 
+vim.keymap.set('n', '<Leader>dc', function() dap.continue() end)
+vim.keymap.set('n', '<Leader>dn', function() dap.step_over() end)
+vim.keymap.set('n', '<Leader>ds', function() dap.step_into() end)
+vim.keymap.set('n', '<Leader>db', function() dap.toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end)
+vim.keymap.set('n', '<Leader>dl', function() dap.run_last() end)
+
 local dapui = require("dapui")
 dapui.setup()
 dap.listeners.before.attach.dapui_config = function()
