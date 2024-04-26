@@ -47,6 +47,10 @@ for _alias in $ZDOTDIR/aliases/*.zsh ; do
     source $_alias
 done
 
+for f in ~/.envelio/*.zsh ; do
+    source $f
+done
+
 source $ZDOTDIR/bindings.zsh
 
 if type pyenv &> /dev/null ; then

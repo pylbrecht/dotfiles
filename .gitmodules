@@ -13,3 +13,6 @@
 [submodule "fzf/.config/fzf/fzf-tab"]
 	path = fzf/.config/fzf/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule "envelio"]
+	path = envelio
+	url = git@git.envelio.sh:2222/lens/dotfiles.git
