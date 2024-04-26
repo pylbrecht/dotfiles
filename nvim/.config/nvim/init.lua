@@ -18,6 +18,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
+  {
+    "williamboman/mason.nvim",
+    "mfussenegger/nvim-dap",
+    "jay-babu/mason-nvim-dap.nvim",
+  },
+  'mfussenegger/nvim-dap',
+  'mfussenegger/nvim-dap-python',
   'caenrique/nvim-maximize-window-toggle',
   'dhruvasagar/vim-zoom',
   'github/copilot.vim',
@@ -175,6 +183,7 @@ require("lsp")
 require("mappings")
 require("colorscheme")
 require("plugins")
+require("debuggers")
 
 require('nvim-treesitter.configs').setup({
   highlight = { enable = true },
