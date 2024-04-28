@@ -31,6 +31,7 @@ require('lazy').setup({
   },
   'mfussenegger/nvim-dap',
   'mfussenegger/nvim-dap-python',
+  'theHamsta/nvim-dap-virtual-text',
   'caenrique/nvim-maximize-window-toggle',
   'dhruvasagar/vim-zoom',
   'github/copilot.vim',

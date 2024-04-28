@@ -1,5 +1,6 @@
 -- FIXME: use a venv with debugpy installed
 require('dap-python').setup('python')
+require("nvim-dap-virtual-text").setup()
 
 require("mason-nvim-dap").setup({
     ensure_installed = { "python" },
