@@ -47,11 +47,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
 
-    local builtin = require('telescope.builtin')
-    vim.keymap.set("n", "gd", builtin.lsp_definitions, {silent = true})
-    vim.keymap.set("n", "gD", function() builtin.lsp_definitions({jump_type = "vsplit"}) end, {silent = true})
-    vim.keymap.set("n", "gr", builtin.lsp_references, {silent = true})
-    vim.keymap.set("n", "gi", builtin.lsp_implementations, {silent = true})
+    local fzf = require('fzf-lua')
+    vim.keymap.set("n", "gd", function() fzf.lsp_definitions({jump_to_single_result = true}) end, {silent = true})
+    vim.keymap.set("n", "gD", function() fzf.lsp_definitions({
+      jump_to_single_result = true,
+      jump_to_single_result_action = require('fzf-lua.actions').file_vsplit
+    }) end, {silent = true})
+    vim.keymap.set("n", "gr", function() fzf.lsp_references({
+      ignore_current_line = true,
+      includeDeclaration = false
+    }) end, {silent = true})
+    vim.keymap.set("n", "gi", fzf.lsp_implementations, {silent = true})
 
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
 

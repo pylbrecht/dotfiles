@@ -19,6 +19,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {}
@@ -137,27 +142,6 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- Fuzzy Finder (files, lsp, etc)
-  {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-      -- Only load if `make` is available. Make sure you have the system
-      -- requirements installed.
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
-        build = 'make',
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
-      },
-    },
-  },
-
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -190,6 +174,7 @@ require("mappings")
 require("colorscheme")
 require("plugins")
 require("debuggers")
+require("fzf")
 
 require('nvim-treesitter.configs').setup({
   highlight = { enable = true },
@@ -286,30 +271,6 @@ require("mason-lspconfig").setup({
   automatic_installation = true
 })
 require("nvim-surround").setup()
-require("telescope").setup({
-  defaults = {
-    layout_strategy = 'vertical',
-    layout_config = {
-      horizontal = { width = 0.99, height = 0.99 },
-      vertical = { width = 0.99, height = 0.99, preview_height = 0.6 }
-    },
-    mappings = {
-      i = {
-        ["<C-j>"] = "move_selection_next",
-        ["<C-k>"] = "move_selection_previous",
-      }
-    }
-  },
-  pickers = {
-    lsp_references = {
-      show_line = false,
-    }
-  },
-  extensions = {
-    "git_worktree"
-  }
-})
-
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'
