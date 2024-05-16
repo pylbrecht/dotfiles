@@ -77,6 +77,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- General mappings
 vim.keymap.set("n", "<leader>lr", ":LspRestart<cr>", {silent = true})
-
--- Navigate diagnostics
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float, { noremap = true, silent = true })
