@@ -1,6 +1,5 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-vim.lsp.set_log_level("debug")
 
 -- TODO: traverse up (lspconfig.util.traverse_parents) the directory tree to
 -- find TypeScript server
