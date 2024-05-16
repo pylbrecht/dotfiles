@@ -139,9 +139,6 @@ require('lazy').setup({
 
   { 'lukas-reineke/indent-blankline.nvim', main = "ibl", opts = {} },
 
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
-
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
