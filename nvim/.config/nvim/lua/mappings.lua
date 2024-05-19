@@ -50,10 +50,6 @@ vim.api.nvim_set_keymap("n", "<leader>gc", ":G commit --verbose<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gwl", ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gwn", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", {})
 
--- Github Copilot
-vim.api.nvim_set_keymap("i", "<C-d>", "<Plug>(copilot-next)", {})
-vim.api.nvim_set_keymap("i", "<C-u>", "<Plug>(copilot-previous)", {})
-
 
 -- vim-test
 vim.api.nvim_set_keymap("n", "<leader>tt", ":TestNearest<cr>", {})

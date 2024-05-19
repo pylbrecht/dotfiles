@@ -19,6 +19,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    "zbirenbaum/copilot-cmp",
+    dependencies = { "zbirenbaum/copilot.lua" },
+    config = function ()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+      require("copilot_cmp").setup()
+    end
+  },
+  {
     "ibhagwan/fzf-lua",
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -39,7 +50,6 @@ require('lazy').setup({
   'theHamsta/nvim-dap-virtual-text',
   'caenrique/nvim-maximize-window-toggle',
   'dhruvasagar/vim-zoom',
-  'github/copilot.vim',
   'nvim-tree/nvim-web-devicons',
   'kylechui/nvim-surround',
   'majutsushi/tagbar',

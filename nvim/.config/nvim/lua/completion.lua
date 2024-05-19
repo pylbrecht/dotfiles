@@ -1,5 +1,9 @@
 local lspkind = require "lspkind"
-lspkind.init {}
+lspkind.init({
+  symbol_map = {
+    Copilot = "",
+  },
+})
 
 require("luasnip.loaders.from_vscode").lazy_load()
 local luasnip = require "luasnip"
@@ -23,6 +27,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = "copilot" },
   },
   snippet = {
     expand = function(args)
