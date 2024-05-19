@@ -1,9 +1,5 @@
 local lspkind = require "lspkind"
-lspkind.init({
-  symbol_map = {
-    Copilot = "",
-  },
-})
+lspkind.init({})
 
 require("luasnip.loaders.from_vscode").lazy_load()
 local luasnip = require "luasnip"
@@ -45,5 +41,15 @@ cmp.setup {
       select = true,
     },
   },
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text', 
+      maxwidth = 50,
+      ellipsis_char = '...',
+      show_labelDetails = true,
+      symbol_map = {
+        Copilot = "",
+      }
+    })
+  }
 }
-
