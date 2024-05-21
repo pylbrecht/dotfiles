@@ -13,7 +13,7 @@ fzf.setup({
 })
 
 -- TODO: find better mnemonics
-vim.api.nvim_set_keymap("n", "<leader>f", ":FzfLua files<cr>", {silent = true})
-vim.api.nvim_set_keymap("n", "<leader>gf", ":FzfLua git_files<cr>", {silent = true})
-vim.api.nvim_set_keymap("n", "<leader>b", ":FzfLua buffers<cr>", {silent = true})
-vim.api.nvim_set_keymap("n", "<leader>/", ":FzfLua live_grep<cr>", {silent = true})
+vim.keymap.set("n", "<leader>f", fzf.files, {silent = true})
+vim.keymap.set("n", "<leader>gf", fzf.git_files, {silent = true})
+vim.keymap.set("n", "<leader>b", fzf.buffers, {silent = true})
+vim.keymap.set("n", "<leader>/", fzf.live_grep, {silent = true})
