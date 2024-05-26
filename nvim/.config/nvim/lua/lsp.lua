@@ -23,6 +23,25 @@ local function get_typescript_server_path(root_dir)
     return global_ts
   end
 end
+
+local mason_registry = require('mason-registry')
+local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+
+local lspconfig = require('lspconfig')
+
+lspconfig.tsserver.setup {
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+      },
+    },
+  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+}
+
 lspconfig.volar.setup{
   on_new_config = function(new_config, new_root_dir)
     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
@@ -30,7 +49,6 @@ lspconfig.volar.setup{
 }
 
 lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {}
 lspconfig.ruff_lsp.setup {}
 
@@ -45,6 +63,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
 
     local fzf = require('fzf-lua')
     vim.keymap.set("n", "gd", function() fzf.lsp_definitions({jump_to_single_result = true}) end, {silent = true})
