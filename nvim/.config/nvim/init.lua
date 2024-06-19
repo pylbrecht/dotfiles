@@ -43,7 +43,9 @@ require('lazy').setup({
   {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {}
+    opts = {
+      disabled_filetypes = {'tagbar', 'fugitive', 'fugitiveblame', 'mason'},
+    }
   },
   { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
   {
