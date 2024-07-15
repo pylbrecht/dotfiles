@@ -1,3 +1,6 @@
+[env]
+TERM = "xterm-256color"
+
 [colors]
 transparent_background_colors = true
 
@@ -76,4 +79,4 @@ x = 8
 y = 8
 
 [window]
-opacity = 0.9
+opacity = 1
