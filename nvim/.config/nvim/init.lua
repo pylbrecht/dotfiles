@@ -45,6 +45,7 @@ require('lazy').setup({
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {
       disabled_filetypes = {'tagbar', 'fugitive', 'fugitiveblame', 'mason'},
+      max_count = 3,
     }
   },
   { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
