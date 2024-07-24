@@ -1,3 +1,7 @@
+# pylint: disable=C0111
+c = c  # noqa: F821 pylint: disable=E0602,C0103
+config = config  # noqa: F821 pylint: disable=E0602,C0103
+
 config.load_autoconfig(True)
 c.content.blocking.whitelist = ["https://app.datadoghq.eu/account/saml/assertion"]
 c.content.blocking.method = "both"
