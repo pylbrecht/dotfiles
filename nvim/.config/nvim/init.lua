@@ -226,6 +226,7 @@ require('nvim-treesitter.configs').setup({
     "dockerfile",
     "gitcommit",
     "git_rebase",
+    "go",
     "html",
     "htmldjango",
     "javascript",
