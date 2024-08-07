@@ -41,6 +41,18 @@ require('lazy').setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
+    "andymass/vim-matchup",
+    config = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+      require("nvim-treesitter.configs").setup({
+        matchup = {
+          enable = true,
+          disable_virtual_text = true,
+        },
+      })
+    end
+  },
+  {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {
