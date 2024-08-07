@@ -1,6 +1,11 @@
 -- follow vim mnemonics for yanking
 vim.api.nvim_set_keymap("n", "Y", "y$", {})
 
+-- always use very magic
+vim.keymap.set('n', '?', '?\\v')
+vim.keymap.set('n', '/', '/\\v')
+vim.keymap.set('c', '%s/', '%s/\\v')
+
 -- H is easier to type than ^
 vim.api.nvim_set_keymap("n", "H", "^", {})
 vim.api.nvim_set_keymap("o", "H", "^", {})
