@@ -7,4 +7,6 @@ config.colors = rosepine.moon.colors()
 config.font = wezterm.font("SauceCodePro Nerd Font")
 config.font_size = 19
 
+config.enable_tab_bar = false
+
 return config
