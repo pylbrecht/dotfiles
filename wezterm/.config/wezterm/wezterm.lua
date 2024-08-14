@@ -15,4 +15,13 @@ config.window_padding = {
   bottom = 0,
 }
 
+-- on macOS cmd+q kills all open instances (or windows?)
+config.keys = {
+  {
+    key = 'q',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentTab { confirm = false },
+  },
+}
+
 return config
