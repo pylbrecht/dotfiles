@@ -19,6 +19,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
+  {
     "folke/ts-comments.nvim",
     opts = {},
     event = "VeryLazy",
@@ -386,6 +391,7 @@ require('prettier').setup({
 })
 
 require("mini.ai").setup({})
+require("nvim-autopairs").setup({})
 
 vim.cmd([[
 " Fix weird resizing issue when running 'alacritty --command nvim'
