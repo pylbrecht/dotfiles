@@ -231,6 +231,7 @@ require("mappings")
 require("colorscheme")
 require("plugins")
 require("debuggers")
+require("options")
 
 require('nvim-treesitter.configs').setup({
   highlight = { enable = true },
