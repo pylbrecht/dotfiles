@@ -24,6 +24,10 @@ require('lazy').setup({
     config = true
   },
   {
+    'ruifm/gitlinker.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  {
     "folke/ts-comments.nvim",
     opts = {},
     event = "VeryLazy",
@@ -393,6 +397,15 @@ require('prettier').setup({
 
 require("mini.ai").setup({})
 require("nvim-autopairs").setup({})
+require("gitlinker").setup({
+    callbacks = {
+        ["git.envelio.sh"] = function(url_data)
+          local url = require("gitlinker.hosts").get_gitlab_type_url(url_data)
+          url = string.gsub(url, "git.envelio.sh", "git.envelio.org")
+          return url
+        end
+  },
+})
 
 vim.cmd([[
 " Fix weird resizing issue when running 'alacritty --command nvim'
