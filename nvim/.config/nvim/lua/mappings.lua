@@ -33,9 +33,14 @@ vim.api.nvim_set_keymap("n", "zq", ":bufdo! bd!<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "zd", ":bd!<cr>", { silent = true })
 
 -- general
-vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>/", ":Telescope live_grep<cr>", {})
+local telescope_builtin = require("telescope.builtin")
+local telescope_opts = {prompt_title = false, preview_title = false, results_title = false}
+
+vim.keymap.set("n", "<leader>f", function() telescope_builtin.find_files(telescope_opts) end, {})
+vim.keymap.set("n", "<leader>b", function() telescope_builtin.buffers(telescope_opts) end, {})
+vim.keymap.set("n", "<leader>/", function() telescope_builtin.live_grep(telescope_opts) end, {})
+vim.keymap.set("n", "<leader>gf", function() telescope_builtin.git_files(telescope_opts) end, {})
+
 vim.api.nvim_set_keymap("n", "]b", ":bnext<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "[b", ":bprevious<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "]c", ":cnext<cr>", { silent = true })
@@ -49,7 +54,6 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gl", ":tab Git log<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gr", ":Gread<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gc", ":G commit --verbose<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gwl", ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", {})

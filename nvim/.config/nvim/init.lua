@@ -337,8 +337,13 @@ require("telescope").setup({
   defaults = {
     layout_strategy = 'vertical',
     layout_config = {
-      horizontal = { width = 0.99, height = 0.99 },
-      vertical = { width = 0.99, height = 0.99, preview_height = 0.6 }
+      vertical = {
+        height = 0.9,
+        width = 0.9,
+        prompt_position = "top",
+        preview_height = 0.7,
+        preview_cutoff = 1,
+      },
     },
     mappings = {
       i = {
