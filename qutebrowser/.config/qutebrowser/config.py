@@ -9,7 +9,16 @@ config.load_autoconfig(True)
 c.content.blocking.whitelist = ["https://app.datadoghq.eu/account/saml/assertion"]
 c.content.blocking.method = "both"
 
+on_macos = sys.platform == "darwin"
+
+if on_macos:
+    os.environ["PATH"] += ':/opt/homebrew/bin'
+
 c.editor.command = ["kitty", "nvim", "{file}", "-c", "normal {line}G{column0}l"]
+
+if on_macos:
+    c.editor.command = ["open", "-n", "-a"] + c.editor.command
+
 c.tabs.padding = {'bottom': 4, 'left': 5, 'right': 5, 'top': 4}
 c.tabs.indicator.padding = {'bottom': 0, 'left': 0, 'right': 4, 'top': 0}
 c.tabs.select_on_remove = 'prev'
