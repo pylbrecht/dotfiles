@@ -48,6 +48,7 @@ c.url.searchengines["dict"] = "https://www.dict.cc/?s={}"
 can_access_clipboard = (
     "https://*.atlassian.net/*",
     "https://github.com/*",
+    "https://*.envelio.org/*",
 )
 for url_pattern in can_access_clipboard:
     config.set('content.javascript.clipboard', 'access', url_pattern)
