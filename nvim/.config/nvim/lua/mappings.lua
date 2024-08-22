@@ -52,7 +52,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>gl", ":tab Git log<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>glo", ":tab Git log --oneline -100<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>glg", ":tab Git log<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gs", ":tab Git<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gr", ":Gread<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>gc", ":G commit --verbose<cr>", {})
