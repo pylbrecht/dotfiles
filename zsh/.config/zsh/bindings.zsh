@@ -4,8 +4,6 @@ bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 bindkey '^h' backward-delete-char
 
-bindkey '^j' history-search-forward
-bindkey '^k' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^p' history-search-backward
 
