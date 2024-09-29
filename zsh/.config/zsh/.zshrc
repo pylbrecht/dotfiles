@@ -16,6 +16,9 @@ if [[ `uname` == 'Darwin' ]] ; then
 fi
 
 autoload -Uz compinit && compinit
+
+source <(jj util completion zsh)
+
 setopt menu_complete
 
 # use menu selection
