@@ -46,6 +46,7 @@ vim.api.nvim_set_keymap("n", "]b", ":bnext<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "[b", ":bprevious<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "]c", ":cnext<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "[c", ":cprevious<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>,", "<C-^>", { noremap = true, silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
