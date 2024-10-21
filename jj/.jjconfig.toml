@@ -1,0 +1,9 @@
+[git]
+private-commits = "description(glob:'wip:*')"
+
+[aliases]
+l = ["log"]
+lb = ["log", "-r", "((bookmarks() & mine()) ~ ::trunk())::"]
+
+[revsets]
+log = "trunk()..@" 
