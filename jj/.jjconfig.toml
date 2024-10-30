@@ -6,6 +6,7 @@ l = ["log"]
 lb = ["log", "-r", "((bookmarks() & mine()) ~ ::trunk())::"]
 gp = ["git", "push"]
 gf = ["git", "fetch"]
+gfa = ["git", "fetch", "--all-remotes"]
 
 [revsets]
 log = "trunk()..@" 
