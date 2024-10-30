@@ -13,3 +13,7 @@ log = "trunk()..@"
 
 [ui]
 default-command = "log"
+
+[user]
+name = "pylbrecht"
+email = "pylbrecht@mailbox.org"
