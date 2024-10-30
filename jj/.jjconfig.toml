@@ -10,3 +10,6 @@ gfa = ["git", "fetch", "--all-remotes"]
 
 [revsets]
 log = "trunk()..@" 
+
+[ui]
+default-command = "log"
