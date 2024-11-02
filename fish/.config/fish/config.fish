@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 fish_config theme choose "Rosé Pine Moon"
+set -U fish_greeting
 
 fish_vi_key_bindings
 fish_vi_cursor
