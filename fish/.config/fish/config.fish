@@ -30,3 +30,6 @@ function fish_prompt
     echo '% '
 end
 set fish_prompt_pwd_dir_length 0
+
+bind \cg --mode insert 'command tmux-session'
+bind \cg --mode default 'command tmux-session'
