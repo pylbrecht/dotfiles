@@ -33,3 +33,5 @@ set fish_prompt_pwd_dir_length 0
 
 bind \cg --mode insert 'command tmux-session'
 bind \cg --mode default 'command tmux-session'
+bind \ce --mode insert 'end-of-line'
+bind \ca --mode insert 'beginning-of-line'
