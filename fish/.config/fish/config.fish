@@ -38,3 +38,4 @@ bind \ce --mode insert 'end-of-line'
 bind \ca --mode insert 'beginning-of-line'
 
 zoxide init fish | source
+pyenv init - | source
