@@ -100,6 +100,9 @@ return {
                     apply = true,
                   })
                 end
+
+                if client.name == "rust_analyzer" then
+                  vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
                 end
               end,
             })
