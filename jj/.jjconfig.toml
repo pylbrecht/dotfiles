@@ -7,6 +7,7 @@ gp = ["git", "push"]
 gf = ["git", "fetch"]
 gfa = ["git", "fetch", "--all-remotes"]
 up = ["rebase", "--skip-emptied", "--source", "all:roots(trunk()..@)", "--destination", "main"]
+wc = ["edit", "working-copy"]
 
 [revsets]
 log = "trunk()..@" 
