@@ -42,8 +42,14 @@ vim.keymap.set("n", "<leader>gf", require("pylbrecht.telescope").project_files, 
 
 -- yank current buffer's file name to system clipboard
 local copy_current_filename = function()
+	-- some of my project paths contain hyphens, which need to be escaped
+	-- https://stackoverflow.com/a/34953646
+	local function escape_pattern(text)
+		return text:gsub("([^%w])", "%%%1")
+	end
 	local git_root = vim.fs.root(0, ".git")
-	local rooted_name = vim.fn.expand("%:p"):gsub(git_root .. "/", "", 1)
+	local path = vim.fn.expand("%:p")
+	local rooted_name = string.gsub(path, escape_pattern(git_root .. "/"), "", 1)
 	vim.fn.setreg("+", rooted_name)
 end
 vim.keymap.set("n", "<leader>yf", copy_current_filename, {})
