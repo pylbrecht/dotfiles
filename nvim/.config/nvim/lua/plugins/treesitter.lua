@@ -70,45 +70,75 @@ return {
       -- gladfully taken from
       -- https://github.com/gennaro-tedesco/dotfiles/blob/b18fd749d6eb17fc4a57ea09cb074b9a203b1e28/nvim/lua/plugins/treesitter.lua#L25-L64
       require("nvim-treesitter-textobjects").setup({
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ["af"] = { query = "@function.outer", desc = "select around function" },
-            ["if"] = { query = "@function.inner", desc = "select inside function" },
-            ["ac"] = { query = "@class.outer", desc = "select around class" },
-            ["ic"] = { query = "@class.inner", desc = "select inside class" },
-            ["al"] = { query = "@loop.outer", desc = "select around loop" },
-            ["il"] = { query = "@loop.inner", desc = "select inside loop" },
-            ["ab"] = { query = "@block.outer", desc = "select around block" },
-            ["ib"] = { query = "@block.inner", desc = "select inside block" },
-          },
-        },
+        lookahead = true,
         move = {
-          enable = true,
           set_jumps = true,
-          goto_next_start = {
-            ["]f"] = { query = "@function.outer", desc = "go to next function" },
-            ["]]"] = { query = "@class.outer", desc = "go to next class" },
-            ["]l"] = { query = "@loop.outer", desc = "go to next loop" },
-          },
-          goto_next_end = {
-            ["]F"] = { query = "@function.outer", desc = "go to end of next function" },
-            ["]["] = { query = "@class.outer", desc = "go to end of next class" },
-            ["]L"] = { query = "@loop.outer", desc = "go to end of next loop end" },
-          },
-          goto_previous_start = {
-            ["[f"] = { query = "@function.outer", desc = "go to previous function" },
-            ["[["] = { query = "@class.outer", desc = "go to previous class" },
-            ["[l"] = { query = "@loop.outer", desc = "go to previous loop" },
-          },
-          goto_previous_end = {
-            ["[F"] = { query = "@function.outer", desc = "go to end of previous function" },
-            ["[]"] = { query = "@class.outer", desc = "go to end of previous class" },
-            ["[L"] = { query = "@loop.outer", desc = "go to end of previous loop" },
-          },
         },
       })
+      local select = require("nvim-treesitter-textobjects.select")
+      vim.keymap.set({ "x", "o" }, "af", function()
+        select.select_textobject("@function.outer", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "if", function()
+        select.select_textobjects("@function.inner", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "ac", function()
+        select.select_textobjects("@class.outer", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "ic", function()
+        select.select_textobjects("@class.inner", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "al", function()
+        select.select_textobjects("@loop.outer", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "il", function()
+        select.select_textobjects("@loop.inner", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "ab", function()
+        select.select_textobjects("@block.outer", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "ib", function()
+        select.select_textobjects("@block.inner", "textobjects")
+      end)
+
+      local move = require("nvim-treesitter-textobjects.move")
+      vim.keymap.set({ "n", "x", "o" }, "]f", function()
+        move.goto_next_start("@function.outer", "textobjects")
+      end)
+
+      vim.keymap.set({ "n", "x", "o" }, "]]", function()
+        move.goto_next_start("@class.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "]l", function()
+        move.goto_next_start("@loop.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "]F", function()
+        move.goto_next_end("@function.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "][", function()
+        move.goto_next_end("@class.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "]L", function()
+        move.goto_next_end("@loop.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "[f", function()
+        move.goto_previous_start("@function.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "[[", function()
+        move.goto_previous_start("@class.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "[l", function()
+        move.goto_previous_start("@loop.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "[F", function()
+        move.goto_previous_end("@function.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "[]", function()
+        move.goto_previous_end("@class.outer", "textobjects")
+      end)
+      vim.keymap.set({ "n", "x", "o" }, "[L", function()
+        move.goto_previous_end("@loop.outer", "textobjects")
+      end)
 
       vim.api.nvim_create_autocmd("FileType", {
         pattern = parsers,
