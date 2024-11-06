@@ -42,6 +42,14 @@ vim.keymap.set("n", "<leader>b", function() telescope_builtin.buffers(telescope_
 vim.keymap.set("n", "<leader>/", function() telescope_builtin.live_grep(telescope_opts) end, {})
 vim.keymap.set("n", "<leader>gf", project_files, {})
 
+-- yank current buffer's file name to system clipboard
+local copy_current_filename = function()
+	local git_root = vim.fs.root(0, ".git")
+	local rooted_name = vim.fn.expand("%:p"):gsub(git_root .. "/", "", 1)
+	vim.fn.setreg("+", rooted_name)
+end
+vim.keymap.set("n", "<leader>yf", copy_current_filename, {})
+
 vim.api.nvim_set_keymap("n", "]b", ":bnext<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "[b", ":bprevious<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "]c", ":cnext<cr>", { silent = true })
