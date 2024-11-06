@@ -17,9 +17,9 @@ local function is_servo_project(root_dir)
 end
 
 return {
-  on_new_config = function(new_config, root_dir)
-    if is_servo_project(root_dir) then
-      new_config.settings = vim.tbl_deep_extend("force", new_config.settings, servo_settings)
+  on_attach = function(client)
+    if is_servo_project(client.root_dir) then
+      client.settings = vim.tbl_deep_extend("force", client.settings, servo_settings)
     end
   end,
 }
