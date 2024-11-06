@@ -34,13 +34,11 @@ vim.api.nvim_set_keymap("n", "zd", ":bd!<cr>", { silent = true })
 
 -- general
 local telescope_builtin = require("telescope.builtin")
-local telescope_opts = {prompt_title = false, preview_title = false, results_title = false}
-local project_files = require("pylbrecht.telescope").project_files
 
-vim.keymap.set("n", "<leader>f", function() telescope_builtin.find_files(telescope_opts) end, {})
-vim.keymap.set("n", "<leader>b", function() telescope_builtin.buffers(telescope_opts) end, {})
+vim.keymap.set("n", "<leader>f", telescope_builtin.find_files, {})
+vim.keymap.set("n", "<leader>b", telescope_builtin.buffers, {})
 vim.keymap.set("n", "<leader>/", require("pylbrecht.telescope").multi_grep, {})
-vim.keymap.set("n", "<leader>gf", project_files, {})
+vim.keymap.set("n", "<leader>gf", require("pylbrecht.telescope").project_files, {})
 
 -- yank current buffer's file name to system clipboard
 local copy_current_filename = function()
