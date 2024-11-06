@@ -24,6 +24,7 @@ cmp.setup {
     { name = 'buffer' },
     { name = 'path' },
     { name = "copilot" },
+    { name = "nazydev", group_index = 0 },
   },
   snippet = {
     expand = function(args)
