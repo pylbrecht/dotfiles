@@ -20,6 +20,7 @@ log = "trunk()..@"
 [ui]
 default-command = "log"
 diff.format = "git"
+diff.tool = ["difft", "--color=always", "$left", "$right"]
 
 [user]
 name = "pylbrecht"
