@@ -1,8 +1,5 @@
--- TODO: use metatable to set default of `function() return {} end` if server
--- is not configured
 -- TODO: move each server config to its own .lua file (e.g. plugins/lsp/ruff.lua).
 local servers = {
-  lua_ls = function() return {} end,
   ts_ls = function()
     local mason_registry = require('mason-registry')
     local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
@@ -71,7 +68,6 @@ local servers = {
       },
     }
   end,
-  rust_analyzer = function() return {} end,
   ruff = function()
     return {
       on_attach = function(client, bufnr)
@@ -82,8 +78,12 @@ local servers = {
       end,
     }
   end,
-  gopls = function() return {} end,
 }
+setmetatable(servers, {
+  __index = function()
+    return {}
+  end,
+})
 
 return {
   {
