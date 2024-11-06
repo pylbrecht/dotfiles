@@ -18,6 +18,7 @@ up = ["rebase", "--skip-emptied", "--source", "all:roots(trunk()..@)", "--destin
 wc = ["edit", "working-copy"]
 de = ["diffedit"]
 
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
 [revsets]
 log = "trunk()..@" 
 
