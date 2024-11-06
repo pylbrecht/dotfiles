@@ -20,6 +20,9 @@ return {
           ["<C-u>"] = "preview-page-up",
           ["<C-d>"] = "preview-page-down"
         },
+        fzf = {
+          ["ctrl-q"] = "select-all+accept",
+        },
       },
       actions = {
         files = {
