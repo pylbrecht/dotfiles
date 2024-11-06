@@ -1,5 +1,8 @@
 [git]
 private-commits = "description(glob:'wip:*')"
+subprocess = true
+sign-on-push = true
+push-new-bookmarks = true
 
 [aliases]
 l = ["log"]
