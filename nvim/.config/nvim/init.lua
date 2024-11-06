@@ -17,7 +17,6 @@ endfor
 
 -- personal stuff
 require("mappings")
-require("colorscheme")
 require("debuggers")
 require("options")
 

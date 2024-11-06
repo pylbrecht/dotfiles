@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -52,7 +52,7 @@ require("lazy").setup({
   {
     "zbirenbaum/copilot-cmp",
     dependencies = { "zbirenbaum/copilot.lua" },
-    config = function ()
+    config = function()
       require("copilot").setup({
         suggestion = { enabled = false },
         panel = { enabled = false },
@@ -81,7 +81,7 @@ require("lazy").setup({
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {
-      disabled_filetypes = {'tagbar', 'fugitive', 'fugitiveblame', 'mason'},
+      disabled_filetypes = { 'tagbar', 'fugitive', 'fugitiveblame', 'mason' },
       max_count = 3,
       disabled_keys = {
         ["<Up>"] = {},
@@ -89,7 +89,7 @@ require("lazy").setup({
       },
     }
   },
-  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
+  { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
   {
     "williamboman/mason.nvim",
     "mfussenegger/nvim-dap",
@@ -120,8 +120,7 @@ require("lazy").setup({
 
   { 'echasnovski/mini.nvim', version = false },
 
-  { 'rose-pine/neovim', name = 'rose-pine' },
-  { 'fatih/vim-go', build = ':GoUpdateBinaries' },
+  { 'fatih/vim-go',          build = ':GoUpdateBinaries' },
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -138,7 +137,7 @@ require("lazy").setup({
     end,
   },
 
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',                opts = {} },
 
   {
     'lewis6991/gitsigns.nvim',
@@ -155,16 +154,16 @@ require("lazy").setup({
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
-        vim.keymap.set({'n', 'v'}, ']c', function()
+        vim.keymap.set({ 'n', 'v' }, ']c', function()
           if vim.wo.diff then return ']c' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
-        vim.keymap.set({'n', 'v'}, '[c', function()
+        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        vim.keymap.set({ 'n', 'v' }, '[c', function()
           if vim.wo.diff then return '[c' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
+        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
       end,
     },
   },
