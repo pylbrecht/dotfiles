@@ -49,8 +49,6 @@ return {
           -- See `:help vim.lsp.*` for documentation on any of the below functions
           local opts = { buffer = ev.buf }
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-          vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
           vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
           vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
           vim.keymap.set('n', '<space>wl', function()
@@ -63,8 +61,8 @@ return {
           vim.keymap.set("n", "<leader>lt", builtin.lsp_type_definitions, { silent = true })
           vim.keymap.set("n", "<leader>lT", function() builtin.lsp_type_definitions({ jump_type = "vsplit" }) end,
             { silent = true })
-          vim.keymap.set("n", "gr", builtin.lsp_references, { silent = true })
-          vim.keymap.set("n", "gi", builtin.lsp_implementations, { silent = true })
+          vim.keymap.set("n", "grr", builtin.lsp_references, { silent = true })
+          vim.keymap.set("n", "gri", builtin.lsp_implementations, { silent = true })
 
           local client = vim.lsp.get_client_by_id(ev.data.client_id)
           if not client then
