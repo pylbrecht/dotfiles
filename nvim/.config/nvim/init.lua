@@ -19,7 +19,6 @@ endfor
 require("lsp")
 require("mappings")
 require("colorscheme")
-require("plugins")
 require("debuggers")
 require("options")
 

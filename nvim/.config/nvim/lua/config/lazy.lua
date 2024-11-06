@@ -22,6 +22,7 @@ vim.g.user_emmet_leader_key = '<C-e>'
 -- Setup lazy.nvim
 require("lazy").setup({
   { import = "plugins.lsp" },
+  { import = "plugins.oil" },
   'will133/vim-dirdiff',
   {
     'windwp/nvim-autopairs',
@@ -121,14 +122,6 @@ require("lazy").setup({
   { 'echasnovski/mini.nvim', version = false },
 
   { 'rose-pine/neovim', name = 'rose-pine' },
-
-  {
-    'stevearc/oil.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
   {
     'hrsh7th/nvim-cmp',
