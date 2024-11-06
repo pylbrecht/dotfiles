@@ -71,6 +71,13 @@ return {
               buffer = ev.buf,
               callback = function()
                 vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
+
+                vim.lsp.buf.code_action({
+                  context = {
+                    only = { 'source.fixAll' }
+                  },
+                  apply = true,
+                })
               end,
             })
           end
