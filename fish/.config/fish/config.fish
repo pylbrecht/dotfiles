@@ -39,3 +39,4 @@ bind \ca --mode insert 'beginning-of-line'
 
 zoxide init fish | source
 pyenv init - | source
+fzf --fish | source
