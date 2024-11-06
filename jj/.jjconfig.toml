@@ -50,3 +50,9 @@ concat(
   diff.git(),
 )
 '''
+
+[fsmonitor]
+backend = "watchman"
+
+[fsmonitor.watchman]
+register-snapshot-trigger = true
