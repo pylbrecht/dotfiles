@@ -105,7 +105,6 @@ require("lazy").setup({
   'majutsushi/tagbar',
   'mattn/emmet-vim',
   'nvim-lua/plenary.nvim',
-  'nvim-lualine/lualine.nvim',
   'rust-lang/rust.vim',
   'tpope/vim-abolish',
   'tpope/vim-eunuch',
@@ -165,20 +164,6 @@ require("lazy").setup({
           return '<Ignore>'
         end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
       end,
-    },
-  },
-
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'rose-pine',
-        component_separators = '|',
-        section_separators = '',
-      },
     },
   },
   { 'lukas-reineke/indent-blankline.nvim', main = "ibl", opts = {} },
