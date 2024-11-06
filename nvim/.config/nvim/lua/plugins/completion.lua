@@ -18,6 +18,10 @@ return {
     dependencies = {
       'rafamadriz/friendly-snippets',
       'fang2hou/blink-copilot',
+      {
+        'Kaiser-Yang/blink-cmp-git',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+      }
     },
     version = '*',
     opts = {
@@ -36,6 +40,7 @@ return {
       },
       sources = {
         default = {
+          'git',
           'lsp',
           'path',
           'snippets',
@@ -43,6 +48,13 @@ return {
           'copilot',
         },
         providers = {
+          git = {
+            module = 'blink-cmp-git',
+            name = 'Git',
+            opts = {
+              -- options for the blink-cmp-git
+            },
+          },
           copilot = {
             name = "copilot",
             module = "blink-copilot",
