@@ -72,7 +72,6 @@ require('prettier').setup({
   }
 })
 
-require("mini.ai").setup({})
 require("nvim-autopairs").setup({})
 require("gitlinker").setup({
     callbacks = {
