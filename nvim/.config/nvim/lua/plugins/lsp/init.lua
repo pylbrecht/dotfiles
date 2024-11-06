@@ -29,15 +29,17 @@ return {
       },
     },
     config = function()
-      local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')
       for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
         local success, opts = pcall(require, "plugins.lsp." .. server)
         if not success then
           opts = {}
         end
+
         opts.capabilities = require('blink.cmp').get_lsp_capabilities(opts.capabilities)
-        lspconfig[server].setup(opts)
+
+        vim.lsp.enable(server)
+        vim.lsp.config(server, opts)
       end
 
       -- Use LspAttach autocommand to only map the following keys
