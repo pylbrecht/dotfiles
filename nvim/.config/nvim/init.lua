@@ -96,7 +96,6 @@ require('lazy').setup({
   'tpope/vim-sleuth',
   'tpope/vim-unimpaired',
   'vim-test/vim-test',
-  'vimwiki/vimwiki',
   'MunifTanjim/prettier.nvim',
 
   { 'echasnovski/mini.nvim', version = false },
