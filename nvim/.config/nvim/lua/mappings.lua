@@ -39,7 +39,7 @@ local project_files = require("pylbrecht.telescope").project_files
 
 vim.keymap.set("n", "<leader>f", function() telescope_builtin.find_files(telescope_opts) end, {})
 vim.keymap.set("n", "<leader>b", function() telescope_builtin.buffers(telescope_opts) end, {})
-vim.keymap.set("n", "<leader>/", function() telescope_builtin.live_grep(telescope_opts) end, {})
+vim.keymap.set("n", "<leader>/", require("pylbrecht.telescope").multi_grep, {})
 vim.keymap.set("n", "<leader>gf", project_files, {})
 
 -- yank current buffer's file name to system clipboard
