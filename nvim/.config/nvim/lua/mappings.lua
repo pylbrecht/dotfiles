@@ -1,3 +1,4 @@
+vim.keymap.set("n", "<esc>", "<cmd>noh<cr>")
 -- follow vim mnemonics for yanking
 vim.api.nvim_set_keymap("n", "Y", "y$", {})
 
