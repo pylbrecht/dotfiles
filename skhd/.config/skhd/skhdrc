@@ -172,6 +172,8 @@ cmd + shift - 8 : yabai -m window --space 8
 cmd + shift - 9 : yabai -m window --space 9
 cmd + shift - 0 : yabai -m window --space 10
 cmd - f : yabai -m window --toggle zoom-fullscreen
-cmd - return : open -n /Applications/Kitty.app
+# NOTE: I am setting SHELL here, because I make skhd use /bin/sh for speed:
+# https://github.com/koekeishiya/skhd/issues/42#issuecomment-1866891201
+cmd - return : open --env SHELL=/opt/homebrew/bin/fish -n /Applications/kitty.app
 cmd - space : yabai -m window --toggle float
 cmd - s : yabai -m window --toggle split
