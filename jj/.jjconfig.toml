@@ -2,9 +2,7 @@
 
 [git]
 private-commits = "description(glob:'wip:*')"
-subprocess = true
 sign-on-push = true
-push-new-bookmarks = true
 
 [aliases]
 gcl = ["git", "clone", "--colocate"]
@@ -56,3 +54,6 @@ backend = "watchman"
 
 [fsmonitor.watchman]
 register-snapshot-trigger = true
+
+[remotes.origin]
+auto-track-bookmarks = "glob:*"
