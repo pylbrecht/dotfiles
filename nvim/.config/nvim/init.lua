@@ -41,34 +41,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require("nvim-surround").setup()
-require("telescope").setup({
-  defaults = {
-    layout_strategy = 'vertical',
-    layout_config = {
-      vertical = {
-        height = 0.9,
-        width = 0.9,
-        prompt_position = "top",
-        preview_height = 0.7,
-        preview_cutoff = 1,
-      },
-    },
-    mappings = {
-      i = {
-        ["<C-j>"] = "move_selection_next",
-        ["<C-k>"] = "move_selection_previous",
-      }
-    }
-  },
-  pickers = {
-    lsp_references = {
-      show_line = false,
-    }
-  },
-  extensions = {
-    "git_worktree"
-  }
-})
 require("ibl").setup({
   indent = {
     char = '┊',
