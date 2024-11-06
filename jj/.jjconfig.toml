@@ -7,9 +7,12 @@ sign-on-push = true
 push-new-bookmarks = true
 
 [aliases]
-l = ["log"]
+gcl = ["git", "clone", "--colocate"]
 gp = ["git", "push"]
+gpc = ["git", "push", "--change"]
+gpr = ["git", "push", "--revisions"]
 gf = ["git", "fetch"]
+gfu = ["git", "fetch", "--remote", "upstream"]
 gfa = ["git", "fetch", "--all-remotes"]
 up = ["rebase", "--skip-emptied", "--source", "all:roots(trunk()..@)", "--destination", "trunk()"]
 wc = ["edit", "working-copy"]
