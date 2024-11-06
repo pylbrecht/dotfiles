@@ -8,9 +8,13 @@ local vue_plugin = {
   configNamespace = 'typescript',
 }
 return {
-  init_options = {
-    plugins = {
-      vue_plugin,
+  settings = {
+    vtsls = {
+      tsserver = {
+        globalPlugins = {
+          vue_plugin,
+        },
+      },
     },
   },
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
