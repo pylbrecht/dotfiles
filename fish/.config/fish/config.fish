@@ -41,5 +41,6 @@ zoxide init fish | source
 pyenv init - | source
 fzf --fish | source
 jj util completion fish | source
-set PATH $PATH ~/.cargo/bin
-set EDITOR nvim
+
+set --universal PATH $PATH ~/.cargo/bin
+set --universal EDITOR nvim
