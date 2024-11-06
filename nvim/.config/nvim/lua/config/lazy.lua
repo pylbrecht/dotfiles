@@ -102,7 +102,6 @@ require("lazy").setup({
   'tpope/vim-repeat',
   'tpope/vim-sensible',
   'tpope/vim-sleuth',
-  'tpope/vim-unimpaired',
   'vim-test/vim-test',
   'MunifTanjim/prettier.nvim',
 
