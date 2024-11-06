@@ -21,6 +21,7 @@ vim.g.user_emmet_leader_key = '<C-e>'
 
 -- Setup lazy.nvim
 require("lazy").setup({
+  { import = "plugins.lsp" },
   'will133/vim-dirdiff',
   {
     'windwp/nvim-autopairs',
@@ -129,17 +130,6 @@ require("lazy").setup({
   },
 
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
-
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      { 'williamboman/mason.nvim', config = true },
-      'williamboman/mason-lspconfig.nvim',
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-      'folke/neodev.nvim',
-    },
-  },
-
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
