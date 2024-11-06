@@ -48,6 +48,7 @@ return {
         "gitcommit",
         "git_rebase",
         "go",
+        "gotmpl",
         "html",
         "htmldjango",
         "javascript",
