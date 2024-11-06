@@ -17,37 +17,54 @@ return {
         end,
       },
     },
-    opts = {
-      defaults = {
-        layout_strategy = 'vertical',
-        layout_config = {
-          vertical = {
-            height = 0.9,
-            width = 0.9,
-            prompt_position = "top",
-            preview_height = 0.7,
-            preview_cutoff = 1,
+    config = function()
+      local telescope = require("telescope")
+      local opts = {
+        defaults = {
+          layout_strategy = 'vertical',
+          layout_config = {
+            vertical = {
+              height = 0.9,
+              width = 0.9,
+              prompt_position = "top",
+              preview_height = 0.7,
+              preview_cutoff = 1,
+            },
+          },
+          mappings = {
+            i = {
+              ["<C-j>"] = "move_selection_next",
+              ["<C-k>"] = "move_selection_previous",
+            }
+          }
+        },
+        pickers = {
+          lsp_references = {
+            show_line = false,
           },
         },
-        mappings = {
-          i = {
-            ["<C-j>"] = "move_selection_next",
-            ["<C-k>"] = "move_selection_previous",
-          }
-        }
-      },
-      pickers = {
-        lsp_references = {
-          show_line = false,
+        find_files = {
+          find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
         },
-      },
-      find_files = {
-        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
-      },
-      extensions = {
-        "git_worktree"
+        extensions = {
+          "git_worktree",
+        }
       }
+      telescope.setup(opts)
+      local builtin = require("telescope.builtin")
 
-    }
-  },
+      vim.keymap.set("n", "<leader>f", builtin.find_files, {})
+      vim.keymap.set("n", "<leader>b", builtin.buffers, {})
+      vim.keymap.set("n", "<leader>h", builtin.help_tags, {})
+      vim.keymap.set("n", "<leader>/", require("pylbrecht.telescope").multi_grep, {})
+      vim.keymap.set("n", "<leader>gf", require("pylbrecht.telescope").project_files, {})
+      vim.keymap.set("n", "gd", builtin.lsp_definitions, { silent = true })
+      vim.keymap.set("n", "gD", function() builtin.lsp_definitions({ jump_type = "vsplit" }) end, { silent = true })
+      vim.keymap.set("n", "<leader>lt", builtin.lsp_type_definitions, { silent = true })
+      vim.keymap.set("n", "<leader>lT", function() builtin.lsp_type_definitions({ jump_type = "vsplit" }) end,
+        { silent = true })
+      vim.keymap.set("n", "grr", builtin.lsp_references, { silent = true })
+      vim.keymap.set("n", "gri", builtin.lsp_implementations, { silent = true })
+    end
+  }
 }

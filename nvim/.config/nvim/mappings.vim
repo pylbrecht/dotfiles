@@ -26,10 +26,6 @@ nnoremap <C-H> <C-W><C-H>
 vnoremap < <gv
 vnoremap > >gv
 
-" telescope mappings
-nnoremap q: :Telescope command_history<Cr>
-nnoremap q/ :Telescope search_history<Cr>
-
 nnoremap <Leader>o :ToggleOnly<cr>
 
 " Things I picked up from this talk: https://www.youtube.com/watch?v=434tljD-5C8

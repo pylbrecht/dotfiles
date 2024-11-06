@@ -33,15 +33,6 @@ vim.api.nvim_set_keymap("n", "<leader><leader>rn", ":setl relativenumber!<cr>", 
 vim.api.nvim_set_keymap("n", "zq", ":bufdo! bd!<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "zd", ":bd!<cr>", { silent = true })
 
--- general
-local telescope_builtin = require("telescope.builtin")
-
-vim.keymap.set("n", "<leader>f", telescope_builtin.find_files, {})
-vim.keymap.set("n", "<leader>b", telescope_builtin.buffers, {})
-vim.keymap.set("n", "<leader>h", telescope_builtin.help_tags, {})
-vim.keymap.set("n", "<leader>/", require("pylbrecht.telescope").multi_grep, {})
-vim.keymap.set("n", "<leader>gf", require("pylbrecht.telescope").project_files, {})
-
 -- yank current buffer's file name to system clipboard
 local copy_current_filename = function()
 	-- some of my project paths contain hyphens, which need to be escaped
