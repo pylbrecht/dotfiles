@@ -101,11 +101,12 @@ return {
                     },
                     apply = true,
                   })
+                elseif client.name == "rust_analyzer" then
+                  vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
+                else
+                  vim.lsp.buf.format({ async = false })
                 end
 
-                if client.name == "rust_analyzer" then
-                  vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
-                end
               end,
             })
           end
