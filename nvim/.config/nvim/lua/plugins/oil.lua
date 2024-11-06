@@ -13,6 +13,7 @@ return {
         ["<C-l>"] = "actions.refresh",
       },
     },
+    config = function(_, opts)
       local oil = require("oil")
       oil.setup(opts)
 
