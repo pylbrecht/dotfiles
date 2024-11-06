@@ -13,6 +13,7 @@ log = "trunk()..@"
 
 [ui]
 default-command = "log"
+diff.format = "git"
 
 [user]
 name = "pylbrecht"
