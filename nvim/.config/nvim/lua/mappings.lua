@@ -79,6 +79,9 @@ vim.api.nvim_set_keymap("n", "<leader>tt", ":TestNearest<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>ta", ":TestFile<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>tl", ":TestLast<cr>", {})
 
+-- jj
+vim.api.nvim_set_keymap("n", "<leader>jja", ":!jj absorb %<cr>", {})
+
 -- move lines up/down
 -- https://vim.fandom.com/wiki/Moving_lines_up_or_down
 vim.api.nvim_set_keymap("v", "<C-j>", ":m '>+1<cr>gv=gv", {})
