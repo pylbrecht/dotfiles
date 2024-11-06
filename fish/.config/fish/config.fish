@@ -43,4 +43,4 @@ fzf --fish | source
 jj util completion fish | source
 
 fish_add_path --universal --prepend ~/.cargo/bin
-set --universal EDITOR nvim
+set --export --universal EDITOR nvim
