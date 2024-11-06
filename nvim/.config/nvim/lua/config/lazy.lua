@@ -21,8 +21,7 @@ vim.g.user_emmet_leader_key = '<C-e>'
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  { import = "plugins.lsp" },
-  { import = "plugins.oil" },
+  { import = "plugins" },
   'will133/vim-dirdiff',
   {
     'windwp/nvim-autopairs',
