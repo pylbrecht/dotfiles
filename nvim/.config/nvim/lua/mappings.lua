@@ -28,6 +28,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
+-- https://www.reddit.com/r/neovim/comments/1ok4s7n/comment/nmdtr59/?share_id=yBcstuSgJTUOKLX-bHhP5&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1
+vim.keymap.set("n", "j", function()
+	return vim.v.count1 > 1 and ("m`" .. vim.v.count1 .. "j") or "j"
+end, { expr = true, desc = "set context mark before moving more than one line down" })
+vim.keymap.set("n", "k", function()
+	return vim.v.count1 > 1 and ("m`" .. vim.v.count1 .. "k") or "k"
+end, { expr = true, desc = "set context mark before moving more than one line up" })
+
 -- toggle relativenumber (helpful during pairing)
 vim.api.nvim_set_keymap("n", "<leader><leader>rn", ":setl relativenumber!<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "zq", ":bufdo! bd!<cr>", { silent = true })
