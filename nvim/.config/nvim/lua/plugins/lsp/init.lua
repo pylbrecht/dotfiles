@@ -81,8 +81,8 @@ return {
                   end
                 end
 
-                vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
-
+                -- The order fixAll -> format (sync) -> organizeImports seems to matter for avoiding race conditions.
+                -- https://github.com/astral-sh/ruff-lsp/issues/409#issuecomment-2764741595
                 if client.name == "ruff" then
                   vim.lsp.buf.code_action({
                     context = {
@@ -90,6 +90,16 @@ return {
                     },
                     apply = true,
                   })
+
+                  vim.lsp.buf.format({ async = false })
+
+                  vim.lsp.buf.code_action({
+                    context = {
+                      only = { 'source.organizeImports' }
+                    },
+                    apply = true,
+                  })
+                end
                 end
               end,
             })
