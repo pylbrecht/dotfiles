@@ -55,6 +55,13 @@ return {
               -- options for the blink-cmp-git
             },
           },
+          snippets = {
+            opts = {
+              extended_filetypes = {
+                jjdescription = { "gitcommit" }
+              }
+            }
+          },
           copilot = {
             name = "copilot",
             module = "blink-copilot",
