@@ -92,6 +92,9 @@ return {
                     },
                     apply = true,
                   })
+                  -- https://github.com/astral-sh/ruff-lsp/issues/95
+                  -- TODO(pylbrecht): maybe use conform.nvim?
+                  vim.wait(100)
                 elseif client.name == "rust_analyzer" then
                   vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
                 else
