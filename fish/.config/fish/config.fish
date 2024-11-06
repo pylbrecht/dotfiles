@@ -42,5 +42,5 @@ pyenv init - | source
 fzf --fish | source
 jj util completion fish | source
 
-set --universal PATH $PATH ~/.cargo/bin
+fish_add_path --universal --prepend ~/.cargo/bin
 set --universal EDITOR nvim
