@@ -16,7 +16,6 @@ endfor
 ]])
 
 -- personal stuff
-require("lsp")
 require("mappings")
 require("colorscheme")
 require("debuggers")
