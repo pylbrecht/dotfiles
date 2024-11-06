@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    atuin init fish | source
 end
 
 fish_config theme choose "Rosé Pine Moon"
