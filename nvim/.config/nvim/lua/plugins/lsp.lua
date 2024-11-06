@@ -2,9 +2,19 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim',          config = true },
-      { 'williamboman/mason-lspconfig.nvim' },
-      { 'j-hui/fidget.nvim',                tag = 'legacy', opts = {} },
+      {
+        'williamboman/mason.nvim',
+        opts = {},
+      },
+      {
+        'williamboman/mason-lspconfig.nvim',
+        opts = { automatic_installation = true },
+      },
+      {
+        'j-hui/fidget.nvim',
+        tag = 'legacy',
+        opts = {}
+      },
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
