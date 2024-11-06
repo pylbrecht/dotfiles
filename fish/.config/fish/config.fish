@@ -42,3 +42,4 @@ pyenv init - | source
 fzf --fish | source
 jj util completion fish | source
 set PATH $PATH ~/.cargo/bin
+set EDITOR nvim
