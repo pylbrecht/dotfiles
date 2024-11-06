@@ -3,7 +3,6 @@ private-commits = "description(glob:'wip:*')"
 
 [aliases]
 l = ["log"]
-lb = ["log", "-r", "((bookmarks() & mine()) ~ ::trunk())::"]
 gp = ["git", "push"]
 gf = ["git", "fetch"]
 gfa = ["git", "fetch", "--all-remotes"]
