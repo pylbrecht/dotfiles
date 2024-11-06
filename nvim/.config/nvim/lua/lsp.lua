@@ -50,7 +50,7 @@ lspconfig.volar.setup{
 
 lspconfig.pyright.setup {}
 lspconfig.rust_analyzer.setup {}
-lspconfig.ruff_lsp.setup {}
+lspconfig.ruff.setup {}
 lspconfig.gopls.setup {}
 
 -- Use LspAttach autocommand to only map the following keys
