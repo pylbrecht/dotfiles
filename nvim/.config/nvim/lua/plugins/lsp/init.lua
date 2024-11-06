@@ -2,6 +2,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
+      'saghen/blink.cmp',
       {
         'williamboman/mason.nvim',
         opts = {},
@@ -35,6 +36,7 @@ return {
         if not success then
           opts = {}
         end
+        opts.capabilities = require('blink.cmp').get_lsp_capabilities(opts.capabilities)
         lspconfig[server].setup(opts)
       end
 

@@ -50,17 +50,6 @@ require("lazy").setup({
     enabled = vim.fn.has("nvim-0.10.0") == 1,
   },
   {
-    "zbirenbaum/copilot-cmp",
-    dependencies = { "zbirenbaum/copilot.lua" },
-    config = function()
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-      require("copilot_cmp").setup()
-    end
-  },
-  {
     "ibhagwan/fzf-lua",
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -120,21 +109,6 @@ require("lazy").setup({
   { 'echasnovski/mini.nvim', version = false },
 
   { 'fatih/vim-go',          build = ':GoUpdateBinaries' },
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      'onsails/lspkind.nvim',
-      { 'L3MON4D3/LuaSnip', build = "make install_jsregexp" },
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-buffer',
-      'rafamadriz/friendly-snippets',
-    },
-    config = function()
-      require "completion"
-    end,
-  },
 
   { 'folke/which-key.nvim',                opts = {} },
 

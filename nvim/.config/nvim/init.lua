@@ -20,10 +20,6 @@ require("mappings")
 require("debuggers")
 require("options")
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
 require("nvim-surround").setup()
 require("ibl").setup({
   indent = {
