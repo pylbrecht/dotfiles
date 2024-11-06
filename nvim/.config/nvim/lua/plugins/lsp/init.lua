@@ -73,6 +73,14 @@ return {
             vim.api.nvim_create_autocmd("BufWritePre", {
               buffer = ev.buf,
               callback = function()
+                local excluded_projects = { "qutebrowser" }
+
+                for _, project in ipairs(excluded_projects) do
+                  if vim.fn.expand("%:p:h"):find(project) then
+                    return
+                  end
+                end
+
                 vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
 
                 vim.lsp.buf.code_action({
