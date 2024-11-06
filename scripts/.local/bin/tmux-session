@@ -8,7 +8,6 @@ if $on_mac; then
     }
 fi
 
-session=$({ tmux list-sessions | sed -E 's/:.*$//' & tmuxp ls; } | sort | uniq | fzf --reverse)
 
 if [ -z $session ]; then
     exit
