@@ -13,6 +13,7 @@ gf = ["git", "fetch"]
 gfa = ["git", "fetch", "--all-remotes"]
 up = ["rebase", "--skip-emptied", "--source", "all:roots(trunk()..@)", "--destination", "trunk()"]
 wc = ["edit", "working-copy"]
+de = ["diffedit"]
 
 [revsets]
 log = "trunk()..@" 
