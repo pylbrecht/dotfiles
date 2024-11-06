@@ -58,6 +58,9 @@ return {
           local builtin = require('telescope.builtin')
           vim.keymap.set("n", "gd", builtin.lsp_definitions, { silent = true })
           vim.keymap.set("n", "gD", function() builtin.lsp_definitions({ jump_type = "vsplit" }) end, { silent = true })
+          vim.keymap.set("n", "<leader>lt", builtin.lsp_type_definitions, { silent = true })
+          vim.keymap.set("n", "<leader>lT", function() builtin.lsp_type_definitions({ jump_type = "vsplit" }) end,
+            { silent = true })
           vim.keymap.set("n", "gr", builtin.lsp_references, { silent = true })
           vim.keymap.set("n", "gi", builtin.lsp_implementations, { silent = true })
 

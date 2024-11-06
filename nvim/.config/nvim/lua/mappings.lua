@@ -37,6 +37,7 @@ local telescope_builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>f", telescope_builtin.find_files, {})
 vim.keymap.set("n", "<leader>b", telescope_builtin.buffers, {})
+vim.keymap.set("n", "<leader>h", telescope_builtin.help_tags, {})
 vim.keymap.set("n", "<leader>/", require("pylbrecht.telescope").multi_grep, {})
 vim.keymap.set("n", "<leader>gf", require("pylbrecht.telescope").project_files, {})
 
