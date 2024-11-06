@@ -83,12 +83,14 @@ return {
 
                 vim.lsp.buf.format({ bufnr = ev.buf, id = client.id })
 
-                vim.lsp.buf.code_action({
-                  context = {
-                    only = { 'source.fixAll' }
-                  },
-                  apply = true,
-                })
+                if client.name == "ruff" then
+                  vim.lsp.buf.code_action({
+                    context = {
+                      only = { 'source.fixAll' }
+                    },
+                    apply = true,
+                  })
+                end
               end,
             })
           end
