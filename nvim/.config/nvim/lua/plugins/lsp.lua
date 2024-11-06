@@ -1,3 +1,90 @@
+-- TODO: use metatable to set default of `function() return {} end` if server
+-- is not configured
+-- TODO: move each server config to its own .lua file (e.g. plugins/lsp/ruff.lua).
+local servers = {
+  lua_ls = function() return {} end,
+  ts_ls = function()
+    local mason_registry = require('mason-registry')
+    local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
+        '/node_modules/@vue/language-server'
+    return {
+      init_options = {
+        plugins = {
+          {
+            name = '@vue/typescript-plugin',
+            location = vue_language_server_path,
+            languages = { 'vue' },
+          },
+        },
+      },
+      filetypes = {
+        'typescript',
+        'javascript',
+        'javascriptreact',
+        'typescriptreact',
+        'vue'
+      },
+    }
+  end,
+  volar = function()
+    -- TODO: traverse up (lspconfig.util.traverse_parents) the directory tree to
+    -- find TypeScript server
+    --
+    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
+    -- Use a local server and fall back to a global TypeScript Server installation
+    local util = require 'lspconfig.util'
+    local function get_typescript_server_path(root_dir)
+      local global_ts = '~/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
+      local found_ts = ''
+      local function check_dir(path)
+        found_ts = util.path.join(path, 'node_modules', 'typescript', 'lib')
+        if util.path.exists(found_ts) then
+          return path
+        end
+      end
+      if util.search_ancestors(root_dir, check_dir) then
+        return found_ts
+      else
+        return global_ts
+      end
+    end
+
+    return {
+      on_new_config = function(new_config, new_root_dir)
+        new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+      end,
+    }
+  end,
+  pyright = function()
+    return {
+      settings = {
+        pyright = {
+          -- Using Ruff's import organizer
+          disableOrganizeImports = true,
+        },
+        python = {
+          analysis = {
+            -- Ignore all files for analysis to exclusively use Ruff for linting
+            ignore = { '*' },
+          },
+        },
+      },
+    }
+  end,
+  rust_analyzer = function() return {} end,
+  ruff = function()
+    return {
+      on_attach = function(client, bufnr)
+        if client.name == 'ruff' then
+          -- Disable hover in favor of Pyright
+          client.server_capabilities.hoverProvider = false
+        end
+      end,
+    }
+  end,
+  gopls = function() return {} end,
+}
+
 return {
   {
     'neovim/nvim-lspconfig',
@@ -29,79 +116,9 @@ return {
     },
     config = function()
       local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup({})
-
-      -- TODO: traverse up (lspconfig.util.traverse_parents) the directory tree to
-      -- find TypeScript server
-      --
-      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
-      -- Use a local server and fall back to a global TypeScript Server installation
-      local util = require 'lspconfig.util'
-      local function get_typescript_server_path(root_dir)
-        local global_ts = '~/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
-        local found_ts = ''
-        local function check_dir(path)
-          found_ts = util.path.join(path, 'node_modules', 'typescript', 'lib')
-          if util.path.exists(found_ts) then
-            return path
-          end
-        end
-        if util.search_ancestors(root_dir, check_dir) then
-          return found_ts
-        else
-          return global_ts
-        end
+      for server, get_opts in pairs(servers) do
+        lspconfig[server].setup(get_opts())
       end
-
-      local mason_registry = require('mason-registry')
-      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
-          '/node_modules/@vue/language-server'
-
-      local lspconfig = require('lspconfig')
-
-      lspconfig.ts_ls.setup {
-        init_options = {
-          plugins = {
-            {
-              name = '@vue/typescript-plugin',
-              location = vue_language_server_path,
-              languages = { 'vue' },
-            },
-          },
-        },
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-      }
-
-      lspconfig.volar.setup {
-        on_new_config = function(new_config, new_root_dir)
-          new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-        end,
-      }
-
-      lspconfig.pyright.setup {
-        settings = {
-          pyright = {
-            -- Using Ruff's import organizer
-            disableOrganizeImports = true,
-          },
-          python = {
-            analysis = {
-              -- Ignore all files for analysis to exclusively use Ruff for linting
-              ignore = { '*' },
-            },
-          },
-        },
-      }
-      lspconfig.rust_analyzer.setup {}
-      lspconfig.ruff.setup {
-        on_attach = function(client, bufnr)
-          if client.name == 'ruff' then
-            -- Disable hover in favor of Pyright
-            client.server_capabilities.hoverProvider = false
-          end
-        end,
-      }
-      lspconfig.gopls.setup {}
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer
