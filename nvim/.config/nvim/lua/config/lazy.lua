@@ -40,10 +40,6 @@ require("lazy").setup({
     end,
   },
   {
-    'ruifm/gitlinker.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-  {
     "folke/ts-comments.nvim",
     opts = {},
     event = "VeryLazy",
