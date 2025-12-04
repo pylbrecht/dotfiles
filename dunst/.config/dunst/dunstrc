@@ -166,7 +166,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    icon_path = /usr/share/icons/rose-pine-moon-icons/16x16/status/:/usr/share/icons/rose-pine-moon-icons/16x16/devices/
 
     ### History ###
 
@@ -180,7 +180,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/hyprlauncer --dmenu dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/qutebrowser
@@ -213,7 +213,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 7
+    corner_radius = 1
 
     ### Legacy
 
@@ -248,7 +248,7 @@
     # dunst will attempt to calculate an appropriate dpi value for each monitor
     # using the resolution and physical size. This might be useful in setups
     # where there are multiple screens with very different dpi values.
-    per_monitor_dpi = false
+    per_monitor_dpi = true
 
 [shortcuts]
 
@@ -271,30 +271,6 @@
 
     # Context menu.
     context = ctrl+shift+period
-
-[urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#2E3440"
-    foreground = "#D8DEE9"
-    timeout = 10
-    # Icon for notifications with low urgency, uncomment to enable
-    #icon = /path/to/icon
-
-[urgency_normal]
-    background = "#2E3440"
-    foreground = "#D8DEE9"
-    timeout = 10
-    # Icon for notifications with normal urgency, uncomment to enable
-    #icon = /path/to/icon
-
-[urgency_critical]
-    background = "#2E3440"
-    foreground = "#D8DEE9"
-    frame_color = "#BF616A"
-    timeout = 0
-    # Icon for notifications with critical urgency, uncomment to enable
-    #icon = /path/to/icon
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
