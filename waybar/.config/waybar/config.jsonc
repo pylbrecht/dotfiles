@@ -77,5 +77,8 @@
 		//"format": " ",
 		"interval": "once",
 		"tooltip": false
+	},
+	"tray": {
+		"spacing": 7
 	}
 }
