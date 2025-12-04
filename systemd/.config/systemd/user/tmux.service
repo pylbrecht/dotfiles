@@ -3,6 +3,7 @@ Description=Start tmux in detached session
 
 [Service]
 Type=forking
+ExecStartPre=systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_SESSION_DESKTOP GPG_TTY XDG_CURRENT_DESKTOP
 ExecStart=/usr/bin/tmux new-session -s %u -d
 ExecStop=/usr/bin/tmux kill-session -t %u
 WorkingDirectory=~
