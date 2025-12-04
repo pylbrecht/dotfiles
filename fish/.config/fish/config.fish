@@ -47,3 +47,9 @@ set --export --universal EDITOR nvim
 set --export --universal MANPAGER "nvim +Man!"
 
 abbr -a --position anywhere C "| fish_clipboard_copy"
+
+set -l os (uname)
+if test "$os" = Linux
+    and uwsm check may-start &> /dev/null
+    exec uwsm start hyprland.desktop
+end
