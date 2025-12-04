@@ -43,6 +43,7 @@ fzf --fish | source
 jj util completion fish | source
 
 fish_add_path --universal --prepend ~/.cargo/bin
+fish_add_path --universal --prepend ~/.local/bin
 set --export --universal EDITOR nvim
 set --export --universal MANPAGER "nvim +Man!"
 set --export --universal GEM_HOME (gem env user_gemhome)
