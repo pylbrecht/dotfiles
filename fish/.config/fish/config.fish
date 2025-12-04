@@ -45,6 +45,8 @@ jj util completion fish | source
 fish_add_path --universal --prepend ~/.cargo/bin
 set --export --universal EDITOR nvim
 set --export --universal MANPAGER "nvim +Man!"
+set --export --universal GEM_HOME (gem env user_gemhome)
+fish_add_path $GEM_HOME/bin
 
 abbr -a --position anywhere C "| fish_clipboard_copy"
 
