@@ -49,7 +49,7 @@ tooltip label {
 }
 
 #workspaces button.urgent {
-
+    border-bottom: 2px solid @love;
 }
 
 #battery,
