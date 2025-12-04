@@ -3,11 +3,27 @@ local servo_settings = {
     overrideCommand = { "./mach", "fmt" },
   },
   check = {
-    overrideCommand = { "./mach", "clippy", "--message-format=json" },
+    overrideCommand = {
+      "./mach",
+      "clippy",
+      "--message-format=json",
+      "--target-dir",
+      "target/lsp",
+      "--features",
+      "tracing,tracing-perfetto",
+    },
   },
   cargo = {
     buildScripts = {
-      overrideCommand = { "./mach", "clippy", "--message-format=json" },
+      overrideCommand = {
+        "./mach",
+        "clippy",
+        "--message-format=json",
+        "--target-dir",
+        "target/lsp",
+        "--features",
+        "tracing,tracing-perfetto",
+      },
     },
   },
 }
