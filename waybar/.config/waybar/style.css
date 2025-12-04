@@ -1,0 +1,73 @@
+@import "./rose-pine-moon.css";
+
+* {
+    border: none;
+    border-radius: 0;
+
+    font-family: "SauceCodePro Nerd Font";
+    font-size: 16px;
+
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+    border-radius: 15px;
+}
+
+tooltip {
+    background: @base;
+    border: 1px solid @overlay;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @text;
+    padding: 6px;
+}
+
+#workspaces {
+    margin-left: 10px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 15px;
+    color: @text;
+}
+
+#workspaces button {
+    padding: 4px 8px;
+    color: @text;
+    border-bottom: 2px solid @base;
+}
+
+#workspaces button.active {
+    /* border: 1px solid @foam; */
+    /* background-color: @pine; */
+    border-bottom: 2px solid @iris;
+}
+
+#workspaces button.urgent {
+
+}
+
+#battery,
+#bluetooth,
+#pulseaudio,
+#network,
+#clock {
+    padding: 0px 12px;
+}
+
+.modules-left {
+    margin-left: 15px;
+}
+.modules-right {
+    margin-right: 10px;
+}
+
+#custom-arch {
+    color: @iris;
+    font-size: 25px;
+}
