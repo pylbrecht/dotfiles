@@ -1,9 +1,6 @@
 session_name: qutebrowser
 start_directory: '~/dev/qutebrowser'
 windows:
-- window_name: irc
-  panes:
-    - weechat
 - window_name: code
   panes:
     - nvim
