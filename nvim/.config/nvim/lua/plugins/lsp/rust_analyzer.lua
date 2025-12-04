@@ -1,20 +1,9 @@
 local servo_settings = {
-  rustfmt = {
-    overrideCommand = { "./mach", "fmt" },
-  },
-  check = {
-    overrideCommand = {
-      "./mach",
-      "clippy",
-      "--message-format=json",
-      "--target-dir",
-      "target/lsp",
-      "--features",
-      "tracing,tracing-perfetto",
+  ['rust-analyzer'] = {
+    rustfmt = {
+      overrideCommand = { "./mach", "fmt" },
     },
-  },
-  cargo = {
-    buildScripts = {
+    check = {
       overrideCommand = {
         "./mach",
         "clippy",
@@ -25,7 +14,20 @@ local servo_settings = {
         "tracing,tracing-perfetto",
       },
     },
-  },
+    cargo = {
+      buildScripts = {
+        overrideCommand = {
+          "./mach",
+          "clippy",
+          "--message-format=json",
+          "--target-dir",
+          "target/lsp",
+          "--features",
+          "tracing,tracing-perfetto",
+        },
+      },
+    },
+  }
 }
 
 local function is_servo_project(root_dir)
