@@ -4,7 +4,17 @@
 	"reload_style_on_change": true,
 	"modules-left": ["custom/arch", "hyprland/workspaces"],
 	"modules-center": ["tray"],
-	"modules-right": ["bluetooth", "pulseaudio", "battery", "network", "clock"],
+	"modules-right": [
+		"bluetooth",
+		"custom/separator",
+		"pulseaudio",
+		"custom/separator",
+		"battery",
+		"custom/separator",
+		"network",
+		"custom/separator",
+		"clock"
+	],
 	"clock": {
 		"interval": 60,
 		"format": "{:%H:%M}"
@@ -19,9 +29,9 @@
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
 	},
 	"pulseaudio": {
-		"format": "{icon}",
-		"format-bluetooth": "{volume}% {icon}",
-		"format-muted": "",
+		"format": "{icon}  {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": " ",
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
@@ -39,7 +49,7 @@
 	"network": {
 		"interface": "wlan0",
 		"format": "{ifname}",
-		"format-wifi": "",
+		"format-wifi": " ",
 		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
 		"format-disconnected": "", //An empty format will hide the module.
 		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -54,12 +64,18 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{capacity}% {icon}",
+		"format": "{icon}  {capacity}%",
 		"format-icons": ["", "", "", "", ""],
 		"format-charging": " {capacity}%",
 		"format-not-charging": " {capacity}%"
 	},
 	"custom/arch": {
 		"format": "󰣇 "
+	},
+	"custom/separator": {
+		"format": "⋅",
+		//"format": " ",
+		"interval": "once",
+		"tooltip": false
 	}
 }
